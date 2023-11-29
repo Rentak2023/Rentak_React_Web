@@ -1,7 +1,7 @@
 import { Flex } from "@mantine/core";
 import { trans } from "@mongez/localization";
-import delivery from "shared/assets/images/Icons/Group-1.svg";
-import support from "shared/assets/images/Icons/Group-4.svg";
+// import delivery from "shared/assets/images/Icons/Group-1.svg";
+// import support from "shared/assets/images/Icons/Group-4.svg";
 import Guarantee from "shared/assets/images/Icons/surface1.svg";
 import credit from "shared/assets/images/Icons/Vector-11.svg";
 import { SpanCard, TitleCard } from "../style";
@@ -18,7 +18,7 @@ export default function Services() {
         justify="space-between"
         align="baseline">
         <Flex gap={30} justify="space-between" align="center">
-          <img src={delivery} alt="delivery" />
+          {/* <img src={delivery} alt="delivery" /> */}
           <div>
             <TitleCard>{trans("fastShipping")}</TitleCard>
             <SpanCard>{trans("Shipping")}</SpanCard>
@@ -32,7 +32,7 @@ export default function Services() {
           </div>
         </Flex>
         <Flex gap={30} justify="space-between" align="center">
-          <img src={support} alt="support" />
+          {/* <img src={support} alt="support" /> */}
           <div>
             <TitleCard>{trans("onlineSupport")}</TitleCard>
             <SpanCard>{trans("support")}</SpanCard>
