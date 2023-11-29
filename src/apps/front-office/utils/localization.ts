@@ -1,6 +1,6 @@
 import { current, LocaleCodes } from "@mongez/react";
 import Is from "@mongez/supportive-is";
-import uk from "assets/images/flags/uk.png";
+// import uk from "assets/images/flags/uk.png";
 
 export const LingualMode: "array" | "object" = "array";
 
@@ -25,12 +25,10 @@ export const localeCodesList: LocaleCodes = {
   en: {
     direction: "ltr",
     name: "English",
-    flag: uk,
   },
   ar: {
     direction: "rtl",
     name: "العربية",
-    flag: uk,
   },
 };
 
