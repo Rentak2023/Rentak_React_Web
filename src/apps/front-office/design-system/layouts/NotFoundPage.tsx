@@ -59,7 +59,7 @@ export default function NotFoundPage() {
         spacing={80}
         cols={2}
         breakpoints={[{ maxWidth: "sm", cols: 1, spacing: 40 }]}>
-        <Image className={classes.mobileImage} />
+        <img src={Image} className={classes.mobileImage} />
         <div>
           <Title className={classes.title}>
             {trans(mainTranslation.notFoundPageTitle)}
@@ -77,7 +77,7 @@ export default function NotFoundPage() {
             {trans(mainTranslation.goBackHome)}
           </Button>
         </div>
-        <Image className={classes.desktopImage} />
+        <img src={Image} className={classes.desktopImage} />
       </SimpleGrid>
     </Container>
   );
