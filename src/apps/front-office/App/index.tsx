@@ -104,7 +104,7 @@ export function AppWithUser({ children }: any) {
     }
   });
 
-  if (!canPass) return <ProgressBar />;
+  if (!canPass) return <ProgressBar loading={canPass} />;
 
   return <App>{children}</App>;
 }
