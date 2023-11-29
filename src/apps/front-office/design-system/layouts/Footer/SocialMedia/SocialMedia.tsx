@@ -1,13 +1,11 @@
-import { trans } from "@mongez/localization";
 import { Flex } from "apps/front-office/design-system/components/Grids";
 import { Logo } from "apps/front-office/design-system/components/Logo";
-import { P4 } from "apps/front-office/design-system/components/Typography";
 import Button from "apps/front-office/design-system/components/Button";
 import {
   FacebookIcon,
   InstagramIcon,
   LinkedinIcon,
-  TwitterIcon,
+  WhatsappIcon,
 } from "shared/assets/svgs";
 
 const SocialMedia = () => {
@@ -16,10 +14,10 @@ const SocialMedia = () => {
       url: "https://www.facebook.com/Rentakapp/",
       icon: <FacebookIcon />,
     },
-    // {
-    //   url: "",
-    //   icon: <TwitterIcon />,
-    // },
+    {
+      url: "https://api.whatsapp.com/send?phone=01111111541",
+      icon: <WhatsappIcon />,
+    },
     {
       url: "https://www.linkedin.com/company/rentak-app/",
       icon: <LinkedinIcon />,

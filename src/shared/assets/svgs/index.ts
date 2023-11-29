@@ -1,6 +1,6 @@
 export { default as DrawerIcon } from "./DrawerIcon";
 export { default as FacebookIcon } from "./FacebookIcon";
-export { default as TwitterIcon } from "./TwitterIcon";
+export { default as WhatsappIcon } from "./WhatsappIcon";
 export { default as LinkedinIcon } from "./LinkedinIcon";
 export { default as InstagramIcon } from "./InstagramIcon";
 export { default as DateIcon } from "./DateIcon";
