@@ -1,11 +1,11 @@
 import { Flex } from "@mantine/core";
 import { trans } from "@mongez/localization";
-import { Container } from "apps/front-office/design-system/main";
 import delivery from "shared/assets/images/Icons/Group-1.svg";
 import support from "shared/assets/images/Icons/Group-4.svg";
 import Guarantee from "shared/assets/images/Icons/surface1.svg";
 import credit from "shared/assets/images/Icons/Vector-11.svg";
 import { SpanCard, TitleCard } from "../style";
+import { Container } from "apps/front-office/design-system/components/Grids";
 
 export default function Services() {
   return (

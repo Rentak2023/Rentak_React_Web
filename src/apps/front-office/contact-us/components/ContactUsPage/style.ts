@@ -39,21 +39,21 @@ export const PartRight = styled.div`
 export const H1 = styled.h1`
   label: H1;
   font-weight: 500;
-  color: ${theme.colors.blue.dark} !important;
+  color: ${theme.colors.dark} !important;
 `;
 
 export const P = styled.p`
   label: P;
   font-weight: 400;
   font-size: 1rem;
-  color: ${theme.colors.blue.dark} !important;
+  color: ${theme.colors.dark} !important;
 `;
 
 export const H3 = styled.h3`
   label: H3;
   font-weight: 500;
   font-size: 1.1rem;
-  color: ${theme.colors.blue.dark} !important;
+  color: ${theme.colors.dark} !important;
   margin-bottom: 0.4rem;
 `;
 
@@ -71,7 +71,7 @@ export const Span = styled.span`
   label: PartRight;
   font-weight: 400;
   font-size: 0.9rem;
-  color: ${theme.colors.blue.dark} !important;
+  color: ${theme.colors.dark} !important;
 `;
 
 export const FormOne = styled.div`
@@ -98,7 +98,7 @@ export const SideRight = styled.div`
 export const Button = styled.button`
   label: Button;
   width: 42%;
-  background-color: ${theme.colors.blue.dark};
+  background-color: ${theme.colors.dark};
   color: ${theme.colors.white};
   border: none;
   padding: 1rem 2.1rem 1rem 2.1rem;
@@ -116,14 +116,14 @@ export const TitleCard = styled.h3`
   label: TitleCard;
   font-size: 1rem;
   font-weight: 500;
-  color: ${theme.colors.blue.dark} !important;
+  color: ${theme.colors.dark} !important;
 `;
 
 export const SpanCard = styled.span`
   label: SpanCard;
   font-size: 0.9rem;
   font-weight: 400;
-  color: ${theme.colors.offWhite} !important;
+  color: ${theme.colors.white} !important;
 `;
 
 export const Links = styled.div`
@@ -166,5 +166,5 @@ export const InfoWrapper = styled.div`
 export const Submit = styled(SubmitButton)`
   label: Submit;
   width: 30%;
-  background-color: ${theme.colors.blue.dark};
+  background-color: ${theme.colors.dark};
 `;

@@ -5,7 +5,7 @@ export const MainTitle = styled.h3`
   label: MainTitle;
   text-align: center;
   font-size: 1.75rem;
-  color: ${theme.colors.blue.dark};
+  color: ${theme.colors.dark};
   font-style: normal;
   margin-top: 2rem;
 `;
@@ -39,7 +39,7 @@ export const Question = styled.div`
   gap: 0.5rem;
   align-items: center;
   font-weight: 600;
-  color: ${theme.colors.blue.dark};
+  color: ${theme.colors.dark};
   & h3 {
     font-size: 1.75rem;
   }
