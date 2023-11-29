@@ -1,0 +1,118 @@
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
+import { Button as MantineButton } from "@mantine/core";
+import { ButtonProps } from "./type";
+import { theme } from "../../utils/theme";
+import devices from "../../utils/devices";
+
+export const BaseButton = styled(MantineButton)`
+  padding: 0 15px;
+  color: ${theme.colors.white};
+  background: ${theme.colors.secondary[500]};
+  border-color: ${theme.colors.secondary[500]};
+  &:hover {
+    background-color: ${theme.colors.secondary[500]};
+    opacity: 0.8;
+    ${({ variant }: ButtonProps) => {
+      return (
+        variant == "primary" &&
+        css`
+          border: 1px solid ${theme.colors.primaryColor};
+          background-color: ${theme.colors.primaryColor};
+        `
+      );
+    }}
+  }
+  ${({ radius }: ButtonProps) => {
+    return (
+      !radius &&
+      css`
+        border-radius: 4px;
+      `
+    );
+  }}
+  ${({ size }: ButtonProps) => {
+    return (
+      !size &&
+      css`
+        height: 40px;
+      `
+    );
+  }}
+  font-weight: normal;
+
+  transition: 0.2s ease-in-out;
+  ${({ variant, color }: ButtonProps) => {
+    return (
+      variant == "outline" &&
+      css`
+        border: 2px solid ${color ?? theme.colors.primaryColor};
+        color: ${color ?? theme.colors.primaryColor};
+      `
+    );
+  }}
+  ${({ variant, color }: ButtonProps) => {
+    return (
+      variant == "primary" &&
+      css`
+        border: 1px solid ${color ?? theme.colors.primaryColor};
+        background-color: ${color ?? theme.colors.primaryColor};
+        color: ${theme.colors.white};
+      `
+    );
+  }}
+  ${({ rounded }: ButtonProps) => {
+    return (
+      rounded &&
+      css`
+        border-radius: 100px;
+      `
+    );
+  }}
+
+  &:hover {
+    ${({ variant }: ButtonProps) => {
+      return (
+        variant == "outline" &&
+        css`
+          color: ${theme.colors.white};
+          background: ${theme.colors.primaryColor};
+          border-color: ${theme.colors.primaryColor};
+        `
+      );
+    }}
+  }
+  ${({ noStyle }: ButtonProps) => {
+    return (
+      noStyle &&
+      css`
+        background: none;
+        padding: 0;
+        color: ${theme.colors.black};
+        border-radius: 0;
+        border: none;
+        &:hover {
+          background: none;
+        }
+
+        &[data-disabled] {
+          background: none;
+          color: #eee;
+          & p {
+            color: #ccc;
+          }
+        }
+      `
+    );
+  }}
+
+  ${devices.mediumMax} {
+    font-size: 15px;
+  }
+
+  ${devices.smallMax} {
+    font-size: 11px;
+    height: 40px;
+    border-width: 1px;
+  }
+`;

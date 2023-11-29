@@ -1,0 +1,47 @@
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import { ServicesType } from "./types";
+import Service from "./Service";
+
+const ServicesSlider = ({ services }: ServicesType) => {
+  return (
+    <Swiper
+      spaceBetween={100}
+      slidesPerView={3}
+      onSlideChange={() => console.log("slide change")}
+      breakpoints={{
+        280: {
+          slidesPerView: 1,
+        },
+        360: {
+          slidesPerView: 1,
+        },
+        576: {
+          slidesPerView: 1,
+        },
+        // when window width is >= 768px
+        768: {
+          slidesPerView: 2,
+        },
+        992:{
+          slidesPerView: 2
+        },
+        1200: {
+          slidesPerView: 3
+        }
+      }}>
+      {services.map(service => (
+        <SwiperSlide key={service.title}>
+          <Service
+            icon={service.icon}
+            title={service.title}
+            description={service.description}
+            buttonText={service.buttonText}
+            color={service.color}
+          />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
+};
+export default ServicesSlider;

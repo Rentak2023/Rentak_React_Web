@@ -1,0 +1,12 @@
+import { ButtonProps as BaseButtonProps } from '@mantine/core';
+import React from 'react';
+
+export type ButtonProps = BaseButtonProps & React.HTMLAttributes<HTMLButtonElement> & {
+    ref?: React.RefObject<HTMLInputElement>;
+
+    rounded?: boolean;
+
+    noStyle?: boolean;
+
+    to?: string;
+}
