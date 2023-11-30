@@ -6,7 +6,7 @@ export const MainSliderWrapper = styled.div`
   /* background: url(${bg}), lightgray 50% / cover no-repeat; */
   position: relative;
   clip-path: ellipse(111% 63% at 50% 37%);
-  min-height: 100vh;
+  /* min-height: 100vh; */
   ${devices.mediumMax} {
       min-height: 100vh;
     }
