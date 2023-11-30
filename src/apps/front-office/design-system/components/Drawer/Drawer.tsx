@@ -103,7 +103,9 @@ const DrawerPage = ({ opened, close }: any) => {
                             direction="column"
                             gap="1.7rem">
                             {link.children.map(child => (
-                              <Button noStyle to={child.url} className="menu-child--link">
+                              <Button noStyle
+                              onClick={() => window.location.href = child.url}
+                                className="menu-child--link">
                                 <P4 color="rgba(0, 26, 51, 0.56)">{child.text}</P4>
                               </Button>
                             ))}

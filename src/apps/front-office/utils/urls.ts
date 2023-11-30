@@ -8,9 +8,9 @@ const URLS = {
     viewRoute: "/blog/:id/:slug",
     view: (post: any) => `/blog/${post.id}/${post.slug}`,
   },
-  faq: "/faq",
+  faq: "https://rentak.azurewebsites.net/Home/FAQs",
   auth: {
-    login: "/login",
+    login: "https://rentak.azurewebsites.net/Account/Login",
     forgetPassword: "/forget-password",
     resetPassword: "/rest-password",
     register: "/register",
@@ -20,9 +20,9 @@ const URLS = {
   notifications: "/notifications",
   wallet: "/wallet",
   invoices: "/invoices",
-  rentPayment: "/rent-payment",
-  rentCollection: "/rent-collection",
-  maintenancePayment: "/maintenance-payment",
+  rentPayment: "https://rentak.azurewebsites.net/Contract/Form?product_id=1",
+  rentCollection: "https://rentak.azurewebsites.net/Contract/RentCollectionForm",
+  maintenancePayment: "https://rentak.azurewebsites.net/Contract/Form?product_id=2",
 
   pages: {
     aboutUs: "/about-us",
@@ -37,7 +37,7 @@ const URLS = {
   //Pages
   aboutUs: "/about-us",
   projects: "/projects",
-  contactUs: "/contact-us",
+  contactUs: "https://rentak.azurewebsites.net/Home/ContactUs",
   team: "/team",
   services: "/services",
   

@@ -45,8 +45,12 @@ export default function TopNav() {
             <Grid.Col span={4}>
               <Flex gap="32px" align="center" justify="end" fullWidth>
                 <Lang />
-                <Button style={{ marginRight: "20px" }}>{trans("loginRegister")}</Button>
-                <Icons />
+                <Button 
+    style={{ marginRight: "20px" }} 
+    onClick={() => window.location.href = URLS.auth.login}
+>
+    {trans("loginRegister")}
+</Button>                <Icons />
               </Flex>
             </Grid.Col>
           </Grid>
