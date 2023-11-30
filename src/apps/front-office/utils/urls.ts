@@ -8,9 +8,9 @@ const URLS = {
     viewRoute: "/blog/:id/:slug",
     view: (post: any) => `/blog/${post.id}/${post.slug}`,
   },
-  faq: "https://rentak.azurewebsites.net/Home/FAQs",
+  faq: "https://rent-ak.com/Home/FAQs",
   auth: {
-    login: "https://rentak.azurewebsites.net/Account/Login",
+    login: "https://rent-ak.com/Account/Login",
     forgetPassword: "/forget-password",
     resetPassword: "/rest-password",
     register: "/register",
@@ -20,10 +20,10 @@ const URLS = {
   notifications: "/notifications",
   wallet: "/wallet",
   invoices: "/invoices",
-  rentPayment: "https://rentak.azurewebsites.net/Contract/Form?product_id=1",
-  rentCollection: "https://rentak.azurewebsites.net/Contract/RentCollectionForm",
-  maintenancePayment: "https://rentak.azurewebsites.net/Contract/Form?product_id=2",
-  units: "https://rentak.azurewebsites.net/Listing/Index",
+  rentPayment: "https://rent-ak.com/Contract/Form?product_id=1",
+  rentCollection: "https://rent-ak.com/Contract/RentCollectionForm",
+  maintenancePayment: "https://rent-ak.com/Contract/Form?product_id=2",
+  units: "https://rent-ak.com/Listing/Index",
 
   pages: {
     aboutUs: "/about-us",
@@ -38,7 +38,7 @@ const URLS = {
   //Pages
   aboutUs: "#",
   projects: "#",
-  contactUs: "https://rentak.azurewebsites.net/Home/ContactUs",
+  contactUs: "https://rent-ak.com/Home/ContactUs",
   team: "#",
   services: "#",
   
@@ -54,7 +54,7 @@ const URLS = {
   serviceFour: "",
 
   //Properties
-  property: (property) => `https://rentakapp.com/Listing/Details/${property.id}`
+  property: (property) => `https://rent-ak.com/Listing/Details/${property.id}`
   
 
 };
