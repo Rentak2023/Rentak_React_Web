@@ -30,7 +30,7 @@ export const showNotification = ({
       backgroundColor:
         type === "success"
           ? theme.colors.success[100]
-          : theme.colors.error[300],
+          : theme.colors.error[100],
     },
   });
 };

@@ -2,6 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ServicesType } from "./types";
 import Service from "./Service";
+import { Autoplay } from "swiper/modules";
 
 const ServicesSlider = ({ services }: ServicesType) => {
   return (
@@ -9,6 +10,8 @@ const ServicesSlider = ({ services }: ServicesType) => {
       spaceBetween={100}
       slidesPerView={3}
       onSlideChange={() => console.log("slide change")}
+      modules={[Autoplay]}
+      autoplay={true}
       breakpoints={{
         280: {
           slidesPerView: 1,

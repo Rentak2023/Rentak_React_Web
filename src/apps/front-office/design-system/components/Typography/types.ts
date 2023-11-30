@@ -30,7 +30,8 @@ export type TypographyPropsType = {
   endAdornment?: string;
   hover?: HoverType;
   as?: React.ElementType;
-  length?: number
+  length?: number;
+  style?: any
 };
 
 export type StyledTextType = Omit<

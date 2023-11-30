@@ -53,8 +53,8 @@ groupedTranslations({
     ar: "اتصل بنا",
   },
   address: {
-    en: "55 East Birchwood Ave. Brooklyn, New York 11201",
-    ar: "55 East Birchwood Ave. Brooklyn, New York 11201"
+    en: "Smart Village, Linx Business Park, B115, Giza, Egypt.",
+    ar: "Smart Village, Linx Business Park, B115, Giza, Egypt."
   },
   //Footer Pages
   pages: {
@@ -117,7 +117,7 @@ groupedTranslations({
   },
   serviceTwoTitle: {
     en: "Rent collection",
-    ar: "جمع الإيجار"
+    ar: "تحصيل الإيجار"
   },
   serviceTwoDescription: {
     en: "Timely reminders to tenants and multiple payment options, including credit card and cash payments.",
@@ -132,8 +132,8 @@ groupedTranslations({
     ar: "ادفع إيجارك"
   },
   serviceThreeDescription: {
-    en: "Timely reminders to tenants and multiple payment options, including credit card and cash payments.",
-    ar: "تذكير في الوقت المناسب للمستأجرين وخيارات دفع متعددة، بما في ذلك بطاقات الائتمان والمدفوعات النقدية."
+    en: "Choose from multiple payment methods, such as paying with credit cards or different installment companies. To pay any rent with ease.",
+    ar: "اختار من طرق دفع متعددة كالدفع بكروت الاتمان او شركات التقسيط المختلفة. لدفع اي ايجار بكل سهولة."
   },
   serviceThreeButtonText: {
     en: "Pay Now",
@@ -165,15 +165,15 @@ groupedTranslations({
   },
   reasonOne: {
     en: "Guaranteed monthly rental income",
-    ar: "دخل إيجار شهري مضمون"
+    ar: "دخل شهري ثابت"
   },
   reasonTwo: {
     en: "Guaranteed your property condition",
-    ar: "ضمان حالة الممتلكات الخاصة بك"
+    ar: "ضمان حالة وحداتك"
   },
   plans: {
     en: "Plans",
-    ar: "الخطط"
+    ar: "فارق كبير"
   },
   rentak: {
     en: "Rentak",
@@ -181,7 +181,7 @@ groupedTranslations({
   },
   trinationalRenting: {
     en: "Trinational Renting",
-    ar: "الإيجار الثلاثي"
+    ar: "الإيجار التقليدي"
   },
   planOne: {
     en: "Monthly rent reminders can be inconvenient.",
@@ -213,7 +213,7 @@ groupedTranslations({
   },
   planTwoTitle: {
     en: "Unit Conditions",
-    ar: "شروط الوحدة"
+    ar: "حالة الوحدة"
   },
   planTwoSubTitle: {
     en: "Guaranteed Unit Conditions",
@@ -249,7 +249,7 @@ groupedTranslations({
   },
   howItWorks:{
     en: "How It Works",
-    ar: "كيف يعمل"
+    ar: "كيف نعمل"
   },
   stepOneTitle: {
     en: "Submit your property",
@@ -317,7 +317,7 @@ groupedTranslations({
   },
   commentsTitle: {
     en: "Few Smiles and Comments",
-    ar: "قليل من الابتسامات والتعليقات"
+    ar: "بعض من الابتسامات والتعليقات"
   },
   commentOne: {
     en: "Moderate children at of outweigh it. Unsatiable it considered invitation he travelling insensible. Consulted admitting oh mr up as described.",
@@ -385,7 +385,7 @@ groupedTranslations({
   },
   rentCollection: {
     en: "Rent Collection",
-    ar: "جمع الإيجار"
+    ar: "تحصيل الإيجار"
   },
   maintenancePayment:{
     en: "Maintenance Payment",

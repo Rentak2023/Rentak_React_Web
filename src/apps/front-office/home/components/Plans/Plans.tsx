@@ -44,7 +44,7 @@ const plans: PlanType[] = [
 
 const plansText = [
   {
-    text: trans("rentak"),
+    text: trans("trinationalRenting"),
   },
   {
     text: trans("planOne"),
@@ -65,7 +65,7 @@ const Plans = () => {
       <PlansWrapper>
         <H3 color={theme.colors.secondary[600]}>{trans("plans")}</H3>
         <Flex fullWidth justify="end">
-          <P3 className="trinational-renting">{trans("trinationalRenting")}</P3>
+          <P3 className="trinational-renting">{trans("rentak")}</P3>
         </Flex>
         <PlansCard>
           <ul>

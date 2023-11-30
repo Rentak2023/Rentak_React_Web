@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import devices from "apps/front-office/design-system/utils/devices";
+import { isRTL } from "apps/front-office/utils/helpers";
 
 export const ServicesWrapper = styled.section`
   padding: 128px 30px 0;
@@ -59,5 +60,5 @@ export const ServiceIconWrapper = styled.div`
   justify-content: center;
   position: absolute;
   bottom: -42px;
-    right: -46px;
+  right: ${isRTL() ? "0" : "-46px"};
 `;

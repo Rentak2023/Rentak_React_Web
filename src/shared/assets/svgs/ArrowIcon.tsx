@@ -1,3 +1,4 @@
+import { isRTL } from "apps/front-office/utils/helpers";
 import { SvgsTypes } from "./types";
 
 const ArrowIcon = ({ type, color, size }: SvgsTypes) => {
@@ -9,6 +10,7 @@ const ArrowIcon = ({ type, color, size }: SvgsTypes) => {
           width={size ?? "47"}
           height={size ?? "47"}
           viewBox="0 0 47 47"
+          style={{transform: isRTL() ? "rotate(180deg)" : "none"}}
           fill="none">
           <path
             fill-rule="evenodd"

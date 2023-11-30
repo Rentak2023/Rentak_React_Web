@@ -1,4 +1,4 @@
-import { trans } from "@mongez/localization";
+import { getCurrentLocaleCode, trans } from "@mongez/localization";
 import { theme } from "apps/front-office/design-system";
 import {
   H2,
@@ -8,7 +8,7 @@ import {
 } from "apps/front-office/design-system/components/Typography";
 import { Flex } from "apps/front-office/design-system/components/Grids";
 import { ContactUsCardWrapper } from "./style";
-import { Form } from "@mongez/react-form";
+import { Form, HiddenInput } from "@mongez/react-form";
 import TextInput from "apps/front-office/design-system/components/Form/TextInput";
 import EmailInput from "apps/front-office/design-system/components/Form/EmailInput";
 import TextAreaInput from "apps/front-office/design-system/components/Form/TextAreaInput";
@@ -31,7 +31,13 @@ const ContactUsCard = () => {
       showNotification({
         message: response.data.message
       });
-    } catch (error) {
+    } catch (error: any) {
+      Object.entries(error.response.data.errors).map(([key, value] : any) => {
+        return showNotification({
+          type: "danger",
+          message: value[0]
+        })
+      })
     } finally {
       setIsSubmitting(false);
     }
@@ -41,27 +47,32 @@ const ContactUsCard = () => {
       <H7>{trans("haveAQuestion")}</H7>
       <Form onSubmit={onSubmit}>
         <Flex direction="column" gap="16px" fullWidth>
+          <HiddenInput name="lang" value={getCurrentLocaleCode()} />
           <TextInput
             name="full_name"
             label="firstName"
             placeholder={trans("firstName")}
+            required
           />
           <PhoneNumberInput
             name="phone"
             label="phone"
             placeholder={trans("phone")}
+            required
           />
-          <EmailInput name="email" label="email" placeholder={trans("email")} />
+          <EmailInput name="email" label="email" placeholder={trans("email")} required />
           <TextInput
             name="subject"
             label="subject"
             placeholder={trans("subject")}
+            required
           />
           <TextAreaInput
             label="message"
             name="message"
             placeholder={trans("message")}
             rows={7}
+            required
           />
         </Flex>
         <SubmitButton

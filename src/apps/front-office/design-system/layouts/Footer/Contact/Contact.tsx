@@ -15,7 +15,7 @@ const Contact = () => {
           <P4 color={theme.colors.paragraph}>Info@rent-ak.com</P4>
         </Link>
         <Link to="tel:+201111111541">
-          <P4  color={theme.colors.paragraph}>(+20) 111111 - 1541</P4>
+          <P4 style={{ direction: "ltr" }} color={theme.colors.paragraph}>(+20) 111111 - 1541</P4>
         </Link>
       </Flex>
     </Flex>

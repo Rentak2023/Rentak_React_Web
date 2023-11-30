@@ -11,7 +11,7 @@ export default function InputLabel({ children, required, ...props }: any) {
       ) : (
         children
       )}
-      {required && <sup className="super">*</sup>}
+      {/* {required && <sup className="super">*</sup>} */}
     </Label>
   );
 }

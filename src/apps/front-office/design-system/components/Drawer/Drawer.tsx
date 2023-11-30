@@ -12,11 +12,17 @@ import URLS from "apps/front-office/utils/urls";
 import { trans } from "@mongez/localization";
 import { P3, P4 } from "../Typography";
 import { theme } from "../../utils/theme";
+import Link from "./Link";
 
 const links = [
   {
+    url: URLS.home,
+    text: trans("home"),
+    children: null,
+  },
+  {
     url: URLS.services,
-    icon: <SidebarIcon type="services" />,
+    // icon: <SidebarIcon type="services" />,
     text: trans("services"),
     children: [
       {
@@ -33,30 +39,46 @@ const links = [
       },
     ],
   },
+
   {
-    url: URLS.invoices,
-    icon: <SidebarIcon type="invoices" color={theme.colors.secondary[600]} />,
-    text: trans("invoices"),
+    url: URLS.units,
+    text: trans("units"),
     children: null,
   },
   {
-    url: URLS.wallet,
-    icon: <SidebarIcon type="wallet" color={theme.colors.secondary[600]} />,
-    text: trans("wallet"),
+    url: URLS.contactUs,
+    text: trans("contactUs"),
     children: null,
   },
   {
-    url: URLS.notifications,
-    icon: <SidebarIcon type="notifications" color={theme.colors.secondary[600]} />,
-    text: trans("notifications"),
+    url: URLS.faq,
+    text: trans("faq"),
     children: null,
   },
-  {
-    url: URLS.settings,
-    icon: <SidebarIcon type="notifications" color={theme.colors.secondary[600]} />,
-    text: trans("settings"),
-    children: null,
-  },
+  // {
+  //   url: URLS.invoices,
+  //   icon: <SidebarIcon type="invoices" color={theme.colors.secondary[600]} />,
+  //   text: trans("invoices"),
+  //   children: null,
+  // },
+  // {
+  //   url: URLS.wallet,
+  //   icon: <SidebarIcon type="wallet" color={theme.colors.secondary[600]} />,
+  //   text: trans("wallet"),
+  //   children: null,
+  // },
+  // {
+  //   url: URLS.notifications,
+  //   icon: <SidebarIcon type="notifications" color={theme.colors.secondary[600]} />,
+  //   text: trans("notifications"),
+  //   children: null,
+  // },
+  // {
+  //   url: URLS.settings,
+  //   icon: <SidebarIcon type="notifications" color={theme.colors.secondary[600]} />,
+  //   text: trans("settings"),
+  //   children: null,
+  // },
 ];
 const DrawerPage = ({ opened, close }: any) => {
 
@@ -87,32 +109,7 @@ const DrawerPage = ({ opened, close }: any) => {
                 </Flex>
                 <Flex direction="column" justify="center">
                   {links.map(link => (
-                    <>
-                      <Flex gap="26px">
-                        <Button noStyle to={link.url} className="menu--link">
-                          {link.icon}
-                          <P3 weight="700" color={theme.colors.secondary[600]}>{link.text}</P3>
-                          {link.children && <ArrowIcon type="top" color={theme.colors.secondary[600]} />}
-                        </Button>
-                      </Flex>
-                      {link.children && (
-                        <Flex className="children--wrapper">
-                          <SidebarLinesIcon />
-                          <Flex
-                            className="menu--children"
-                            direction="column"
-                            gap="1.7rem">
-                            {link.children.map(child => (
-                              <Button noStyle
-                              onClick={() => window.location.href = child.url}
-                                className="menu-child--link">
-                                <P4 color="rgba(0, 26, 51, 0.56)">{child.text}</P4>
-                              </Button>
-                            ))}
-                          </Flex>
-                        </Flex>
-                      )}
-                    </>
+                    <Link link={link} />
                   ))}
                 </Flex>
               </UserWrapper>

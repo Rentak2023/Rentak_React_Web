@@ -23,6 +23,7 @@ const URLS = {
   rentPayment: "https://rentak.azurewebsites.net/Contract/Form?product_id=1",
   rentCollection: "https://rentak.azurewebsites.net/Contract/RentCollectionForm",
   maintenancePayment: "https://rentak.azurewebsites.net/Contract/Form?product_id=2",
+  units: "https://rentak.azurewebsites.net/Listing/Index",
 
   pages: {
     aboutUs: "/about-us",
@@ -31,22 +32,22 @@ const URLS = {
     viewRoute: "/pages/:slug",
     view: (page: any) => `/pages/${page.id}/${page.slug}`,
   },
-  landlord: "/landlord",
-  tenants: "/tenants",
+  landlord: "#",
+  tenants: "#",
 
   //Pages
-  aboutUs: "/about-us",
-  projects: "/projects",
+  aboutUs: "#",
+  projects: "#",
   contactUs: "https://rentak.azurewebsites.net/Home/ContactUs",
-  team: "/team",
-  services: "/services",
+  team: "#",
+  services: "#",
   
   //Services
-  kitchen: "/kitchen",
-  livingArea: "/livingArea",
-  bathroom: "/bathroom",
-  dinningHall: "/dinningHall",
-  bedroom: "/bedroom"
+  kitchen: "#",
+  livingArea: "#",
+  bathroom: "#",
+  dinningHall: "#",
+  bedroom: "#"
 };
 
 export default URLS;

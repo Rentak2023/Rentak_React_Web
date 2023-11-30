@@ -11,7 +11,7 @@ const Comment = ({ comment }) => {
   return (
     <CommentWrapper>
       <StarsIcon />
-      <P4>{comment.comment}</P4>
+      <P4 className="comment">{comment.comment}</P4>
       <UserWrapper>
         <Flex gap="20px" className="description">
           {comment.image}

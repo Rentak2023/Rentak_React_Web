@@ -20,7 +20,7 @@ const services = [
     title: trans("serviceTwoTitle"),
     description: trans("serviceTwoDescription"),
     buttonText: trans("serviceTwoButtonText"),
-    color: "rgba(255, 204, 0, 0.10)",
+    color: "rgba(244, 91, 44, 0.10)",
   },
   {
     icon: <ServicesIcon type={3} />,
@@ -34,7 +34,7 @@ const services = [
     title: trans("serviceFourTitle"),
     description: trans("serviceFourDescription"),
     buttonText: trans("serviceFourButtonText"),
-    color: "rgba(148, 210, 140, 0.10)",
+    color: "rgba(255, 204, 0, 0.10)",
   },
 ];
 const Services = () => {

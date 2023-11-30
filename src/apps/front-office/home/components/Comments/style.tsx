@@ -25,6 +25,9 @@ export const CommentWrapper = styled.div`
   .description {
     margin-top: 53px;
   }
+  .comment{
+    height: 100px;
+  }
 `;
 
 export const UserWrapper = styled.div`
