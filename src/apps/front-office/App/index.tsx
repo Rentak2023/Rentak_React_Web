@@ -45,7 +45,7 @@ export default function App({ children }: AppProps) {
   return (
     <>
       <ColorSchemeProvider
-        colorScheme={colorScheme}
+        colorScheme="light"
         toggleColorScheme={theme => {
           if (!theme) return;
 
@@ -56,12 +56,14 @@ export default function App({ children }: AppProps) {
           <MantineProvider
             theme={{
               fontFamily: primaryFontFamily,
-              colorScheme: colorScheme,
+              colorScheme: "light",
               dir: direction,
             }}
             emotionCache={isRTL() ? cacheRTL : cacheLTR}
             withGlobalStyles
-            withNormalizeCSS>
+            withNormalizeCSS
+
+          >
             <InjectThemeAtom />
             <ModalsProvider>
               <ToastContainer />

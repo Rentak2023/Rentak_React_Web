@@ -54,7 +54,7 @@ const Property = ({ property }) => {
         </Flex>
         <Flex direction="column">
           <a href={URLS.property(property)}>
-            <H4 weight="500">{property.property_name}</H4>
+            <H4 truncationWidth="300px" weight="500">{property.property_name}</H4>
           </a>
           <P4 weight="400">{property.location.city_name}</P4>
         </Flex>
