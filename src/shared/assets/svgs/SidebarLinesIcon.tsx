@@ -1,3 +1,4 @@
+import { isRTL } from "apps/front-office/utils/helpers";
 import React from "react";
 
 const SidebarLinesIcon = () => {
@@ -8,6 +9,7 @@ const SidebarLinesIcon = () => {
         width="23"
         height="184"
         viewBox="0 0 23 184"
+        style={{ transform: isRTL() ? "rotate3d(0, 1, 0, 180deg)" : "none" }}
         fill="none">
         <path
           fill-rule="evenodd"

@@ -1,3 +1,4 @@
+import { isRTL } from "apps/front-office/utils/helpers";
 import { SvgsTypes } from "./types";
 
 const CloseDrawerIcon = ({ size, color }: SvgsTypes) => {
@@ -8,6 +9,7 @@ const CloseDrawerIcon = ({ size, color }: SvgsTypes) => {
         width="41"
         height="40"
         viewBox="0 0 41 40"
+        style={{ transform: isRTL() ? "rotate(180deg)" : "none" }}
         fill="none">
         <g filter="url(#filter0_b_528_1581)">
           <rect
