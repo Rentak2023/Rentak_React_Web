@@ -144,8 +144,8 @@ groupedTranslations({
     ar: "استأجر منزلك المثالي"
   },
   serviceFourDescription: {
-    en: "Timely reminders to tenants and multiple payment options, including credit card and cash payments.",
-    ar: "تذكير في الوقت المناسب للمستأجرين وخيارات دفع متعددة، بما في ذلك بطاقات الائتمان والمدفوعات النقدية."
+    en: "Explore trustworthy listings with real availability, secure transactions, and no upfront cash security deposit.",
+    ar: "تصفح قائمة من الوحدات المختارة بعناية لتلائم كافة احتياجاتك."
   },
   serviceFourButtonText: {
     en: "Explore Properties",
@@ -172,7 +172,7 @@ groupedTranslations({
     ar: "ضمان حالة وحداتك"
   },
   plans: {
-    en: "Plans",
+    en: "Big Difference",
     ar: "فارق كبير"
   },
   rentak: {
