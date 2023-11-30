@@ -10,7 +10,7 @@ const ArrowIcon = ({ type, color, size }: SvgsTypes) => {
           width={size ?? "47"}
           height={size ?? "47"}
           viewBox="0 0 47 47"
-          style={{transform: isRTL() ? "rotate(180deg)" : "none"}}
+          style={{ transform: isRTL() ? "rotate(180deg)" : "none" }}
           fill="none">
           <path
             fill-rule="evenodd"
@@ -21,7 +21,22 @@ const ArrowIcon = ({ type, color, size }: SvgsTypes) => {
         </svg>
       );
     case "left":
-      return <></>;
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={size ?? "47"}
+          height={size ?? "47"}
+          viewBox="0 0 47 47"
+          style={{ transform: isRTL() ? "none" : "rotate(180deg)" }}
+          fill="none">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M18.7148 11.0515C19.278 10.4884 20.191 10.4884 20.7541 11.0515L32.2901 22.5875C32.8533 23.1506 32.8533 24.0637 32.2901 24.6268L20.7541 36.1628C20.191 36.7259 19.278 36.7259 18.7148 36.1628C18.1517 35.5997 18.1517 34.6866 18.7148 34.1235L29.2312 23.6072L18.7148 13.0908C18.1517 12.5277 18.1517 11.6146 18.7148 11.0515Z"
+            fill={color ?? "#204D42"}
+          />
+        </svg>
+      );
     case "top":
       return (
         <svg

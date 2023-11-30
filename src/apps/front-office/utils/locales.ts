@@ -180,7 +180,7 @@ groupedTranslations({
     ar: "Rentak"
   },
   trinationalRenting: {
-    en: "Trinational Renting",
+    en: "Traditional Renting",
     ar: "الإيجار التقليدي"
   },
   planOne: {

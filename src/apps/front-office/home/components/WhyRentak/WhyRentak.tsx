@@ -29,7 +29,7 @@ const WhyRentak = () => {
         <H2 className="main-header" color={theme.colors.secondary[600]}>
           {trans("whyRentak")}
         </H2>
-        <Flex gap="120px" fullWidth className="grid">
+        <Flex gap="120px" fullWidth className="grid" justify="space-between">
           <Flex direction="column" gap="169px" justify="center">
             {reasons.map(reason => (
               <Reason key={reason.id}>

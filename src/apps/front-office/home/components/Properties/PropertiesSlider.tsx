@@ -15,6 +15,7 @@ const PropertiesSlider = ({ properties }) => {
       slidesPerView={3}
       navigation={{
         nextEl: ".custom--next",
+        prevEl: ".custom--prev"
       }}
       autoplay={true}
       pagination={{ clickable: true }}
@@ -44,8 +45,10 @@ const PropertiesSlider = ({ properties }) => {
           <Property property={property} />
         </SwiperSlide>
       ))}
+      <div className="custom--prev">
+        <ArrowIcon type="left" />
+      </div>
       <div className="custom--next">
-        <Overlay />
         <ArrowIcon type="right" />
       </div>
     </Swiper>
