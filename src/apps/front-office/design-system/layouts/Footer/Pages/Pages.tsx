@@ -15,6 +15,7 @@ const Pages = () => {
       url: URLS.faq,
       text: trans('faq')
     },
+    
     // {
     //   url: URLS.aboutUs,
     //   text: trans('aboutUs')

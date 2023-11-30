@@ -11,6 +11,7 @@ import { ArrowIcon, DirectionIcon } from "shared/assets/svgs";
 import { theme } from "apps/front-office/design-system";
 
 const Service = ({ icon, title, description, link, color }: ServiceType) => {
+  
   return (
     <ServiceWrapper color={color}>
       <ServiceIconWrapper>{icon}</ServiceIconWrapper>

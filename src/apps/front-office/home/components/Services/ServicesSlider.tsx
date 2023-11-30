@@ -39,7 +39,7 @@ const ServicesSlider = ({ services }: ServicesType) => {
             icon={service.icon}
             title={service.title}
             description={service.description}
-            buttonText={service.buttonText}
+            link={service.link}
             color={service.color}
           />
         </SwiperSlide>
