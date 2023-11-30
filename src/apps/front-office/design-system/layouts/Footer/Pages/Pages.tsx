@@ -8,25 +8,33 @@ import URLS from "apps/front-office/utils/urls"
 const Pages = () => {
   const pagesLinks = [
     {
-      url: URLS.aboutUs,
-      text: trans('aboutUs')
-    },
-    {
-      url: URLS.projects,
-      text: trans('ourProjects')
-    },
-    {
-      url: URLS.team,
-      text: trans('ourTeam')
-    },
-    {
       url: URLS.contactUs,
       text: trans('contactUs')
     },
     {
-      url: URLS.services,
-      text: trans('services')
+      url: URLS.faq,
+      text: trans('faq')
     },
+    // {
+    //   url: URLS.aboutUs,
+    //   text: trans('aboutUs')
+    // },
+    // {
+    //   url: URLS.projects,
+    //   text: trans('ourProjects')
+    // },
+    // {
+    //   url: URLS.team,
+    //   text: trans('ourTeam')
+    // },
+    // {
+    //   url: URLS.contactUs,
+    //   text: trans('contactUs')
+    // },
+    // {
+    //   url: URLS.services,
+    //   text: trans('services')
+    // },
   ]
   return (
     <Flex direction="column" >

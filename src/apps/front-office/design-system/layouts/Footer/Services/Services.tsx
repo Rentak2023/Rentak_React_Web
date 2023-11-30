@@ -9,25 +9,37 @@ import URLS from "apps/front-office/utils/urls"
 const Services = () => {
   const servicesLinks = [
     {
-      url: URLS.kitchen,
-      text: trans('kitchen')
+      url: URLS.rentPayment,
+      text: trans("rentPayment")
     },
     {
-      url: URLS.livingArea,
-      text: trans('livingArea')
+      url: URLS.rentCollection,
+      text: trans("rentCollection")
     },
     {
-      url: URLS.bathroom,
-      text: trans('bathroom')
-    },
-    {
-      url: URLS.dinningHall,
-      text: trans('dinningHall')
-    },
-    {
-      url: URLS.bedroom,
-      text: trans('bedroom')
-    },
+      url: URLS.units,
+      text: trans("units") 
+    }
+    // {
+    //   url: URLS.kitchen,
+    //   text: trans('kitchen')
+    // },
+    // {
+    //   url: URLS.livingArea,
+    //   text: trans('livingArea')
+    // },
+    // {
+    //   url: URLS.bathroom,
+    //   text: trans('bathroom')
+    // },
+    // {
+    //   url: URLS.dinningHall,
+    //   text: trans('dinningHall')
+    // },
+    // {
+    //   url: URLS.bedroom,
+    //   text: trans('bedroom')
+    // },
   ];
   
   return (
@@ -36,10 +48,12 @@ const Services = () => {
 
       <Flex direction="column" align="start">
         {servicesLinks.map(link => (
-          <Button noStyle to={link.url}>
-            <P4 color={theme.colors.paragraph}>
-              {link.text}
-            </P4>
+          <Button noStyle>
+            <a href={link.url}>
+              <P4 color={theme.colors.paragraph}>
+                {link.text}
+              </P4>
+            </a>
           </Button>
         ))}
       </Flex>

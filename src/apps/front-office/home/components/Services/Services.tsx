@@ -6,34 +6,35 @@ import { ServicesIcon } from "assets/svgs";
 import { Container } from "apps/front-office/design-system/components/Grids";
 import { H2 } from "apps/front-office/design-system/components/Typography";
 import { theme } from "apps/front-office/design-system";
+import URLS from "apps/front-office/utils/urls";
 
 const services = [
   {
     icon: <ServicesIcon type={1} />,
     title: trans("serviceOneTitle"),
     description: trans("serviceOneDescription"),
-    buttonText: trans("serviceOneButtonText"),
+    link: URLS.maintenancePayment,
     color: "rgba(148, 210, 140, 0.10)",
   },
   {
     icon: <ServicesIcon type={2} />,
     title: trans("serviceTwoTitle"),
     description: trans("serviceTwoDescription"),
-    buttonText: trans("serviceTwoButtonText"),
+    link: URLS.rentCollection,
     color: "rgba(244, 91, 44, 0.10)",
   },
   {
     icon: <ServicesIcon type={3} />,
     title: trans("serviceThreeTitle"),
     description: trans("serviceThreeDescription"),
-    buttonText: trans("serviceThreeButtonText"),
-    color: "rgba(244, 91, 44, 0.10)",
+    link: URLS.rentPayment,
+    color: "rgba(0, 139, 243, 0.10)",
   },
   {
     icon: <ServicesIcon type={4} />,
     title: trans("serviceFourTitle"),
     description: trans("serviceFourDescription"),
-    buttonText: trans("serviceFourButtonText"),
+    link: URLS.units,
     color: "rgba(255, 204, 0, 0.10)",
   },
 ];

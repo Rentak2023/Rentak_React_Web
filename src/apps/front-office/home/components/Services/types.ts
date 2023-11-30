@@ -4,7 +4,7 @@ export type ServiceType = {
   icon: React.ReactNode;
   title: string;
   description: string;
-  buttonText: string;
+  link: string;
   color: string
 }
 

@@ -10,15 +10,17 @@ import { Flex } from "apps/front-office/design-system/components/Grids";
 import { ArrowIcon, DirectionIcon } from "shared/assets/svgs";
 import { theme } from "apps/front-office/design-system";
 
-const Service = ({ icon, title, description, buttonText, color }: ServiceType) => {
+const Service = ({ icon, title, description, link, color }: ServiceType) => {
   return (
     <ServiceWrapper color={color}>
       <ServiceIconWrapper>{icon}</ServiceIconWrapper>
       <Button noStyle>
-        <Flex align="center">
-          <H5 color={theme.colors.secondary[600]} weight="700">{title} </H5>
-          <ArrowIcon type="right" />
-        </Flex>
+        <a href={link}>
+          <Flex align="center">
+            <H5 color={theme.colors.secondary[600]} weight="700">{title} </H5>
+            <ArrowIcon type="right" />
+          </Flex>
+        </a>
       </Button>
       <P2 color={theme.colors.secondary[500]} className="description">
         {description}

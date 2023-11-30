@@ -48,11 +48,15 @@ const URLS = {
   bathroom: "#",
   dinningHall: "#",
   bedroom: "#",
+  serviceOne: "",
+  serviceTwo: "",
+  serviceThree: "",
+  serviceFour: "",
 
   //Properties
-  properties: "https://rentakapp.com/Listing/Details",
-  viewProperty: "",
   property: (property) => `https://rentakapp.com/Listing/Details/${property.id}`
+  
+
 };
 
 export default URLS;
