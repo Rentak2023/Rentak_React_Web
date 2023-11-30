@@ -6,6 +6,7 @@ export const MainSliderWrapper = styled.div`
   /* background: url(${bg}), lightgray 50% / cover no-repeat; */
   position: relative;
   clip-path: ellipse(111% 63% at 50% 37%);
+  min-height: 100vh;
   ${devices.mediumMax} {
       min-height: 100vh;
     }
@@ -20,11 +21,11 @@ export const ContentWrapper = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  left: 0;
+  left: 25px;
   right: 0;
   bottom: 0;
-  top: 0;
-  ${devices.hdMax} {
+  top: -21rem;
+  /* ${devices.hdMax} {
     padding-left: 34rem;
   }
   ${devices.xxLargeMax} {
@@ -39,7 +40,7 @@ export const ContentWrapper = styled.div`
   ${devices.mediumMax} {
     padding-left: 0rem;
     padding: 1rem
-  }
+  } */
   display: flex;
   flex-direction: column;
   justify-content: center;
