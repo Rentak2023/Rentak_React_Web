@@ -1,3 +1,4 @@
+import { isRTL } from "apps/front-office/utils/helpers";
 import { SvgsTypes } from "./types";
 
 const DirectionIcon = ({ type, color }: SvgsTypes) => {
@@ -9,6 +10,7 @@ const DirectionIcon = ({ type, color }: SvgsTypes) => {
           width="30"
           height="31"
           viewBox="0 0 30 31"
+          style={{transform: isRTL() ? "rotate(180deg)" : "none"}}
           fill="none">
           <path
             d="M15.7148 11.1348L19.6875 15.1074L15.7148 19.0801"
@@ -31,6 +33,7 @@ const DirectionIcon = ({ type, color }: SvgsTypes) => {
           width="30"
           height="31"
           viewBox="0 0 30 31"
+          style={{transform: isRTL() ? "rotate(180deg)" : "none"}}
           fill="none">
           <path
             d="M14.2852 11.4219L10.3125 15.3945L14.2852 19.3672"
