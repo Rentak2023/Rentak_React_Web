@@ -34,10 +34,12 @@ const Pages = () => {
 
       <Flex direction="column" align="start">
         {pagesLinks.map(link => (
-          <Button noStyle to={link.url} key={link.url}>
-            <P4 color={theme.colors.paragraph}>
-              {link.text}
-            </P4>
+          <Button noStyle key={link.url}>
+            <a href={link.url}>
+              <P4 color={theme.colors.paragraph}>
+                {link.text}
+              </P4>
+            </a>
           </Button>
         ))}
       </Flex>

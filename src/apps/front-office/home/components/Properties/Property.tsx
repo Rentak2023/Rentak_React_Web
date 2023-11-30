@@ -1,5 +1,10 @@
 import React from "react";
-import { PropertyWrapper, DescriptionWrapper, PropertyType, Rate } from "./style";
+import {
+  PropertyWrapper,
+  DescriptionWrapper,
+  PropertyType,
+  Rate,
+} from "./style";
 import {
   H4,
   P1,
@@ -12,6 +17,7 @@ import { Flex } from "apps/front-office/design-system/components/Grids";
 import { Bathtub, BedIcon, SpaceIcon, StarIcon } from "shared/assets/svgs";
 import { trans } from "@mongez/localization";
 import { theme } from "apps/front-office/design-system";
+import URLS from "apps/front-office/utils/urls";
 const Property = ({ property }) => {
   const items = [
     {
@@ -40,14 +46,16 @@ const Property = ({ property }) => {
       </Flex>
       <DescriptionWrapper>
         <Flex justify="end" fullWidth>
-          {property.property_type.type_name && 
+          {property.property_type.type_name && (
             <PropertyType>
               <P3 weight="500">{property.property_type.type_name}</P3>
             </PropertyType>
-          }
+          )}
         </Flex>
         <Flex direction="column">
-          <H4 weight="500">{property.property_name}</H4>
+          <a href={URLS.property(property)}>
+            <H4 weight="500">{property.property_name}</H4>
+          </a>
           <P4 weight="400">{property.location.city_name}</P4>
         </Flex>
         <Flex gap="26px" className="description">

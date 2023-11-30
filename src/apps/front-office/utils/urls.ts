@@ -47,7 +47,12 @@ const URLS = {
   livingArea: "#",
   bathroom: "#",
   dinningHall: "#",
-  bedroom: "#"
+  bedroom: "#",
+
+  //Properties
+  properties: "https://rentakapp.com/Listing/Details",
+  viewProperty: "",
+  property: (property) => `https://rentakapp.com/Listing/Details/${property.id}`
 };
 
 export default URLS;

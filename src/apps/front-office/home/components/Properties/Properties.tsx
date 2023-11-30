@@ -15,6 +15,7 @@ import { PropertiesWrapper } from "./style";
 import Button from "apps/front-office/design-system/components/Button";
 import { DirectionIcon } from "shared/assets/svgs";
 import { theme } from "apps/front-office/design-system";
+import URLS from "apps/front-office/utils/urls";
 
 const Properties = () => {
   const [properties, setProperties] = useState([]);
@@ -37,8 +38,10 @@ const Properties = () => {
         <H2>{trans("availableRental")}</H2>
         <Flex fullWidth justify="end" className="see--all">
           <Button noStyle>
-            <P2 weight="600" color={theme.colors.secondary[400]}>{trans("seeAllUnits")}</P2>
-            <DirectionIcon type="right" color={theme.colors.secondary[400]} />
+            <a href={URLS.units} style={{display: "flex"}}>
+              <P2 weight="600" color={theme.colors.secondary[400]}>{trans("seeAllUnits")}</P2>
+              <DirectionIcon type="right" color={theme.colors.secondary[400]} />
+            </a>
           </Button>
         </Flex>
         <PropertiesSlider properties={properties} />

@@ -1,9 +1,6 @@
 import { Flex } from "../Grids";
 import Button from "../Button";
-import {
-  ArrowIcon,
-  SidebarLinesIcon,
-} from "shared/assets/svgs";
+import { ArrowIcon, SidebarLinesIcon } from "shared/assets/svgs";
 import { P3, P4 } from "../Typography";
 import { theme } from "../../utils/theme";
 import { useState } from "react";
@@ -11,21 +8,26 @@ import { useState } from "react";
 const Link = ({ link }) => {
   const [showChildren, setShowChildren] = useState(true);
   const onClickHandler = () => {
-    setShowChildren(prevState => !prevState)
-  }
+    setShowChildren(prevState => !prevState);
+  };
   return (
     <>
       <Flex gap="26px">
-        <Button noStyle to={link.url} className="menu--link">
-          {/* {link.icon} */}
-          <P3 weight="700" color={theme.colors.secondary[600]}>
-            {link.text}
-          </P3>
-          {link.children && (
-            <Button noStyle onClick={onClickHandler}>
-              <ArrowIcon type={showChildren ? "top" : "bottom"}color={theme.colors.secondary[600]} />
-            </Button>
-          )}
+        <Button noStyle className="menu--link">
+          <a href={link.url}>
+            {/* {link.icon} */}
+            <P3 weight="700" color={theme.colors.secondary[600]}>
+              {link.text}
+            </P3>
+            {link.children && (
+              <Button noStyle onClick={onClickHandler}>
+                <ArrowIcon
+                  type={showChildren ? "top" : "bottom"}
+                  color={theme.colors.secondary[600]}
+                />
+              </Button>
+            )}
+          </a>
         </Button>
       </Flex>
       {link.children && showChildren && (
