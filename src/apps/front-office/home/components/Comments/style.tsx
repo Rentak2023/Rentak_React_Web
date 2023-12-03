@@ -13,7 +13,7 @@ export const CommentsWrapper = styled.section`
 `;
 
 export const CommentWrapper = styled.div`
-  padding: 52px 38px;
+  padding: 52px 34px;
   ${devices.xSmallMax}{
     padding: 52px 10px;
   }

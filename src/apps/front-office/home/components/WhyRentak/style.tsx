@@ -4,6 +4,9 @@ import devices from "apps/front-office/design-system/utils/devices";
 
 export const WhyRentakWrapper = styled.section`
   padding-top: 128px;
+  ${devices.mediumMax} {
+    padding-top: 30px;
+  }
   .main-header {
     text-align: center;
     font-weight: 600;
@@ -31,9 +34,12 @@ export const Line = styled.div`
   border-left: 18.538px solid ${theme.colors.primaryColor};
   border-radius: 25.542px;
   height: 214px;
-  ${devices.xSmallMax} {
-    height: 150px;
+  ${devices.mediumMax} {
+    height: 105px;
   }
+  /* ${devices.xSmallMax} {
+    height: 150px;
+  } */
 `;
 
 export const Reason = styled.div`

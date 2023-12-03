@@ -13,8 +13,8 @@ const Link = ({ link }) => {
   return (
     <>
       <Flex gap="26px">
-        <Button noStyle className="menu--link">
-          <a href={link.url}>
+        <a href={link.url}>
+          <Button noStyle className="menu--link">
             {/* {link.icon} */}
             <P3 weight="700" color={theme.colors.secondary[600]}>
               {link.text}
@@ -27,8 +27,8 @@ const Link = ({ link }) => {
                 />
               </Button>
             )}
-          </a>
-        </Button>
+          </Button>
+        </a>
       </Flex>
       {link.children && showChildren && (
         <Flex className="children--wrapper">

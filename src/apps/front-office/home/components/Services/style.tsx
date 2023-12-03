@@ -4,13 +4,18 @@ import { isRTL } from "apps/front-office/utils/helpers";
 
 export const ServicesWrapper = styled.section`
   padding: 128px 30px 0;
-  /* overflow: hidden; */
+  ${devices.mediumMax}{
+    padding: 30px 20px;
+  }
   ${devices.xSmallMax}{
     padding: 128px 15px;
   }
   h2{
     margin-bottom: 102px;
     font-weight: 700;
+    ${devices.mediumMax}{
+      margin-bottom: 20px;
+    }
   }
   .swiper{
     overflow: visible;
@@ -30,6 +35,9 @@ export const ServiceWrapper = styled.div<ServiceWrapperType>`
   }
   border-radius: 12px;
   height: 579px;
+  ${devices.mediumMax}{
+    height: 455px;
+  }
   position: relative;
   margin-bottom: 60px;
   .description {

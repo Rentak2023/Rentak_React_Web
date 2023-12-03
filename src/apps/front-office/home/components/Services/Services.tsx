@@ -1,12 +1,13 @@
 import { trans } from "@mongez/localization";
 import { ServicesWrapper } from "./style";
-
 import ServicesSlider from "./ServicesSlider";
 import { ServicesIcon } from "assets/svgs";
 import { Container } from "apps/front-office/design-system/components/Grids";
 import { H2 } from "apps/front-office/design-system/components/Typography";
 import { theme } from "apps/front-office/design-system";
 import URLS from "apps/front-office/utils/urls";
+import useBreakpoints from "apps/front-office/common/hooks/useBreakpoints";
+import MobileServices from "./MobileServices";
 
 const services = [
   {
@@ -38,14 +39,22 @@ const services = [
     color: "rgba(255, 204, 0, 0.10)",
   },
 ];
+
 const Services = () => {
+  const { medium } = useBreakpoints();
   return (
     <div style={{ overflow: "hidden" }}>
       <ServicesWrapper>
         <Container>
-          <H2 color={theme.colors.secondary[600]} textAlign="center">{trans("ourServices")}</H2>
+          <H2 color={theme.colors.secondary[600]} textAlign="center">
+            {trans("ourServices")}
+          </H2>
         </Container>
-        <ServicesSlider services={services} />
+        {medium ? (
+          <ServicesSlider services={services} />
+          ) : (
+          <MobileServices services={services} />
+        )}
       </ServicesWrapper>
     </div>
   );

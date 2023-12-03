@@ -17,7 +17,7 @@ const SocialMedia = () => {
       icon: <ContactUsIcon type="instagram" />,
     },
     {
-      url: "https://api.whatsapp.com/send?phone=01111111541",
+      url: "https://wa.me/+201111111541",
       icon: <ContactUsIcon type="whatsapp" />,
     },
     {
