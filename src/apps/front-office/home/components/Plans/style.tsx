@@ -4,6 +4,9 @@ import devices from "apps/front-office/design-system/utils/devices";
 
 export const PlansWrapper = styled.section`
   padding-top: 128px;
+  ${devices.mediumMax} {
+    padding-top: 50px;
+  }
   position: relative;
   h3 {
     margin-bottom: 84px;
@@ -62,7 +65,7 @@ export const AbsoluteCard = styled.div`
     li {
       :first-child {
         padding: 24px 52px;
-        p{
+        p {
           font-weight: 800;
         }
       }

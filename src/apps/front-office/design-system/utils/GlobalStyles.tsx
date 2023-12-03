@@ -116,7 +116,7 @@ export default function GlobalStyles() {
           .custom--prev {
             left: 40px;
             ${devices.smallMax} {
-              right: 0;
+              left: 0;
             }
           }
 

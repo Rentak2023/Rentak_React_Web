@@ -5,6 +5,9 @@ import devices from "apps/front-office/design-system/utils/devices";
 export const CommentsWrapper = styled.section`
   margin-top: 128px;
   padding: 72px 104px 32px;
+  ${devices.mediumMax}{
+    margin-top: 60px;
+  }
   ${devices.smallMax}{
     padding: 60px 10px;
   }

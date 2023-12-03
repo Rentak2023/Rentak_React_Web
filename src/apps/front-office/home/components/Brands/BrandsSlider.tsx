@@ -25,7 +25,7 @@ const BrandsSlider = ({ brands }) => {
           slidesPerView: 1,
         },
         576: {
-          slidesPerView: 1,
+          slidesPerView: 2,
         },
         // when window width is >= 768px
         768: {

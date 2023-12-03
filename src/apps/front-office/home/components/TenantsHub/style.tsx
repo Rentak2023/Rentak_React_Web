@@ -3,6 +3,9 @@ import devices from "apps/front-office/design-system/utils/devices";
 
 export const TenantsHubWrapper = styled.section`
   margin: 128px 0;
+  ${devices.mediumMax} {
+    margin: 60px 0;
+  }
 `;
 export const Image = styled.div`
   width: 400.291px;

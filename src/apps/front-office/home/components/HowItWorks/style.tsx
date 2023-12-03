@@ -5,10 +5,17 @@ import devices from "apps/front-office/design-system/utils/devices";
 export const HowItWorksWrapper = styled.section`
   margin-top: 128px;
   padding: 109px 30px;
+  ${devices.mediumMax} {
+    margin-top: 60px;
+    padding: 40px 20px;
+  }
   background: #f7f8fa;
   position: relative;
   h2 {
     margin-bottom: 102px;
+    ${devices.mediumMax} {
+      margin-bottom: 30px;
+    }
     text-align: center;
   }
   .steps--wrapper {
@@ -17,7 +24,7 @@ export const HowItWorksWrapper = styled.section`
       flex-direction: row;
       flex-wrap: wrap;
       gap: 2rem;
-      .item{
+      .item {
         width: 330px;
         max-width: 100%;
       }

@@ -13,11 +13,11 @@ export const FooterWrapper = styled.footer`
   }
   ${devices.mediumMax}{
     gap: 101px;
-    padding: 200px 25px 0 25px;
+    padding: 150px 25px 0 25px;
     flex-wrap: wrap;
   }
   ${devices.xSmallMax}{
-    padding: 200px 0 0;
+    padding: 150px 0 0;
     gap: 50px;
     flex-wrap: wrap;
   }

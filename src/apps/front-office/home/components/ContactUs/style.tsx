@@ -4,9 +4,15 @@ import devices from "apps/front-office/design-system/utils/devices";
 export const ContactUsWrapper = styled.section`
   margin-top: 128px;
   /* padding-top: 44px; */
+  ${devices.mediumMax} {
+    margin-top: 60px;
+  }
   background: #f7f8fa;
   .header {
     margin-top: 27%;
+    ${devices.mediumMax} {
+      margin-top: 1rem;
+    }
   }
   .grid {
     ${devices.mediumMax} {
@@ -28,7 +34,7 @@ export const ContactUsCardWrapper = styled.div`
   ${devices.mediumMax} {
     width: auto;
     padding: 10px;
-    .social--media{
+    .social--media {
       gap: 10px;
     }
   }
