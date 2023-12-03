@@ -5,7 +5,7 @@ import devices from "../../utils/devices";
 export const Wrapper = styled.div`
   min-height: 100vh;
   padding: 25px;
-  ${devices.xSmallMax}{
+  ${devices.mediumMax}{
     padding: 0;
   }
   button {
