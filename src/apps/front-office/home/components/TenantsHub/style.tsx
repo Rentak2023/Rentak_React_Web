@@ -29,7 +29,7 @@ export const Image = styled.div`
   }
   &.bottom-image {
     position: relative;
-    right: -229px;
+    right: -135px;
     ${devices.xLargeMax} {
       right: -168px;
     }

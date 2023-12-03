@@ -11,12 +11,12 @@ const Contact = () => {
       <P4 color={theme.colors.dark} weight="600">{trans("contactUs")}</P4>
       <Flex direction="column" align="start" gap="31px">
         <P4 color={theme.colors.paragraph} >{trans("address")}</P4>
-        <Link to="mailto:Info@rent-ak.com">
+        <a href="mailto:Info@rent-ak.com">
           <P4 color={theme.colors.paragraph}>Info@rent-ak.com</P4>
-        </Link>
-        <Link to="tel:+201111111541">
+        </a>
+        <a href="tel:+201111111541">
           <P4 style={{ direction: "ltr" }} color={theme.colors.paragraph}>(+20) 111111 - 1541</P4>
-        </Link>
+        </a>
       </Flex>
     </Flex>
   );

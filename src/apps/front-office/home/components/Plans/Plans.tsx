@@ -2,6 +2,7 @@ import React from "react";
 import { AbsoluteCard, PlansCard, PlansWrapper } from "./style";
 import {
   H3,
+  H5,
   P3,
   P4,
   Small,
@@ -44,28 +45,33 @@ const plans: PlanType[] = [
 
 const plansText = [
   {
-    text: trans("trinationalRenting"),
+    id: "rp1",
+    title: trans("trinationalRenting"),
   },
   {
-    text: trans("planOne"),
+    id: "rp2",
+    title: trans("planOne"),
   },
   {
-    text: trans("planTwo"),
+    id: "rp3",
+    title: trans("planTwo"),
   },
   {
-    text: trans("planThree"),
+    id: "rp4",
+    title: trans("planThree"),
   },
   {
-    text: trans("planFour"),
+    id: "rp5",
+    title: trans("planFour"),
   },
 ];
 const Plans = () => {
   return (
     <Container>
       <PlansWrapper>
-        <H3 color={theme.colors.secondary[600]}>{trans("plans")}</H3>
+        {/* <H3 color={theme.colors.secondary[600]}>{trans("plans")}</H3> */}
         <Flex fullWidth justify="end">
-          <P3 className="trinational-renting">{trans("rentak")}</P3>
+          <H5 className="trinational-renting">{trans("rentak")}</H5>
         </Flex>
         <PlansCard>
           <ul>
@@ -82,9 +88,11 @@ const Plans = () => {
         <AbsoluteCard>
           <ul>
             {plansText.map(text => (
-              <li key={text.text}>
-                <P4 color={theme.colors.white}>{text.text}</P4>
-              </li>
+              <>
+                <li key={text.title}>
+                  <P4 color={theme.colors.white}>{text.title}</P4>
+                </li>
+              </>
             ))}
           </ul>
         </AbsoluteCard>

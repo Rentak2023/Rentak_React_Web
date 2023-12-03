@@ -15,7 +15,7 @@ const SocialMedia = () => {
       icon: <FacebookIcon />,
     },
     {
-      url: "https://api.whatsapp.com/send?phone=01111111541",
+      url: "https://wa.me/+201111111541",
       icon: <WhatsappIcon />,
     },
     {
@@ -35,7 +35,7 @@ const SocialMedia = () => {
       <Flex gap="54px" align="center" justify="center">
         {socialMediaLinks.map(link => (
           <Button noStyle key={link.url}>
-            <a href={link.url} target="_blank">
+            <a href={link.url} target="_blank" rel="noopener noreferrer">
               {link.icon}
             </a>
           </Button>

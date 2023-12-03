@@ -1,34 +1,34 @@
 const typography = {
   h1: {
     sizes: {
-      xs: "56px",
-      sm: "62px",
-      md: "66px",
-      lg: "70px",
-      xl: "73px",
-      xxl: "75px",
+      xs: "40px",
+      sm: "45px",
+      md: "50px",
+      lg: "65px",
+      xl: "68px",
+      xxl: "70px",
       hd: "85px",
     },
     weight: "800",
   },
   h2: {
     sizes: {
-      xs: "30px",
-      sm: "42px",
-      md: "42px",
-      lg: "46px",
-      xl: "52px",
-      xxl: "56px",
+      xs: "26px",
+      sm: "31px",
+      md: "36px",
+      lg: "41px",
+      xl: "47px",
+      xxl: "51px",
       hd: "60px",
     },
     weight: "700",
   },
   h3: {
     sizes: {
-      xs: "30px",
-      sm: "32px",
-      md: "34px",
-      lg: "36px",
+      xs: "18px",
+      sm: "23px",
+      md: "28px",
+      lg: "33px",
       xl: "38px",
       xxl: "42px",
       hd: "50px",
@@ -37,20 +37,20 @@ const typography = {
   },
   h4: {
     sizes: {
-      xs: "18px",
-      md: "22px",
+      xs: "16px",
+      md: "21px",
       lg: "26px",
-      xl: "28px",
+      xl: "31px",
       xxl: "36px",
     },
     weight: "800",
   },
   h5: {
     sizes: {
-      xs: "16px",
-      md: "18px",
+      xs: "14px",
+      md: "17px",
       lg: "20px",
-      xl: "22px",
+      xl: "23px",
       xxl: "26px",
     },
     weight: "800",
@@ -77,9 +77,9 @@ const typography = {
   },
   p1: {
     sizes: {
-      xs: "16px",
-      md: "18px",
-      lg: "20px",
+      xs: "14px",
+      md: "16px",
+      lg: "18px",
       xl: "22px",
       xxl: "26px",
     },
@@ -87,10 +87,10 @@ const typography = {
   },
   p2: {
     sizes: {
-      xs: "15px",
-      md: "17px",
-      lg: "19px",
-      xl: "21px",
+      xs: "12px",
+      md: "14px",
+      lg: "18px",
+      xl: "20px",
       xxl: "23px",
     },
     weight: "normal",
@@ -98,9 +98,9 @@ const typography = {
   p3: {
     // will be used with anchors
     sizes: {
-      xs: "14px",
-      md: "16px",
-      lg: "19px",
+      xs: "11px",
+      md: "13px",
+      lg: "15px",
       xl: "18px",
       xxl: "20px",
     },
@@ -109,9 +109,9 @@ const typography = {
   p4: {
     // will be used with anchors
     sizes: {
-      xs: "12px",
-      md: "13px",
-      lg: "15px",
+      xs: "10px",
+      md: "12px",
+      lg: "14px",
       xl: "16px",
       xxl: "18px",
     },

@@ -13,7 +13,10 @@ export const HowItWorksWrapper = styled.section`
   }
   .steps--wrapper {
     ${devices.xLargeMax} {
-      flex-direction: column;
+      /* flex-direction: column; */
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2rem;
       .item{
         width: 330px;
         max-width: 100%;
@@ -65,6 +68,7 @@ export const StepItem = styled.div`
       transform: rotate(90deg);
       height: 233px;
       margin: auto;
+      display: none;
     }
   }
 `;

@@ -57,11 +57,14 @@ export const AbsoluteCard = styled.div`
   width: 380px;
   height: 630px;
   right: 440px;
-  top: 235px;
+  top: 100px;
   ul {
     li {
       :first-child {
         padding: 24px 52px;
+        p{
+          font-weight: 800;
+        }
       }
       padding: 38px 40px;
     }

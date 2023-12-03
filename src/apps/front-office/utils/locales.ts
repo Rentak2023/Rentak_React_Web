@@ -19,7 +19,7 @@ groupedTranslations({
   // Header
   loginRegister:{
     en: "Login | Register",
-    ar: "تسجيل الدحول | تسجيل"
+    ar: "تسجيل الدخول | تسجيل"
   },
   lang: {
     en: "العربية",
@@ -27,7 +27,7 @@ groupedTranslations({
   },
   landlord: {
     en: "Landlord",
-    ar: "المالك"
+    ar: "مالك"
   },
   tenants:{
     en: "Tenants",
@@ -40,7 +40,7 @@ groupedTranslations({
   },
   mainSliderDesc: {
     en: "At Rentak, we redefine the rental experience, making it hassle-free and secure for both homeowners and tenants. Discover the ease of worry-free property management and transparent rental transactions.",
-    ar: "في Rentak، نقوم بإعادة تعريف تجربة الإيجار، مما يجعلها خالية من المتاعب وآمنة لكل من أصحاب المنازل والمستأجرين. اكتشف سهولة إدارة العقارات الخالية من القلق ومعاملات الإيجار الشفافة."
+    ar: "في Rentak، نقوم بإعادة تعريف تجربة الإيجار، مما يجعلها خالية من المتاعب وآمنة لكل من أصحاب المنازل والمستأجرين. اكتشف سهولة إدارة العقارات الخالية من القلق ومعاملات إيجاريه شفافة."
   },
   //Footer Desc
   footerDesc: {
@@ -50,7 +50,7 @@ groupedTranslations({
   //Footer contact us
   contactUs: {
     en: "Contact Us",
-    ar: "اتصل بنا",
+    ar: "تواصل معنا",
   },
   address: {
     en: "Smart Village, Linx Business Park, B115, Giza, Egypt.",
@@ -63,7 +63,7 @@ groupedTranslations({
   },
   aboutUs: {
     en: "About Us",
-    ar: "عنَا"
+    ar: "عن رينتك"
   },
   ourProjects: {
     en: "Our Projects",
@@ -84,7 +84,7 @@ groupedTranslations({
   },
   livingArea: {
     en: "Living Area",
-    ar: "منطقة سكنية"
+    ar: "غرفة معيشة "
   },
   bathroom: {
     en: "Bathroom",
@@ -92,7 +92,7 @@ groupedTranslations({
   },
   dinningHall: {
     en: "Dinning Hall",
-    ar: "قاعة الطعام"
+    ar: "غرفة الطعام"
   },
   bedroom: {
     en: "Bedroom",
@@ -109,11 +109,11 @@ groupedTranslations({
   },
   serviceOneDescription: {
     en: "Rentak ensures on-time rent payments, guarantees the property condition and handles legalities till the end of the rent duration.",
-    ar: "تضمن شركة Rentak دفع الإيجار في الوقت المحدد، وتضمن حالة العقار وتتعامل مع الأمور القانونية حتى نهاية مدة الإيجار."
+    ar: "تضمن رينتك دفع الإيجار في ميعاده كل شهر ، كما تضمن حالة الوحدة و تتولي كافة المعاملات القانونية حتي نهاية مدة العقد"
   },
   serviceOneButtonText: {
     en: "Learn more",
-    ar: "أعرف أكثر"
+    ar: "إعرف المزيد"
   },
   serviceTwoTitle: {
     en: "Rent collection",
@@ -125,15 +125,15 @@ groupedTranslations({
   },
   serviceTwoButtonText: {
     en: "Start here",
-    ar: "أبدأ هنا"
+    ar: "ابدأ هنا"
   },
   serviceThreeTitle: {
     en: "Pay Your Rent",
-    ar: "ادفع إيجارك"
+    ar: "دفع الإيجار"
   },
   serviceThreeDescription: {
     en: "Choose from multiple payment methods, such as paying with credit cards or different installment companies. To pay any rent with ease.",
-    ar: "اختار من طرق دفع متعددة كالدفع بكروت الاتمان او شركات التقسيط المختلفة. لدفع اي ايجار بكل سهولة."
+    ar: "اختار من طرق دفع متعددة كالدفع بكروت الاتمان او شركات التقسيط المختلفة، لدفع اي ايجار بكل سهولة."
   },
   serviceThreeButtonText: {
     en: "Pay Now",
@@ -149,27 +149,27 @@ groupedTranslations({
   },
   serviceFourButtonText: {
     en: "Explore Properties",
-    ar: "اكتشف الخصائص"
+    ar: "الوحدات المتاحة"
   },
   whyRentakHeader: {
     en: "Owners’ Hub",
-    ar: "مركز المالكين"
+    ar: "للملاك"
   },
   whyRentakSubTitle: {
     en: '"Effortless, Efficient, Expert Property Management with Rentak"',
-    ar: '"إدارة العقارات بسهولة وكفاءة وخبرة مع Rentak!"'
+    ar: '"إدارة العقارات بسهولة وكفاءة وخبرة مع رينتك '
   }, 
   whyRentak: {
     en: "Why Rentak ?",
-    ar: "لماذا Rentak ?"
+    ar: "لماذا رينتك؟"
   },
   reasonOne: {
     en: "Guaranteed monthly rental income",
-    ar: "دخل شهري ثابت"
+    ar: " إيجار شهري مضمون"
   },
   reasonTwo: {
-    en: "Guaranteed your property condition",
-    ar: "ضمان حالة وحداتك"
+    en: "Guaranteed property condition",
+    ar: "ضمان حالة الوحده"
   },
   plans: {
     en: "Big Difference",
@@ -177,55 +177,55 @@ groupedTranslations({
   },
   rentak: {
     en: "Rentak",
-    ar: "Rentak"
+    ar: "رينتك"
   },
   trinationalRenting: {
     en: "Traditional Renting",
     ar: "الإيجار التقليدي"
   },
   planOne: {
-    en: "Monthly rent reminders can be inconvenient.",
-    ar: "قد تكون تذكيرات الإيجار الشهري غير مريحة."
+    en: "Monthly rent reminder can be inconvenient.",
+    ar: "التذكيرات المستمرة لدفع الإيجار غير مريحة."
   },
   planTwo: {
-    en: "Renters risk property damages, leading to potential disputes.",
-    ar: "يخاطر المستأجرون بأضرار في الممتلكات، مما يؤدي إلى نزاعات محتملة."
+    en: "Renters are always at risk for severe damages, leading to probable disputes.",
+    ar: "يخاطر الملاك بأضرار تلحق بوحداتهم، مما يؤدي إلى النزاعات."
   },
   planThree: {
-    en: "Unpaid utility bills can cause financial stress and disputes.",
-    ar: "يمكن أن تسبب فواتير الخدمات غير المدفوعة ضغوطًا مالية ونزاعات."
+    en: "Late or unpaid bills definitely cause stress and grudge",
+    ar: "تسبب الفواتير غير المدفوعة ضغوطًا مالية ونزاعات."
   },
   planFour: {
     en: "Limited legal support and protection for landlords and tenants.",
-    ar: "محدودية الدعم القانوني والحماية لأصحاب العقارات والمستأجرين."
+    ar: "محدودية الدعم القانوني والحماية للملاك والمستأجرين."
   },
   planOneTitle: {
     en: "Monthly Rent Reminders",
-    ar: "تذكير الإيجار الشهري"
+    ar: "تذكير دوري لدفع الإيجار "
   },
   planOneSubTitle: {
     en: "Guaranteed On-Time Rent Collection",
-    ar: "ضمان تحصيل الإيجار في الوقت المحدد"
+    ar: "ضمان تحصيل الإيجار في الوقت المحدد" 
   },
   planOneDescription: {
     en: "Hassle-free, automated rent collection without the need for reminders.",
-    ar: "تحصيل الإيجارات آليًا بدون متاعب دون الحاجة إلى تذكير." 
+    ar: "تحصيل الإيجارات بدون متاعب و دون الحاجة إلى تذكير." 
   },
   planTwoTitle: {
-    en: "Unit Conditions",
+    en: "Unit Condition",
     ar: "حالة الوحدة"
   },
   planTwoSubTitle: {
-    en: "Guaranteed Unit Conditions",
-    ar: "شروط الوحدة المضمونة"
+    en: "Guaranteed Unit Condition",
+    ar: "ضمان حالة الوحدة "
   },
   planTwoDescription: {
     en: "We ensure the property's condition at the end of the lease, minimizing risks for landlords.",
-    ar: "نحن نضمن حالة العقار في نهاية عقد الإيجار، مما يقلل من المخاطر التي يتعرض لها الملاك." 
+    ar: "نحن نضمن حالة العقار في نهاية مدة العقد ، مما يقلل من المخاطر التي يتعرض لها الملاك." 
   },
   planThreeTitle: {
     en: "Unpaid Bills",
-    ar: "الفواتير غير المسددة"
+    ar: "فواتير غير مسددة"
   },
   planThreeSubTitle: {
     en: "Bill Payment Assurance",
@@ -233,19 +233,19 @@ groupedTranslations({
   },
   planThreeDescription: {
     en: "We handle all bills promptly, eliminating the risk of unpaid utility bills.",
-    ar: "نحن نتعامل مع جميع الفواتير على الفور، مما يلغي مخاطر فواتير الخدمات غير المدفوعة." 
+    ar: "نحن نتاكد من سداد جميع الفواتير ، مما يلغي مخاطر الفواتير غير المدفوعة."
   },
   planFourTitle: {
     en: "Legal Support",
-    ar: "الدعم القانوني"
+    ar: "دعم قانوني"
   },
   planFourSubTitle: {
     en: "Rent Fully Guaranteed till Eviction",
-    ar: "الإيجار مضمون بالكامل حتى الإخلاء"
+    ar: "ضمان الايجار حتى الإخلاء"
   },
   planFourDescription: {
     en: "Legal protection and expert support provided throughout the tenancy period.",
-    ar: "يتم توفير الحماية القانونية ودعم الخبراء طوال فترة الإيجار." 
+    ar: " توفير الحماية القانونية والدعم المستمر طوال فترة الإيجار."  
   },
   howItWorks:{
     en: "How It Works",
@@ -253,27 +253,27 @@ groupedTranslations({
   },
   stepOneTitle: {
     en: "Submit your property",
-    ar: "أرسل الممتلكات الخاصة بك"
+    ar: "اضف بيانات وحدتك"
   },
   stepOneDescription: {
     en: "Homeowners submit their property details to Rentak for comprehensive management.",
-    ar: "يقدم أصحاب المنازل تفاصيل ممتلكاتهم إلى Rentak لإدارة شاملة."
+    ar: "يضيف الملاك بيانات وحداتهم التفصيلية، لتقوم رينتك بادارتها."
   },
   stepTwoTitle: {
     en: "Effortless Management",
     ar: "إدارة سهلة"
   },
   stepTwoDescription: {
-    en: "Rentak handles legalities, rent collection, property maintenance, and ensures a smooth tenant experience.",
-    ar: "تتولى شركة Rentak الإجراءات القانونية وتحصيل الإيجارات وصيانة العقارات وتضمن تجربة سلسة للمستأجر."
+    en: "Rentak handles legalities, rent collection, property maintenance, and ensures a smooth experience.",
+    ar: "تتولي شركة رينتك كل الإجراءات القانونية وتحصيل الإيجار والصيانة السنوية وتضمن تجربة سلسة للمالك."
   },
   stepThreeTitle: {
     en: "Secure Transactions",
-    ar: "المعاملات الآمنة"
+    ar: "معاملات آمنة"
   },
   stepThreeDescription: {
     en: "Homeowners receive on-time payments, and tenants enjoy transparent transactions and hassle-free living.",
-    ar: "يتلقى أصحاب المنازل الدفعات في الوقت المحدد، ويتمتع المستأجرون بمعاملات شفافة وحياة خالية من المتاعب."
+    ar: "يتلقى الملاك الايجار في الوقت المحدد، ويتمتع المستأجرون بشفافية المعاملات و إيجار خالي من المتاعب."
   },
   stepFourTitle: {
     en: "End of Rent",
@@ -281,15 +281,15 @@ groupedTranslations({
   },
   stepFourDescription: {
     en: "Rentak guarantees the unit's condition, settles bills, and manages the transition for both parties.",
-    ar: "تضمن شركة Rentak حالة الوحدة، وتسدد الفواتير، وتدير عملية الانتقال لكلا الطرفين."
+    ar: " تضمن رينتك حالة الوحدة، وتسديد الفواتير، وتدير عملية الايجار لكلا الطرفين."
   },
   tenantsHubTitle: {
     en: "Tenants’ Hub",
-    ar: "مركز المستأجرين"
+    ar: "للمستأجرين"
   },
   tenantsHubSubTitle:{
     en: "Swift, Secure, Simple Living with Rentak!",
-    ar: "حياة سريعة وآمنة وبسيطة مع Rentak!"
+    ar: "حياة سريعة وآمنة وبسيطة مع رينتك!"
   },
   tenantsHubOneTitle: {
     en: "Pay Your Way",
@@ -301,23 +301,23 @@ groupedTranslations({
   },
   tenantsHubTwoTitle: {
     en: "Easy Move-In",
-    ar: "سهولة الحركة"
+    ar: "سهولة النقل"
   },
   tenantsHubTwoDescription: {
     en: "Bid farewell to heavy cash deposits. With us, pay only the first month's rent.",
-    ar: "وداعا للودائع النقدية الثقيلة. معنا ادفع إيجار الشهر الأول فقط."
+    ar: "وداعا للمقدم . معنا ادفع إيجار الشهر الأول فقط."
   },
   tenantsHubThreeTitle: {
     en: "Explore Listings with Clarity",
-    ar: "استكشف القوائم بوضوح"
+    ar: "ابحث عن وحدات بسهولة"
   },
   tenantsHubThreeDescription: {
     en: "Browse our curated listings showcasing available units, complete with real photos and transparent rental prices. No surprises, just straightforward options.",
-    ar: "تصفح قوائمنا المنسقة التي تعرض الوحدات المتاحة، كاملة مع الصور الحقيقية وأسعار الإيجار الشفافة. لا توجد مفاجآت، مجرد خيارات واضحة."
+    ar: "تصفح قوائمنا التي تعرض الوحدات المتاحة، كاملة مع الصور الحقيقية وأسعار الإيجار. لا توجد مفاجآت، مجرد خيارات واضحة."
   },
   commentsTitle: {
     en: "Few Smiles and Comments",
-    ar: "بعض من الابتسامات والتعليقات"
+    ar: "بعض الابتسامات والتعليقات"
   },
   commentOne: {
     en: "Moderate children at of outweigh it. Unsatiable it considered invitation he travelling insensible. Consulted admitting oh mr up as described.",
@@ -341,7 +341,7 @@ groupedTranslations({
   },
   instagramComment: {
     en: "Instagram Comment",
-    ar: "تعبيق عللي انستاجرام"
+    ar: "تعليق عللي انستاجرام"
   },
   commentThree: {
     en: "Moderate children at of outweigh it. Unsatiable it considered invitation he travelling insensible. Consulted admitting oh mr up as described.",
@@ -361,11 +361,11 @@ groupedTranslations({
   },
   firstName: {
     en: "First Name",
-    ar: "الإسم الأول"
+    ar: "الاسم الأول"
   },
   lastName: {
     en: "Last Name",
-    ar: "الإسم الأخير"
+    ar: "الاسم الأخير"
   },
   availableRental:{
     en: 'Available Rental',
@@ -381,7 +381,7 @@ groupedTranslations({
   },
   rentPayment: {
     en: "Rent Payment",
-    ar: "دفع الايجار"
+    ar: "دفع الإيجار"
   },
   rentCollection: {
     en: "Rent Collection",
@@ -406,5 +406,9 @@ groupedTranslations({
   invoices:{
     en: "Invoices",
     ar: "الفواتير"
+  },
+  submit: {
+    en: "Submit",
+    ar: "إرسال"
   }
 });
