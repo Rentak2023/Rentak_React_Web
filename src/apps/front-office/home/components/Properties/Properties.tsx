@@ -37,12 +37,14 @@ const Properties = () => {
       <PropertiesWrapper>
         <H2>{trans("availableRental")}</H2>
         <Flex fullWidth justify="end" className="see--all">
-          <Button noStyle>
-            <a href={URLS.units} style={{display: "flex"}}>
-              <P2 weight="600" color={theme.colors.secondary[400]}>{trans("seeAllUnits")}</P2>
+          <a href={URLS.units} style={{ display: "flex" }}>
+            <Button noStyle>
+              <P2 weight="600" color={theme.colors.secondary[400]}>
+                {trans("seeAllUnits")}
+              </P2>
               <DirectionIcon type="right" color={theme.colors.secondary[400]} />
-            </a>
-          </Button>
+            </Button>
+          </a>
         </Flex>
         <PropertiesSlider properties={properties} />
       </PropertiesWrapper>

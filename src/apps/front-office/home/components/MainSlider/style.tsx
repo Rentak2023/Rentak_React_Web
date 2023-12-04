@@ -3,17 +3,16 @@ import devices from "apps/front-office/design-system/utils/devices";
 import bg from "assets/images/mainSlider.png";
 
 export const MainSliderWrapper = styled.div`
-  /* background: url(${bg}), lightgray 50% / cover no-repeat; */
   position: relative;
   clip-path: ellipse(111% 63% at 50% 37%);
-  /* min-height: 100vh; */
   ${devices.mediumMax} {
-      min-height: 100vh;
-    }
+    min-height: 100vh;
+  }
   img {
     width: 100%;
     ${devices.mediumMax} {
       min-height: 100vh;
+      object-fit: cover;
     }
   }
 `;
@@ -57,6 +56,7 @@ export const ContentWrapper = styled.div`
     line-height: 150%; /* 150% */
     letter-spacing: 0.28px;
     width: 700px;
+    margin-right: 31px;
     ${devices.smallMax} {
       width: auto;
       font-size: 16px;

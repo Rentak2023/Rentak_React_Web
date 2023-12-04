@@ -9,7 +9,7 @@ const ServicesSlider = ({ services }: ServicesType) => {
   const { medium } = useBreakpoints()
   return (
     <Swiper
-      spaceBetween={100}
+      spaceBetween={!medium ? 30 : 100}
       slidesPerView={3}
       modules={[Autoplay]}
       autoplay={true}

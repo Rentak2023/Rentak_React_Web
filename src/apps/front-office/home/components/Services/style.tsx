@@ -8,7 +8,7 @@ export const ServicesWrapper = styled.section`
     padding: 30px 20px;
   }
   ${devices.xSmallMax}{
-    padding: 128px 15px;
+    padding: 30px 15px;
   }
   h2{
     margin-bottom: 102px;

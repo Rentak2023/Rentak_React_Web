@@ -19,6 +19,7 @@ export const HowItWorksWrapper = styled.section`
     text-align: center;
   }
   .steps--wrapper {
+
     ${devices.xLargeMax} {
       /* flex-direction: column; */
       flex-direction: row;
@@ -27,6 +28,11 @@ export const HowItWorksWrapper = styled.section`
       .item {
         width: 330px;
         max-width: 100%;
+      }
+    }
+    ${devices.mediumMax} {
+      .item {
+        width: auto;
       }
     }
   }
