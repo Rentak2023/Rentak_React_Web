@@ -58,7 +58,7 @@ export const AbsoluteCard = styled.div`
   background: #385c95;
   opacity: 0.9;
   width: 380px;
-  height: 630px;
+  height: 530px;
   right: 440px;
   top: 100px;
   ul {
@@ -69,7 +69,7 @@ export const AbsoluteCard = styled.div`
           font-weight: 800;
         }
       }
-      padding: 38px 40px;
+      padding: 16px 40px;
     }
   }
   ${devices.xLargeMax} {
