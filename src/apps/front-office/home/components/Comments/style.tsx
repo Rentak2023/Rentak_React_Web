@@ -5,10 +5,10 @@ import devices from "apps/front-office/design-system/utils/devices";
 export const CommentsWrapper = styled.section`
   margin-top: 128px;
   padding: 72px 104px 32px;
-  ${devices.mediumMax}{
+  ${devices.mediumMax} {
     margin-top: 60px;
   }
-  ${devices.smallMax}{
+  ${devices.smallMax} {
     padding: 60px 10px;
   }
   border-radius: 8px;
@@ -17,7 +17,7 @@ export const CommentsWrapper = styled.section`
 
 export const CommentWrapper = styled.div`
   padding: 52px 34px;
-  ${devices.xSmallMax}{
+  ${devices.xSmallMax} {
     padding: 52px 10px;
   }
   border-radius: 10px;
@@ -28,7 +28,7 @@ export const CommentWrapper = styled.div`
   .description {
     margin-top: 53px;
   }
-  .comment{
+  .comment {
     height: 100px;
   }
 `;
@@ -59,17 +59,24 @@ export const SliderWrapper = styled.div`
     .custom--next {
       right: -10px;
     }
-    .swiper-pagination{
+    ${devices.smallMax} {
+      .custom--prev {
+        left: -92%;
+      }
+      .custom--next {
+        right: 0px;
+      }
+    }
+    .swiper-pagination {
       margin-top: 74px;
     }
-    .swiper-pagination-bullet{
-      background: #80B3E6;
+    .swiper-pagination-bullet {
+      background: #80b3e6;
       height: 13px;
       width: 13px;
-      &.swiper-pagination-bullet-active{
+      &.swiper-pagination-bullet-active {
         background-color: ${theme.colors.secondary[600]};
       }
     }
-    
   }
 `;
