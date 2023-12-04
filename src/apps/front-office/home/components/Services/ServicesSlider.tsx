@@ -2,18 +2,21 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ServicesType } from "./types";
 import Service from "./Service";
-import { Autoplay } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import useBreakpoints from "apps/front-office/common/hooks/useBreakpoints";
+import { ArrowIcon } from "shared/assets/svgs";
 
 const ServicesSlider = ({ services }: ServicesType) => {
-  const { medium } = useBreakpoints()
+  const { medium } = useBreakpoints();
   return (
     <Swiper
       spaceBetween={!medium ? 30 : 100}
       slidesPerView={3}
-      modules={[Autoplay]}
-      autoplay={true}
-      // direction="vertical"
+      modules={[Navigation]}
+      navigation={{
+        nextEl: ".custom--next",
+        prevEl: ".custom--prev",
+      }}
       breakpoints={{
         280: {
           slidesPerView: 1,
@@ -28,15 +31,13 @@ const ServicesSlider = ({ services }: ServicesType) => {
         768: {
           slidesPerView: 2,
         },
-        992:{
-          slidesPerView: 2
+        992: {
+          slidesPerView: 2,
         },
         1200: {
-          slidesPerView: 3
-        }
-      }}
-      
-      >
+          slidesPerView: 3,
+        },
+      }}>
       {services.map(service => (
         <SwiperSlide key={service.title}>
           <Service
@@ -48,6 +49,12 @@ const ServicesSlider = ({ services }: ServicesType) => {
           />
         </SwiperSlide>
       ))}
+      <div className="custom--prev">
+        <ArrowIcon type="left" />
+      </div>
+      <div className="custom--next">
+        <ArrowIcon type="right" />
+      </div>
     </Swiper>
   );
 };

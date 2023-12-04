@@ -29,7 +29,7 @@ export const Text = styled("span", {
     text-decoration: ${textDecoration};
     text-align: ${textAlign};
     line-height: ${lineHeight};
-    color: ${color || "#000D1A"};
+    color: ${color || theme.colors.secondary[600]};
     display: block;
   `}
   ${({ fontSize, length, isHeader }) =>

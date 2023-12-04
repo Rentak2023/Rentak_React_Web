@@ -15,6 +15,7 @@ const Plan = ({ title, subTitle, description }: PlanType) => {
         align="center"
         fullWidth
         className="list-item">
+          
         <P3 color={theme.colors.secondary[600]} weight="600">
           {title}
         </P3>
