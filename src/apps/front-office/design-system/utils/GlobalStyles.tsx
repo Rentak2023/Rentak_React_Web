@@ -90,6 +90,7 @@ export default function GlobalStyles() {
           }
           .custom--prev,
           .custom--next {
+            filter: drop-shadow(0px 0px 7px rgba(135, 135, 135, 0.25));
             position: absolute;
             top: calc(50% - 15px);
             transform: translateY(calc(-50%));

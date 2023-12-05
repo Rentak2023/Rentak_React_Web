@@ -11,28 +11,28 @@ import MobileServices from "./MobileServices";
 
 const services = [
   {
-    icon: <ServicesIcon type={1} />,
+    icon: <ServicesIcon type={1} size={200} />,
     title: trans("serviceOneTitle"),
     description: trans("serviceOneDescription"),
     link: URLS.maintenancePayment,
     color: "rgba(148, 210, 140, 0.10)",
   },
   {
-    icon: <ServicesIcon type={2} />,
+    icon: <ServicesIcon type={2} size={200} />,
     title: trans("serviceTwoTitle"),
     description: trans("serviceTwoDescription"),
     link: URLS.rentCollection,
     color: "rgba(244, 91, 44, 0.10)",
   },
   {
-    icon: <ServicesIcon type={3} />,
+    icon: <ServicesIcon type={3} size={200} />,
     title: trans("serviceThreeTitle"),
     description: trans("serviceThreeDescription"),
     link: URLS.rentPayment,
     color: "rgba(0, 139, 243, 0.10)",
   },
   {
-    icon: <ServicesIcon type={4} />,
+    icon: <ServicesIcon type={4} size={240} />,
     title: trans("serviceFourTitle"),
     description: trans("serviceFourDescription"),
     link: URLS.units,

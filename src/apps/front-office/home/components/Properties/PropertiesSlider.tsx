@@ -17,7 +17,7 @@ const PropertiesSlider = ({ properties }) => {
         nextEl: ".custom--next",
         prevEl: ".custom--prev"
       }}
-      autoplay={true}
+      // autoplay={true}
       pagination={{ clickable: true }}
       breakpoints={{
         280: {

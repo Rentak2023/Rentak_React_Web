@@ -10,8 +10,8 @@ const ServicesSlider = ({ services }: ServicesType) => {
   const { medium } = useBreakpoints();
   return (
     <Swiper
-      spaceBetween={!medium ? 30 : 100}
-      slidesPerView={3}
+      spaceBetween={30}
+      slidesPerView={4}
       modules={[Navigation]}
       navigation={{
         nextEl: ".custom--next",
@@ -35,7 +35,7 @@ const ServicesSlider = ({ services }: ServicesType) => {
           slidesPerView: 2,
         },
         1200: {
-          slidesPerView: 3,
+          slidesPerView: 4,
         },
       }}>
       {services.map(service => (
@@ -49,12 +49,12 @@ const ServicesSlider = ({ services }: ServicesType) => {
           />
         </SwiperSlide>
       ))}
-      <div className="custom--prev">
+      {/* <div className="custom--prev">
         <ArrowIcon type="left" />
       </div>
       <div className="custom--next">
         <ArrowIcon type="right" />
-      </div>
+      </div> */}
     </Swiper>
   );
 };

@@ -5,8 +5,8 @@ const ServicesIcon = ({ type, size, color }: SvgsTypes) => {
     case 1:
       return (
         <svg
-          width="320"
-          height="320"
+          width={size ?? "320"}
+          height={size ?? "320"}
           viewBox="0 0 320 320"
           fill="none"
           xmlns="http://www.w3.org/2000/svg">
@@ -1152,8 +1152,8 @@ const ServicesIcon = ({ type, size, color }: SvgsTypes) => {
     case 2:
       return (
         <svg
-          width="196"
-          height="260"
+          width={size ?? "196"}
+          height={size ?? "260"}
           viewBox="0 0 196 260"
           fill="none"
           xmlns="http://www.w3.org/2000/svg">
@@ -2284,8 +2284,8 @@ const ServicesIcon = ({ type, size, color }: SvgsTypes) => {
     case 3:
       return (
         <svg
-          width="154"
-          height="278"
+          width={size ?? "154"}
+          height={size ?? "278"}
           viewBox="0 0 154 278"
           fill="none"
           xmlns="http://www.w3.org/2000/svg">
@@ -2842,8 +2842,8 @@ const ServicesIcon = ({ type, size, color }: SvgsTypes) => {
     case 4:
       return (
         <svg
-        width="319"
-        height="319"
+        width={size ?? "319"}
+        height={size ?? "319"}
         viewBox="0 0 319 319"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">

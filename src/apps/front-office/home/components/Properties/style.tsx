@@ -14,7 +14,7 @@ type PropertyWrapperProps = {
 export const PropertyWrapper = styled.div<PropertyWrapperProps>`
   background: ${({ image }) =>
     `url(${image}), lightgray 50% / cover no-repeat`};
-  min-height: 598.09px;
+  min-height: 679px;
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 10px 10px 0 0;
@@ -35,6 +35,7 @@ export const DescriptionWrapper = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  height: 398.09px;
 `;
 
 export const PropertyType = styled.div`

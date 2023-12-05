@@ -3,6 +3,7 @@ import React from "react";
 import Service from "./Service";
 
 const MobileServices = ({ services }) => {
+
   return (
     <Flex direction="column">
       {services.map(service => (

@@ -17,7 +17,7 @@ const typography = {
       sm: "31px",
       md: "36px",
       lg: "41px",
-      xl: "47px",
+      xl: "43px",
       xxl: "51px",
       hd: "60px",
     },

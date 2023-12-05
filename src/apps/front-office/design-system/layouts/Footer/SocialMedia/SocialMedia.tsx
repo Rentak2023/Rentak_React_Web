@@ -7,8 +7,10 @@ import {
   LinkedinIcon,
   WhatsappIcon,
 } from "shared/assets/svgs";
+import useBreakpoints from "apps/front-office/common/hooks/useBreakpoints";
 
 const SocialMedia = () => {
+  const {xxLarge} = useBreakpoints()
   const socialMediaLinks = [
     {
       url: "https://www.facebook.com/Rentakapp/",
@@ -32,7 +34,7 @@ const SocialMedia = () => {
       <Logo />
       {/* <P4>{trans("footerDesc")}</P4> */}
 
-      <Flex gap="54px" align="center" justify="center">
+      <Flex gap={xxLarge ? "35px" : "54px"} align="center" justify="center">
         {socialMediaLinks.map(link => (
           <Button noStyle key={link.url}>
             <a href={link.url} target="_blank" rel="noopener noreferrer">

@@ -23,23 +23,10 @@ export const ContentWrapper = styled.div`
   left: 25px;
   right: 0;
   bottom: 0;
-  top: -21rem;
-  /* ${devices.hdMax} {
-    padding-left: 34rem;
-  }
-  ${devices.xxLargeMax} {
-    padding-left: 17rem;
-  }
-  ${devices.xLargeMax} {
-    padding-left: 15rem;
-  }
+  top: -23rem;
   ${devices.largeMax} {
-    padding-left: 12rem;
+    top: -18rem;
   }
-  ${devices.mediumMax} {
-    padding-left: 0rem;
-    padding: 1rem
-  } */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,6 +44,21 @@ export const ContentWrapper = styled.div`
     letter-spacing: 0.28px;
     width: 700px;
     margin-right: 31px;
+    ${devices.hdMax} {
+      font-size: 28px;
+    }
+    ${devices.xxLargeMax} {
+      font-size: 23px;
+    }
+    ${devices.xLargeMax} {
+      font-size: 21px;
+    }
+    ${devices.largeMax} {
+      font-size: 19px;
+    }
+    ${devices.mediumMax} {
+      font-size: 17px;
+    }
     ${devices.smallMax} {
       width: auto;
       font-size: 16px;

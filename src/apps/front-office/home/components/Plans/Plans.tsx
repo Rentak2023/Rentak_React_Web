@@ -67,7 +67,6 @@ const Plans = () => {
   return (
     <Container>
       <PlansWrapper>
-        {/* <H3 color={theme.colors.secondary[600]}>{trans("plans")}</H3> */}
         <Flex fullWidth justify="end">
           <H5 className="trinational-renting">{trans("trinationalRenting")}</H5>
         </Flex>
@@ -77,7 +76,6 @@ const Plans = () => {
               <Plan
                 key={plan.id}
                 title={plan.title}
-                // subTitle={plan.subTitle}
                 description={plan.description}
               />
             ))}

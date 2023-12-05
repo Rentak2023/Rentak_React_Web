@@ -4,7 +4,7 @@ import devices from "apps/front-office/design-system/utils/devices";
 
 export const HowItWorksWrapper = styled.section`
   margin-top: 128px;
-  padding: 109px 30px;
+  padding: 109px 40px;
   ${devices.mediumMax} {
     margin-top: 60px;
     padding: 40px 20px;

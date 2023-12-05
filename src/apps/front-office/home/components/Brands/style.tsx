@@ -7,6 +7,9 @@ export const BrandsWrapper = styled.section`
     padding-top: 60px 0;
   }
   .swiper{
+    img{
+      max-width: 130px;
+    }
     .custom--next{
       filter: drop-shadow(0px 0px 7px rgba(135, 135, 135, 0.25));
       top: 34px;

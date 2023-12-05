@@ -7,6 +7,9 @@ export const FooterWrapper = styled.footer`
   align-items: flex-start;
   gap: 101px;
   padding: 260px 134px 134px 134px;
+  ${devices.xxLargeMax}{
+    padding: 260px 73px 134px 134px;
+  }
   ${devices.largeMax}{
     gap: 70px;
     padding: 200px 25px 0;

@@ -26,17 +26,16 @@ type ServiceWrapperType = {
 }
 export const ServiceWrapper = styled.div<ServiceWrapperType>`
   background-color: ${({color}) => color};
-  padding: 52px 44px;
+  padding: 40px 15px;
   ${devices.xSmallMax}{
-    padding: 40px 20px;
     button svg{
       width: 25px;
     }
   }
   border-radius: 12px;
-  height: 579px;
+  height: 380px;
   ${devices.mediumMax}{
-    height: 455px;
+    /* height: 455px; */
   }
   position: relative;
   margin-bottom: 60px;
@@ -68,5 +67,5 @@ export const ServiceIconWrapper = styled.div`
   justify-content: center;
   position: absolute;
   bottom: -42px;
-  right: ${isRTL() ? "0" : "-46px"};
+  right: ${isRTL() ? "0" : "-20px"};
 `;

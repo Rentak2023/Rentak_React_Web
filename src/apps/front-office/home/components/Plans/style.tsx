@@ -29,7 +29,7 @@ export const PlansCard = styled.div`
 
   ul {
     li {
-      padding: 29px 60px;
+      padding: 29px 30px;
       ${devices.xSmallMax} {
         padding: 20px 10px;
       }
@@ -73,7 +73,7 @@ export const AbsoluteCard = styled.div`
     }
   }
   ${devices.xLargeMax} {
-    width: 260px;
+    /* width: 260px; */
     right: 405px;
   }
   ${devices.largeMax} {

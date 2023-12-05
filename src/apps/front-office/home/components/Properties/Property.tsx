@@ -67,7 +67,7 @@ const Property = ({ property }) => {
           ))}
         </Flex>
         <Flex align="center">
-          <H4 weight="400" color={theme.colors.secondary[400]}>
+          <H4 weight="400" length={45} color={theme.colors.secondary[400]}>
             {property.price} EGP{" "}
           </H4>
           <P2 color={theme.colors.secondary[400]}>/{trans("perMonth")}</P2>
