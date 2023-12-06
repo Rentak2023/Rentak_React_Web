@@ -27,6 +27,10 @@ export const ImageWrapper = styled.div`
     height: 100%;
     width: 100%;
     border-radius: 20.61px;
+    object-fit: cover;
+    ${devices.smallMax} {
+      height: 150px;
+    }
   }
 `;
 

@@ -46,9 +46,9 @@ const BrandsSlider = ({ brands }) => {
         </SwiperSlide>
       ))}
 
-      <div className="custom--next">
+      {/* <div className="custom--next">
         <ArrowIcon type="right" />
-      </div>
+      </div> */}
     </Swiper>
   );
 };

@@ -33,6 +33,10 @@ export const CommentWrapper = styled.div`
   }
   .comment {
     height: 100px;
+    width: 250px;
+    ${devices.mediumMax}{
+      width: auto;
+    }
   }
 `;
 

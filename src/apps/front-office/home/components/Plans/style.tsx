@@ -14,13 +14,23 @@ export const PlansWrapper = styled.section`
   .trinational-renting {
     margin-bottom: 16px;
     width: 390px;
-    ${devices.xSmallMax} {
+    ${devices.largeMax} {
+      width: 297px;
+    }
+    ${devices.mediumMax} {
       width: auto;
+    }
+    ${devices.smallMax} {
+      width: 83px;
+      text-align: center;
+      font-size: 9px;
+      margin-bottom: 5px;
     }
   }
 `;
 
 export const PlansCard = styled.div`
+  label: plans-card;
   border-radius: 40px;
   background: #fff;
   box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.08);
@@ -30,8 +40,17 @@ export const PlansCard = styled.div`
   ul {
     li {
       padding: 29px 30px;
+      
+      ${devices.smallMax} {
+        padding: 9px 35px 21px 25px;
+        height: 40px;
+      }
       ${devices.xSmallMax} {
-        padding: 20px 10px;
+        height: auto;
+        p {
+          font-size: 9px;
+          max-width: 67px;
+        }
       }
       :nth-child(odd) {
         background-color: ${theme.colors.secondary[100]};
@@ -40,15 +59,21 @@ export const PlansCard = styled.div`
   }
   .description {
     width: 330px;
+    ${devices.largeMax} {
+      width: 268px;
+    }
+    ${devices.mediumMax} {
+      width: fit-content;
+    }
     ${devices.smallMax} {
       width: auto;
     }
   }
   .list-item {
-    ${devices.mediumMax} {
+    /* ${devices.mediumMax} {
       flex-direction: column;
       gap: 24px;
-    }
+    } */
   }
 `;
 
@@ -65,29 +90,58 @@ export const AbsoluteCard = styled.div`
     li {
       :first-child {
         padding: 24px 52px;
+        ${devices.smallMax} {
+          padding: 6px 24px;
+        }
         p {
           font-weight: 800;
         }
       }
       padding: 16px 40px;
+      ${devices.mediumMax} {
+        padding: 26px;
+        display: flex;
+        justify-content: center;
+      }
+      ${devices.smallMax} {
+        padding: 9px 16px;
+        text-align: center;
+        p {
+          display: inline-block;
+          text-align: center;
+        }
+      }
+      ${devices.xSmallMax} {
+        padding: 17px;
+      }
     }
   }
   ${devices.xLargeMax} {
-    /* width: 260px; */
     right: 405px;
   }
   ${devices.largeMax} {
-    /* width: 380px; */
-    margin: auto;
-    position: relative;
-    right: 0;
-    top: 30px;
-    height: auto;
+    right: 330px;
   }
+  ${devices.mediumMax} {
+    width: fit-content;
+    z-index: 9;
+    height: fit-content;
+    right: 185px;
+    top: 34px;
+  }
+  ${devices.smallMax} {
+    position: absolute;
+    right: 84px;
+    top: 43px;
+    height: fit-content;
+    width: 80px;
+    z-index: 9;
+    height: 223px;
+  }
+
   ${devices.xSmallMax} {
-    width: auto;
-    position: relative;
-    right: 0;
-    top: 30px;
+    right: 66px;
+    width: fit-content;
+    height: fit-content;
   }
 `;
