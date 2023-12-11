@@ -25,11 +25,11 @@ function PhoneNumberInput({
 
   return (
     <Flex direction="column" gap="0" fullWidth>
-        <InputLabel htmlFor={id} required={props.required}>
-          {trans(label)}
-        </InputLabel>
+      <InputLabel htmlFor={id} required={props.required}>
+        {trans(label)}
+      </InputLabel>
       <WrapperInput>
-        <Wrapper style={{ overflow: "hidden" }}>
+        <Wrapper style={{ overflow: "hidden" }} radius={props.bigRadius}>
           <StyledInput
             placeholder={placeholder}
             value={value}

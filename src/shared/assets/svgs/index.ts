@@ -20,3 +20,4 @@ export { default as SpaceIcon } from "./SpaceIcon";
 export { default as SidebarIcon } from "./SidebarIcon";
 export { default as SidebarLinesIcon } from "./SidebarLinesIcon";
 export { default as CloseDrawerIcon } from "./CloseDrawerIcon";
+export { default as UploadIcon } from "./UploadIcon";

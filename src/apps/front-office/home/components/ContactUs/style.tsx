@@ -39,3 +39,6 @@ export const ContactUsCardWrapper = styled.div`
     }
   }
 `;
+export const SubmitButtonWrapper = styled.div`
+  margin: 16px 0;
+`;

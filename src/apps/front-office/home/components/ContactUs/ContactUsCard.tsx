@@ -7,7 +7,7 @@ import {
   P2,
 } from "apps/front-office/design-system/components/Typography";
 import { Flex } from "apps/front-office/design-system/components/Grids";
-import { ContactUsCardWrapper } from "./style";
+import { ContactUsCardWrapper, SubmitButtonWrapper } from "./style";
 import { Form, HiddenInput } from "@mongez/react-form";
 import TextInput from "apps/front-office/design-system/components/Form/TextInput";
 import EmailInput from "apps/front-office/design-system/components/Form/EmailInput";
@@ -53,19 +53,22 @@ const ContactUsCard = () => {
             label="firstName"
             placeholder={trans("firstName")}
             required
+            bigRadius
           />
           <PhoneNumberInput
             name="phone"
             label="phone"
             placeholder={trans("phone")}
             required
+            bigRadius
           />
-          <EmailInput name="email" label="email" placeholder={trans("email")} required />
+          <EmailInput name="email" label="email" placeholder={trans("email")} required bigRadius/>
           <TextInput
             name="subject"
             label="subject"
             placeholder={trans("subject")}
             required
+            bigRadius
           />
           <TextAreaInput
             label="message"
@@ -73,15 +76,18 @@ const ContactUsCard = () => {
             placeholder={trans("message")}
             rows={7}
             required
+            bigRadius
           />
         </Flex>
-        <SubmitButton
-          isSubmitting={isSubmitting}
-          radius="12px"
-          variant="primary"
-          fullWidth>
-          {trans("submit")}
-        </SubmitButton>
+        <SubmitButtonWrapper>
+          <SubmitButton
+            isSubmitting={isSubmitting}
+            radius="12px"
+            variant="primary"
+            fullWidth>
+            {trans("submit")}
+          </SubmitButton>
+        </SubmitButtonWrapper>
       </Form>
       <SocialMedia />
     </ContactUsCardWrapper>

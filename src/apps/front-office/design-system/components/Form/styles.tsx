@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Flex } from "../Grids";
-import { Select, Input, Textarea } from "@mantine/core";
+import { Select, Input, Textarea, FileInput, Button } from "@mantine/core";
 import { theme } from "../../utils/theme";
 import devices from "../../utils/devices";
 
@@ -14,7 +14,8 @@ type Types = any & {
   bg?: boolean;
 };
 export const SubmitButtonWrapper = styled.div`
-  margin: 16px 0;
+  /* margin: 16px 0; */
+  width: 100%;
 `;
 export const WrapperInput = styled(Flex)<Types>`
   width: 100%;
@@ -22,21 +23,14 @@ export const WrapperInput = styled(Flex)<Types>`
     border-color: ${({ error }) => error && theme.colors.error[100]};
   }
 `;
-export const AutoCompleteWrapper = styled.div`
-  .mantine-Autocomplete-input{
-    min-width: 539px;
-    height: 45px;
-    background: transparent;
-  }
-  
-`
-export const Wrapper = styled(Flex)`
+
+export const Wrapper = styled(Flex)<any>`
   label: input-wrapper;
   position: relative;
   height: ${({ height }) => height || "50px"};
   width: 100%;
-  border: 1px solid #34343433;
-  border-radius: 10px;
+  border: 1px solid ${theme.colors.grey[100]};
+  border-radius: ${({ radius }) => (radius ? "10px" : "3px")};
   padding: 0 10px;
   align-items: center;
   gap: 0.5rem;
@@ -46,21 +40,6 @@ export const Wrapper = styled(Flex)`
   }
   input {
     width: 100%;
-  }
-`;
-export const CheckboxWrapper = styled(Flex)`
-  label: Checkbox-wrapper;
-  margin: 0.5rem 0;
-  .mantine-Checkbox-body {
-    align-items: center;
-  }
-
-  .mantine-Checkbox-input {
-    &:checked {
-      background-color: ${theme.colors.primaryColor};
-    }
-    color: ${theme.colors.primaryColor};
-    border-color: ${theme.colors.primaryColor};
   }
 `;
 
@@ -99,34 +78,17 @@ export const StyledInput = styled(Input)<any>`
 export const StyledTextarea = styled(Textarea)<any>`
   label: textarea;
   border-radius: 8px;
-  background: #FFF;
+  background: #fff;
   width: 100%;
-  textarea{
+  textarea {
     border-radius: 8px;
-  }
-`;
-export const DateWrapper = styled.div<Types>`
-  label: date-input;
-  width: 100%;
-  .mantine-DateInput-input {
-    border: none;
-  }
-`;
-export const StyledSelectInput = styled(Select)<Types>`
-  label: select-input;
-  input {
-    border: 0;
-    height: 100%;
-    width: 100%;
   }
 `;
 
 export const StyledTextArea = styled("textarea")<Types>`
   height: 100%;
-  flex: 1;
   padding: 8px;
   flex: 1;
-  height: 100%;
   background: transparent;
   overflow-y: auto;
   resize: none;
@@ -145,5 +107,46 @@ export const StyledTextArea = styled("textarea")<Types>`
   ${devices.large} {
     font-size: 18px;
     padding: 14px;
+  }
+`;
+export const StyledFileInput = styled(FileInput)`
+  label: StyledFileInput;
+  width: 100%;
+  z-index: 1;
+  /* opacity: 0; */
+  button {
+    border: none;
+    background: transparent;
+    div{
+      width: 65%;
+    }
+  }
+`;
+export const FileInputButton = styled(Button)<any>`
+  border-radius: 16px 0px 0px 16px;
+  background: rgba(217, 217, 217, 0.2);
+  position: absolute;
+  right: 0;
+  height: 100%;
+  :hover {
+    background-color: rgba(217, 217, 217, 0.4);
+  }
+`;
+
+export const DateWrapper = styled.div<Types>`
+  label: date-input;
+  width: 100%;
+  input {
+    border: none;
+  }
+`;
+
+export const StyledSelectInput = styled(Select)<Types>`
+  label: select-input;
+  width: 100%;
+  input {
+    border: 0;
+    height: 100%;
+    width: 100%;
   }
 `;

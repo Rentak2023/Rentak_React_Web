@@ -18,7 +18,6 @@ export default function SubmitButton({
         type="submit"
         loading={props.isSubmitting}
         disabled={props.isDisabled}
-        variant="primary"
         {...props}
       >
         {children}

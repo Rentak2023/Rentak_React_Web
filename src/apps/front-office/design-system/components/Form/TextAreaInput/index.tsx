@@ -1,11 +1,5 @@
 "use client";
-import {
-  StyledInput,
-  StyledSelectInput,
-  StyledTextarea,
-  Wrapper,
-  WrapperInput,
-} from "../styles";
+import { StyledTextarea, Wrapper, WrapperInput } from "../styles";
 import InputError from "../InputError";
 import InputLabel from "../InputLabel";
 import { Flex } from "../../Grids";
@@ -34,16 +28,15 @@ function TextAreaInput({
         {trans(label)}
       </InputLabel>
       <WrapperInput error={error}>
-          <StyledTextarea
-            placeholder={placeholder}
-            value={value}
-            onChange={(e: any) => {
-              changeValue(e.target.value);
-            }}
-            cols={5}
-            
-            {...props}
-          />
+        <StyledTextarea
+          placeholder={placeholder}
+          value={value}
+          onChange={(e: any) => {
+            changeValue(e.target.value);
+          }}
+          cols={5}
+          {...props}
+        />
       </WrapperInput>
       <InputError error={error} />
     </Flex>

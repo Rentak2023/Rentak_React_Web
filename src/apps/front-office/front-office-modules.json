@@ -26,6 +26,12 @@
         "/terms-conditions"
       ],
       "name": "informative-pages"
+    },
+    {
+      "entry": [
+        "/contract"
+      ],
+      "name": "contract"
     }
   ]
 }

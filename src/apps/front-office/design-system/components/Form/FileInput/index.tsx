@@ -1,29 +1,28 @@
-"use client";
 import {
-  StyledInput,
+  FileInputButton,
+  StyledFileInput,
   Wrapper,
   WrapperInput,
 } from "../styles";
 import InputError from "../InputError";
 import InputLabel from "../InputLabel";
 import { Flex } from "../../Grids";
-import { InputPropsType } from "../types";
 import {
-  maxLengthRule,
-  minLengthRule,
   useFormControl,
 } from "@mongez/react-form";
 import { requiredRule } from "@mongez/react-form";
 import { trans } from "@mongez/localization";
+import Button from "../../Button";
+import { UploadIcon } from "shared/assets/svgs";
+import { Small } from "../../Typography";
 
-function TextInput({
+function FileInput({
   placeholder,
   label,
   icon,
   defaultValue,
-  clearable,
   ...props
-}: InputPropsType) {
+}: any) {
   const { id, value, changeValue, error } = useFormControl(props);
 
   return (
@@ -32,15 +31,20 @@ function TextInput({
         {trans(label)}
       </InputLabel>
       <WrapperInput error={error}>
-        <Wrapper radius={props.bigRadius}>
-          <StyledInput
+        <Wrapper>
+          <StyledFileInput
             placeholder={placeholder}
             value={value}
-            onChange={(e: any) => {
-              changeValue(e.target.value);
-            }}
+            onChange={changeValue}
+            accept="image/png,image/jpeg"
             {...props}
           />
+          <FileInputButton>
+            <UploadIcon />
+            <Small>
+              {trans('uploadId')}
+            </Small>
+          </FileInputButton>
         </Wrapper>
       </WrapperInput>
       <InputError error={error} />
@@ -48,9 +52,9 @@ function TextInput({
   );
 }
 
-export default TextInput;
+export default FileInput;
 
-TextInput.defaultProps = {
-  type: "text",
-  rules: [requiredRule, minLengthRule, maxLengthRule],
+FileInput.defaultProps = {
+  type: "file",
+  rules: [requiredRule],
 };

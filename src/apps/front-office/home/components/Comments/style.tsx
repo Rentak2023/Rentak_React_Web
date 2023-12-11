@@ -33,7 +33,7 @@ export const CommentWrapper = styled.div`
   }
   .comment {
     height: 100px;
-    width: 250px;
+    width: 220px;
     ${devices.mediumMax}{
       width: auto;
     }

@@ -40,7 +40,11 @@ export const PlansCard = styled.div`
   ul {
     li {
       padding: 29px 30px;
-      
+      ${devices.large} {
+        p{
+          font-size: 13px;
+        }
+      }
       ${devices.smallMax} {
         padding: 9px 35px 21px 25px;
         height: 40px;

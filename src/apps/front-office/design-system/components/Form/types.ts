@@ -10,4 +10,5 @@ export type InputPropsType = InputProps &
     label?: any;
     placeholder?: string;
     onChange?: (e: EventListenerObject) => void;
+    bigRadius?: boolean
   };

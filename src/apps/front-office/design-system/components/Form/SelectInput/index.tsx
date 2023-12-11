@@ -1,20 +1,20 @@
-"use client";
-import { StyledInput, Wrapper, WrapperInput } from "../styles";
+import { StyledSelectInput, Wrapper, WrapperInput } from "../styles";
 import InputError from "../InputError";
 import InputLabel from "../InputLabel";
 import { Flex } from "../../Grids";
 import { InputPropsType } from "../types";
-import { emailRule, requiredRule, useFormControl } from "@mongez/react-form";
+import { requiredRule, useFormControl } from "@mongez/react-form";
 import { trans } from "@mongez/localization";
 
-function EmailInput({
+function SelectInput({
   placeholder,
   label,
   icon,
-  id,
+  defaultValue,
+  clearable,
   ...props
 }: InputPropsType) {
-  const { value, changeValue, error } = useFormControl(props);
+  const { value, changeValue, error, id } = useFormControl(props);
 
   return (
     <Flex direction="column" gap="0" fullWidth>
@@ -22,13 +22,13 @@ function EmailInput({
         {trans(label)}
       </InputLabel>
       <WrapperInput>
-        <Wrapper radius={props.bigRadius}>
-          <StyledInput
+        <Wrapper>
+          <StyledSelectInput
             placeholder={placeholder}
+            defaultValue={defaultValue}
+            clearable={clearable}
             value={value}
-            onChange={(e: any) => {
-              changeValue(e.target.value);
-            }}
+            onChange={changeValue}
             {...props}
           />
         </Wrapper>
@@ -38,9 +38,7 @@ function EmailInput({
   );
 }
 
-export default EmailInput;
-
-EmailInput.defaultProps = {
-  type: "email",
-  rules: [requiredRule, emailRule],
+export default SelectInput;
+SelectInput.defaultProps = {
+  rules: [requiredRule],
 };

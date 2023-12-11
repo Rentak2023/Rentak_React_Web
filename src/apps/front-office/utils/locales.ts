@@ -410,5 +410,79 @@ groupedTranslations({
   submit: {
     en: "Submit",
     ar: "إرسال"
+  },
+  //Contract Page 
+  contractInfo: {
+    en: "Contract Info",
+    ar: "معلومات العقد"
+  },
+  contractSubTitle: {
+    en: "Easily create contract by filling data and we will create to you a contract document",
+    ar: "أنشئ عقدًا بسهولة عن طريق ملء البيانات وسنقوم بإنشاء مستند عقد لك"
+  },
+  personalInfo: {
+    en: "Personal Info",
+    ar: "معلومات شخصية"
+  },
+  landlordIdentity:{
+    en: "Landlord Identity Front Image",
+    ar: "الصورة الأمامية لهوية المالك"
+  },
+  tenantIdentity: {
+    en: "Tenant Identity Front Image",
+    ar: "الصورة الأمامية لهوية المستأجر"
+  },
+  landlordPhone: {
+    en: "Landlord Phone",
+    ar: "هاتف المالك"
+  },
+  tenantPhone: {
+    en: "Tenant Phone",
+    ar: "هاتف المستأجر"
+  },
+  phone:{
+    en: "Phone Number",
+    ar: "رقم الهاتف"
+  },
+  uploadId: {
+    en: "Upload ID",
+    ar: "تحميل البطاقة"
+  },
+  unitDescription: {
+    en: "Unit description",
+    ar: "وصف الوحدة"
+  },
+  unitArea: {
+    en: "Unit Area",
+    ar: "مساحة الوحدة"
+  },
+  contractPeriod: {
+    en: "Contract Period (In Months)",
+    ar: "مدة العقد (بالشهور)"
+  },
+  startDate:{
+    en: "Contract start date",
+    ar: "تاريخ بدء العقد"
+  },
+  rentAmount:{
+    en: "Rent Amount",
+    ar: "مقدار الايجار"
+  },
+  purposeOfRenting:{
+    en: "Purpose of renting",
+    ar: "الغرض من الإيجار"
+  },
+  residential: {
+    en: "Residential",
+    ar: "سكني"
+  },
+  managerial:{
+    en: "managerial",
+    ar: "إداري"
+  },
+  createContract:{
+    en: "Create Contract",
+    ar: "إنشاء العقد"
   }
+  
 });

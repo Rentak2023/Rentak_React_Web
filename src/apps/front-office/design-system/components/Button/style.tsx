@@ -61,6 +61,19 @@ export const BaseButton = styled(MantineButton)`
       `
     );
   }}
+  ${({ variant, color }: ButtonProps) => {
+    return (
+      variant == "contract" &&
+      css`
+        background-color: ${color ?? theme.colors.secondary[400]};
+        color: ${theme.colors.white};
+        height: auto;
+        width: 100%;
+        border-radius: 10.842px;
+        padding: 28.912px;
+      `
+    );
+  }}
   ${({ rounded }: ButtonProps) => {
     return (
       rounded &&
@@ -112,7 +125,7 @@ export const BaseButton = styled(MantineButton)`
 
   ${devices.smallMax} {
     font-size: 11px;
-    height: 40px;
+    /* height: 40px; */
     border-width: 1px;
   }
 `;

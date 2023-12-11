@@ -1,27 +1,37 @@
-"use client";
-import { StyledInput, Wrapper, WrapperInput } from "../styles";
+import {
+  StyledInput,
+  Wrapper,
+  WrapperInput,
+} from "../styles";
 import InputError from "../InputError";
 import InputLabel from "../InputLabel";
 import { Flex } from "../../Grids";
 import { InputPropsType } from "../types";
-import { emailRule, requiredRule, useFormControl } from "@mongez/react-form";
+import {
+  maxRule,
+  minRule,
+  numberRule,
+  useFormControl,
+} from "@mongez/react-form";
+import { requiredRule } from "@mongez/react-form";
 import { trans } from "@mongez/localization";
 
-function EmailInput({
+function NumberInput({
   placeholder,
   label,
   icon,
-  id,
+  defaultValue,
+  clearable,
   ...props
 }: InputPropsType) {
-  const { value, changeValue, error } = useFormControl(props);
+  const { id, value, changeValue, error } = useFormControl(props);
 
   return (
     <Flex direction="column" gap="0" fullWidth>
       <InputLabel htmlFor={id} required={props.required}>
         {trans(label)}
       </InputLabel>
-      <WrapperInput>
+      <WrapperInput error={error}>
         <Wrapper radius={props.bigRadius}>
           <StyledInput
             placeholder={placeholder}
@@ -38,9 +48,10 @@ function EmailInput({
   );
 }
 
-export default EmailInput;
+export default NumberInput;
 
-EmailInput.defaultProps = {
-  type: "email",
-  rules: [requiredRule, emailRule],
+NumberInput.defaultProps = {
+  type: "number",
+  rule: "number",
+  rules: [requiredRule, minRule, maxRule, numberRule],
 };

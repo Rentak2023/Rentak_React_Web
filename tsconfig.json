@@ -35,6 +35,6 @@
       }
     ]
   },
-  "include": ["src"],
+  "include": ["src", "src/shared/assets/svgs/.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

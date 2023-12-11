@@ -54,8 +54,9 @@ const URLS = {
   serviceFour: "",
 
   //Properties
-  property: (property) => `https://rent-ak.com/Listing/Details/${property.id}`
-  
+  property: (property) => `https://rent-ak.com/Listing/Details/${property.id}`,
+  //Contract
+  contract: "/contract"
 
 };
 
