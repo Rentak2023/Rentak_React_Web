@@ -477,7 +477,7 @@ groupedTranslations({
     ar: "سكني"
   },
   managerial:{
-    en: "managerial",
+    en: "Administrative",
     ar: "إداري"
   },
   createContract:{
