@@ -14,10 +14,10 @@ function EmailInput({
   id,
   ...props
 }: InputPropsType) {
-  const { value, changeValue, error } = useFormControl(props);
+  const { value, changeValue, error, visibleElementRef } = useFormControl(props);
 
   return (
-    <Flex direction="column" gap="0" fullWidth>
+    <Flex ref={visibleElementRef} direction="column" gap="0" fullWidth>
       <InputLabel htmlFor={id} required={props.required}>
         {trans(label)}
       </InputLabel>

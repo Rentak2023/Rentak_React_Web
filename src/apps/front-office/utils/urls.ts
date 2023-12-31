@@ -20,8 +20,8 @@ const URLS = {
   notifications: "/notifications",
   wallet: "/wallet",
   invoices: "/invoices",
-  rentPayment: "https://rent-ak.com/Contract/Form?product_id=1",
-  rentCollection: "https://rent-ak.com/Contract/RentCollectionForm",
+  rentPayment: "/rent-payment" || "https://rent-ak.com/Contract/Form?product_id=1",
+  rentCollection: "/rent-collection" ||  "https://rent-ak.com/Contract/RentCollectionForm",
   maintenancePayment: "https://rent-ak.com/Contract/Form?product_id=2",
   units: "https://rent-ak.com/Listing/Index",
 

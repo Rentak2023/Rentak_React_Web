@@ -32,6 +32,18 @@
         "/contract"
       ],
       "name": "contract"
+    },
+    {
+      "entry": [
+        "/rent-payment"
+      ],
+      "name": "rent-payment"
+    },
+    {
+      "entry": [
+        "/rent-collection"
+      ],
+      "name": "rent-collection"
     }
   ]
 }

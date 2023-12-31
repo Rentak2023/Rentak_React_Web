@@ -1,4 +1,3 @@
-"use client";
 import {
   StyledInput,
   Wrapper,
@@ -9,6 +8,7 @@ import InputLabel from "../InputLabel";
 import { Flex } from "../../Grids";
 import { InputPropsType } from "../types";
 import {
+  matchRule,
   maxLengthRule,
   minLengthRule,
   useFormControl,
@@ -24,10 +24,10 @@ function TextInput({
   clearable,
   ...props
 }: InputPropsType) {
-  const { id, value, changeValue, error } = useFormControl(props);
+  const { id, value, changeValue, error, visibleElementRef } = useFormControl(props);
 
   return (
-    <Flex direction="column" gap="0" fullWidth>
+    <Flex ref={visibleElementRef} direction="column" gap="0" fullWidth>
       <InputLabel htmlFor={id} required={props.required}>
         {trans(label)}
       </InputLabel>
@@ -39,6 +39,7 @@ function TextInput({
             onChange={(e: any) => {
               changeValue(e.target.value);
             }}
+            
             {...props}
           />
         </Wrapper>
@@ -52,5 +53,5 @@ export default TextInput;
 
 TextInput.defaultProps = {
   type: "text",
-  rules: [requiredRule, minLengthRule, maxLengthRule],
+  rules: [requiredRule, minLengthRule, maxLengthRule, matchRule],
 };

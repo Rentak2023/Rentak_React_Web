@@ -483,6 +483,155 @@ groupedTranslations({
   createContract:{
     en: "Create Contract",
     ar: "إنشاء العقد"
+  },
+  vacationFinancing: {
+    en: "Vacation financing",
+    ar: "تمويل الاجازة"
+  },
+  vacayNow: {
+    en: "vacay now and pay later",
+    ar: "إجازة الآن والدفع في وقت لاحق"
+  },
+  fillForm: {
+    en: "Fill in the form",
+    ar: "إملأ الإستمارة"
+  },
+  completeForm: {
+    en: "Please complete the form to enjoy our available payment options",
+    ar: "يرجى إكمال النموذج للاستمتاع بخيارات الدفع المتاحة لدينا"
+  },
+  //Forms
+  profileInfo:{
+    en: "Profile Info",
+    ar: "المعلومات الشخصية"
+  },
+  ownerInfo: {
+    en: "Owner Info",
+    ar: "معلومات المالك"
+  },
+  confirmation: {
+    en: "Confirmation",
+    ar: "تأكيد"
+  },
+  fullName:{
+    en: "Full Name",
+    ar: "الإسم"
+  },
+  nationalId: {
+    en: "National Id",
+    ar: "الهوية الوطنية"
+  },
+  otp: {
+    en: "OTP",
+    ar: "الرقم التعريفي المتغير"
+  },
+  ownerFullName: {
+    en: "Owner’s Full Name ",
+    ar: "الاسم الكامل للمالك"
+  },
+  ownerPhone: {
+    en: "Owner’s Phone Number",
+    ar: "رقم هاتف المالك"
+  },
+  transferTo:{
+    en: "Transfer To",
+    ar: "تحويل إلى"
+  },
+  bank: {
+    en: "Bank",
+    ar: "بنك"
+  },
+  unitDescriptionHint:{
+    en: "Type the unit description as you want it to appear on the transfer form",
+    ar: "اكتب وصف الوحدة كما تريد أن يظهر في نموذج النقل"
+  },
+  totalAmountHint: {
+    en: "Rent Amount + 5% Admin Fees",
+    ar: "مبلغ الإيجار + 5% رسوم إدارية"
+  },
+  serviceFees: {
+    en: "Service Fees",
+    ar: "رسوم الخدمة"
+  },
+  promoCode: {
+    en: "Promo Code",
+    ar: "الرمز الترويجي"
+  },
+  totalAmount: {
+    en: "Total Amount",
+    ar: "المبلغ الإجمالي"
+  },
+  tenantFullName:{
+    en: "Tenant Full Name",
+    ar: "الاسم الكامل للمستأجر"
+  },
+  tenantPhoneNumber: {
+    en: "Tenant Phone Number",
+    ar: "رقم هاتف المستأجر"
+  },
+  contractStartDate: {
+    en: "Contract Start Date",
+    ar: "تاريخ بداية العقد"
+  },
+  contractEndDate: {
+    en: "Contract End Date",
+    ar: "تاريخ انتهاء العقد"
+  },
+  annualIncreasePercentage:{
+    en: "Annual Increase Percentage",
+    ar: "نسبة الزيادة السنوية"
+  },
+  collectionDay:{
+    en: "Collection Day",
+    ar: "يوم التحصيل"
+  },
+  tenantInfo:{
+    en: "Tenant Info",
+    ar: "معلومات المستأجر"
+  },
+  sendOtp:{
+    en: 'Send OTP',
+    ar: "إرسال الرقم التعريفي المتغير"
+  },
+  verifyOtp: {
+    en: "Verify OTP",
+    ar: "تأكيد الرقم التعريفي المتغير"
+  },
+  verifySuccess: {
+    en: "OTP verification done Successfully",
+    ar: "تم التحقق من OTP بنجاح"
+  },
+  continue: {
+    en: "continue",
+    ar: "استمرار"
+  },
+  rentNow:{
+    en: "Rent now .. Pay Later",
+    ar: "استأجر الآن .. ادفع لاحقًا"
+  },
+  bankAccountNumber:{
+    en: "Bank Account Number",
+    ar: "رقم الحساب المصرفي"
+  },
+  confirmBankAccountNumber:{
+    en: "Confirm Bank Account Number",
+    ar: "تأكيد رقم الحساب البنكي"
+  },
+  walletAccountNumber:{
+    en: "Wallet Account Number",
+    ar: "رقم حساب المحفظة"
+  },
+  confirmWalletAccountNumber:{
+    en: "Confirm Wallet Account Number",
+    ar: "تأكيد رقم حساب المحفظة"
+  },
+  acknowledgmentAndCommitment: {
+    en: "Acknowledgment And Commitment",
+    ar: "الاعتراف والالتزام"
+  },
+  agree:{
+    en: "Agree",
+    ar: "أوافق"
   }
   
 });

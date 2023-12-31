@@ -150,3 +150,18 @@ export const StyledSelectInput = styled(Select)<Types>`
     width: 100%;
   }
 `;
+export const CheckboxWrapper = styled(Flex)`
+  label: Checkbox-wrapper;
+  margin: 0.5rem 0;
+  .mantine-Checkbox-body {
+    align-items: center;
+  }
+
+  .mantine-Checkbox-input {
+    &:checked {
+      background-color: ${theme.colors.primaryColor};
+    }
+    color: ${theme.colors.primaryColor};
+    border-color: ${theme.colors.primaryColor};
+  }
+`;

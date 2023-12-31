@@ -35,7 +35,7 @@ export const BaseButton = styled(MantineButton)`
     return (
       !size &&
       css`
-        height: 40px;
+        min-height: 40px;
       `
     );
   }}
@@ -46,8 +46,11 @@ export const BaseButton = styled(MantineButton)`
     return (
       variant == "outline" &&
       css`
-        border: 2px solid ${color ?? theme.colors.primaryColor};
-        color: ${color ?? theme.colors.primaryColor};
+        border: 1px solid ${color ?? theme.colors.secondary[600]};
+        background-color: ${theme.colors.white};
+        p{
+          color: ${color ?? theme.colors.secondary[600]};
+        }
       `
     );
   }}
@@ -71,6 +74,9 @@ export const BaseButton = styled(MantineButton)`
         width: 100%;
         border-radius: 10.842px;
         padding: 28.912px;
+        p{
+          text-transform: uppercase;
+        }
       `
     );
   }}
@@ -89,8 +95,10 @@ export const BaseButton = styled(MantineButton)`
         variant == "outline" &&
         css`
           color: ${theme.colors.white};
-          background: ${theme.colors.primaryColor};
-          border-color: ${theme.colors.primaryColor};
+          background: ${theme.colors.secondary[600]};
+          p{
+            color: ${theme.colors.white};
+          }
         `
       );
     }}
