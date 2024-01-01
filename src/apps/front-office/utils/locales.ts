@@ -163,13 +163,21 @@ groupedTranslations({
     en: "Why Rentak ?",
     ar: "لماذا رينتك؟"
   },
+  reasonOneTitle: {
+    en: "Monthly Income",
+    ar: "الإيجار الشهري"
+  },
   reasonOne: {
-    en: "Guaranteed monthly rental income",
-    ar: " إيجار شهري مضمون"
+    en: "Guaranteed against any unexpected surprises",
+    ar: "مضمون ضد أي مفاجآت غير متوقعة"
+  },
+  reasonTwoTitle: {
+    en: "Unit condition",
+    ar: "حالة الوحدة"
   },
   reasonTwo: {
-    en: "Guaranteed property condition",
-    ar: "ضمان حالة الوحده"
+    en: "Guaranteed against damages",
+    ar: "مضمون ضد الأضرار"
   },
   plans: {
     en: "Big Difference",

@@ -1,5 +1,13 @@
 import React from "react";
-import { ImageWrapper, Line, Reason, WhyRentakWrapper } from "./style";
+import {
+  BgImageWrapper,
+  ImageWrapper,
+  Line,
+  MainBgWrapper,
+  Reason,
+  WhyRentakWrapper,
+  Wrapper,
+} from "./style";
 import Header from "./Header";
 import {
   Container,
@@ -7,43 +15,57 @@ import {
 } from "apps/front-office/design-system/components/Grids";
 import { theme } from "apps/front-office/design-system";
 import { trans } from "@mongez/localization";
-import bgImage from "assets/images/whyRentakBg.png";
-import { H2 } from "apps/front-office/design-system/components/Typography";
+import { H2, P4 } from "apps/front-office/design-system/components/Typography";
+import BgImage from "shared/assets/images/why-rentak-bg.png";
 
 const reasons = [
   {
     id: "r1",
+    title: trans("reasonOneTitle"),
     text: trans("reasonOne"),
   },
   {
     id: "r2",
+    title: trans("reasonTwoTitle"),
     text: trans("reasonTwo"),
   },
 ];
 
 const WhyRentak = () => {
   return (
-    <Container>
-      <WhyRentakWrapper>
+    <Wrapper>
+      <Container>
         <Header />
         <H2 className="main-header" color={theme.colors.secondary[600]}>
           {trans("whyRentak")}
         </H2>
-        <Flex gap="120px" fullWidth className="grid" justify="space-between">
-          <Flex direction="column" gap="169px" justify="center">
-            {reasons.map(reason => (
-              <Reason key={reason.id}>
+        <MainBgWrapper>
+          <Flex fullWidth className="grid" justify="center" align="center">
+            <Flex direction="column" justify="center">
+              <Reason>
+                <Flex className="reason" direction="column" align="center" justify="center">
+                  <h4>{reasons[0].title}</h4>
+                  <P4>{reasons[0].text}</P4>
+                </Flex>
                 <Line />
-                <H2 color={theme.colors.primaryColor} length={45}>{reason.text}</H2>
               </Reason>
-            ))}
+            </Flex>
+            <BgImageWrapper>
+              <img src={BgImage} />
+            </BgImageWrapper>
+            <Flex direction="column" justify="center">
+              <Reason>
+                <Line />
+                <Flex className="reason" direction="column" align="center" justify="center">
+                  <h4>{reasons[1].title}</h4>
+                  <P4>{reasons[1].text}</P4>
+                </Flex>
+              </Reason>
+            </Flex>
           </Flex>
-          <ImageWrapper>
-            <img src={bgImage} />
-          </ImageWrapper>
-        </Flex>
-      </WhyRentakWrapper>
-    </Container>
+        </MainBgWrapper>
+      </Container>
+    </Wrapper>
   );
 };
 
