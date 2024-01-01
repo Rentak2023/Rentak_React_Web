@@ -21,10 +21,11 @@ function PhoneNumberInput({
   id,
   ...props
 }: InputPropsType) {
-  const { value, changeValue, error } = useFormControl(props);
+  const { value, changeValue, visibleElementRef, otherProps, error } =
+    useFormControl(props);
 
   return (
-    <Flex direction="column" gap="0" fullWidth>
+    <Flex direction="column" ref={visibleElementRef} gap="0" fullWidth>
       <InputLabel htmlFor={id} required={props.required}>
         {trans(label)}
       </InputLabel>
@@ -36,7 +37,7 @@ function PhoneNumberInput({
             onChange={(e: any) => {
               changeValue(e.target.value);
             }}
-            {...props}
+            {...otherProps}
           />
         </Wrapper>
       </WrapperInput>

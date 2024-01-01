@@ -11,8 +11,8 @@ function RentCollectionPage() {
       <Helmet title={trans("rentCollection")} />
       <>
         <PageHeader
-          title="vacationFinancing"
-          subTitle="vacayNow"
+          title="rentCollection"
+          subTitle="rentNow"
           icon={<FormIcon />}
         />
         <Card

@@ -1,8 +1,4 @@
-import {
-  StyledInput,
-  Wrapper,
-  WrapperInput,
-} from "../styles";
+import { StyledInput, Wrapper, WrapperInput } from "../styles";
 import InputError from "../InputError";
 import InputLabel from "../InputLabel";
 import { Flex } from "../../Grids";
@@ -24,10 +20,11 @@ function NumberInput({
   clearable,
   ...props
 }: InputPropsType) {
-  const { id, value, changeValue, error } = useFormControl(props);
+  const { id, value, changeValue, visibleElementRef, otherProps, error } =
+    useFormControl(props);
 
   return (
-    <Flex direction="column" gap="0" fullWidth>
+    <Flex direction="column" gap="0" fullWidth ref={visibleElementRef}>
       <InputLabel htmlFor={id} required={props.required}>
         {trans(label)}
       </InputLabel>
@@ -39,7 +36,7 @@ function NumberInput({
             onChange={(e: any) => {
               changeValue(e.target.value);
             }}
-            {...props}
+            {...otherProps}
           />
         </Wrapper>
       </WrapperInput>

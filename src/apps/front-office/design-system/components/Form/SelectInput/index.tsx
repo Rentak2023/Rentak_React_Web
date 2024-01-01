@@ -10,14 +10,14 @@ function SelectInput({
   placeholder,
   label,
   icon,
-  defaultValue,
   clearable,
   ...props
 }: InputPropsType) {
-  const { value, changeValue, error, id } = useFormControl(props);
+  const { value, changeValue, error, visibleElementRef, otherProps, id } =
+    useFormControl(props);
 
   return (
-    <Flex direction="column" gap="0" fullWidth>
+    <Flex direction="column" gap="0" fullWidth ref={visibleElementRef}>
       <InputLabel htmlFor={id} required={props.required}>
         {trans(label)}
       </InputLabel>
@@ -25,11 +25,10 @@ function SelectInput({
         <Wrapper>
           <StyledSelectInput
             placeholder={placeholder}
-            defaultValue={defaultValue}
             clearable={clearable}
             value={value}
             onChange={changeValue}
-            {...props}
+            {...otherProps}
           />
         </Wrapper>
       </WrapperInput>

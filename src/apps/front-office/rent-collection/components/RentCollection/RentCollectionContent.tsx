@@ -1,168 +1,83 @@
-import React, { useState } from "react";
+import { useRef, useState } from "react";
 import { Grid, Stepper } from "@mantine/core";
 import { trans } from "@mongez/localization";
-import Button from "apps/front-office/design-system/components/Button";
-import TextInput from "apps/front-office/design-system/components/Form/TextInput";
-import { Col, Flex } from "apps/front-office/design-system/components/Grids";
-import EmailInput from "apps/front-office/design-system/components/Form/EmailInput";
-import PhoneNumberInput from "apps/front-office/design-system/components/Form/PhoneNumberInput";
 import { P4 } from "apps/front-office/design-system/components/Typography";
+import Button from "apps/front-office/design-system/components/Button";
+import { Col, Flex } from "apps/front-office/design-system/components/Grids";
 import { theme } from "apps/front-office/design-system";
-import NumberInput from "apps/front-office/design-system/components/Form/NumberInput";
 import { StepWrapper, StepperWrapper } from "./style";
-import { ArrowIcon, DirectionIcon } from "shared/assets/svgs";
+import { ArrowIcon } from "shared/assets/svgs";
 import { Line } from "apps/front-office/design-system/components/Shapes/Line";
 import { Form } from "@mongez/react-form";
-import SelectInput from "apps/front-office/design-system/components/Form/SelectInput";
-import DateInput from "apps/front-office/design-system/components/Form/DateInput";
+import ProfileInfoStep from "../Steps/ProfileInfoStep";
+import PaymentMethodStep from "../Steps/PaymentMethodStep";
+import TenantInfoStep from "../Steps/TenantInfoStep";
+import UnitDescriptionStep from "../Steps/UnitDescriptionStep";
+import ConfirmationStep from "../Steps/ConfirmationStep";
+import { showNotification } from "apps/front-office/design-system/components/Notifications/showNotification";
+import { sendRentCollection } from "../../services/services";
+import { labels } from "./labels";
 
-const RentCollectionContent = () => {
+const RentPaymentContent = () => {
   const totalSteps = 5;
-  const labels = [
-    <P4 weight="600" style={{ width: "max-content" }}>
-      {trans("profileInfo")}
-    </P4>,
-    <P4 weight="600" style={{ width: "max-content" }}>
-      {trans("tenantInfo")}
-    </P4>,
-    <P4 weight="600" style={{ width: "max-content" }}>
-      {trans("paymentMethod")}
-    </P4>,
-    <P4 weight="600" style={{ width: "max-content" }}>
-      {trans("unitDescription")}
-    </P4>,
-    <P4 weight="600" style={{ width: "max-content" }}>
-      {trans("confirmation")}
-    </P4>,
-  ];
-
   const [currentStep, setCurrentStep] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<any>();
 
   const handleNextStep = () => {
-    setCurrentStep(prevStep => Math.min(prevStep + 1, totalSteps));
+    const form = formRef.current as Form;
+
+    form.validateVisible().then(() => {
+      if (form.isValid()) {
+        // move to the next step
+        setCurrentStep(prevStep => Math.min(prevStep + 1, totalSteps));
+      }
+    });
   };
 
   const handlePrevStep = () => {
-    setCurrentStep(prevStep => Math.max(prevStep - 1, 1));
+    const form = formRef.current;
+
+    form.validateVisible().then(() => {
+      if (form.isValid()) {
+        // move to the Prev step
+        setCurrentStep(prevStep => Math.max(prevStep - 1, 1));
+      }
+    });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async ({ values }) => {
     // Handle form submission logic here
-    console.log("Form submitted:");
-  };
+    setIsSubmitting(true);
+    try {
+      const response = await sendRentCollection(values);
 
-  const renderStep = step => {
-    switch (step) {
-      case 1:
-        return (
-          <Col span={10}>
-            <TextInput
-              name="full_name"
-              label={trans("fullName")}
-              placeholder={trans("fullName")}
-            />
-            <PhoneNumberInput
-              name="phone"
-              label={trans("phoneNumber")}
-              placeholder={trans("phoneNumber")}
-            />
-          </Col>
-        );
-      case 2:
-        return (
-          <Col span={10}>
-            <TextInput
-              name="full_name"
-              label={trans("tenantFullName")}
-              placeholder={trans("fullName")}
-            />
-            <PhoneNumberInput
-              name="phone"
-              label={trans("tenantPhoneNumber")}
-              placeholder={trans("phoneNumber")}
-            />
-          </Col>
-        );
-      case 3:
-        return (
-          <Col span={10}>
-            <SelectInput
-              name="payment_methods"
-              label="paymentMethods"
-              data={[
-                { label: trans("residential"), value: "سكني" },
-                { label: trans("managerial"), value: "اداري" },
-              ]}
-              defaultValue={1}
-              required
-              clearable
-            />
-          </Col>
-        );
-      case 4:
-        return (
-          <Col span={10}>
-            <TextInput
-              name="unit_description"
-              label={`${trans("unitDescription")} ( ${trans(
-                "unitDescriptionHint",
-              )} )`}
-              placeholder={trans("unitDescription")}
-            />
-            <NumberInput
-              name="rent_amount"
-              label={trans("rentAmount")}
-              placeholder={trans("rentAmount")}
-              min={1}
-            />
-            <NumberInput
-              name="service_fees"
-              label={trans("serviceFees")}
-              placeholder={trans("serviceFees")}
-              min={1}
-            />
-            <NumberInput
-              name="total_amount"
-              label={`${trans("totalAmount")} ( ${trans("totalAmountHint")} )`}
-              placeholder={trans("totalAmount")}
-              min={1}
-            />
-            <DateInput
-              name="contract_start_date"
-              label="contractStartDate"
-              placeholder="startDate"
-              required
-            />
-            <DateInput
-              name="contract_end_date"
-              label="contractEndDate"
-              placeholder="endDate"
-              required
-            />
-            <NumberInput
-              name="total_amount"
-              label={trans("annualIncreasePercentage")}
-              placeholder={trans("totalAmount")}
-              min={1}
-            />
-            <SelectInput
-              name="collection_day"
-              label="collectionDay"
-              data={[
-                { label: trans("residential"), value: "سكني" },
-                { label: trans("managerial"), value: "اداري" },
-              ]}
-              required
-              clearable
-            />
-          </Col>
-        );
-      case 5:
-        return <Col span={10}></Col>;
-      default:
-        return null;
+      showNotification({
+        message: response.data.message,
+      });
+
+      if (response.data.url) {
+        window.location.href = response.data.url;
+      }
+    } catch (error: any) {
+      Object.entries(error.response.data.errors).map(([key, value]: any) => {
+        return showNotification({
+          type: "danger",
+          message: value[0],
+        });
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
+
+  const allSteps = [
+    ProfileInfoStep,
+    TenantInfoStep,
+    PaymentMethodStep,
+    UnitDescriptionStep,
+    ConfirmationStep,
+  ];
 
   return (
     <StepperWrapper>
@@ -190,37 +105,45 @@ const RentCollectionContent = () => {
         ))}
       </Stepper>
 
-      <StepWrapper>
-        <Form>
-          <Grid>{renderStep(currentStep)}</Grid>
-        </Form>
-      </StepWrapper>
+      <Form ref={formRef as any} onSubmit={handleSubmit}>
+        <StepWrapper>
+          <Grid>
+            {allSteps.map((Component, index) => {
+              return (
+                <Col key={index} hidden={index !== currentStep - 1}>
+                  <Component />
+                </Col>
+              );
+            })}
+          </Grid>
+        </StepWrapper>
 
-      <Flex
-        justify={currentStep !== 1 ? "space-between" : "end"}
-        fullWidth
-        className="buttons">
-        {currentStep !== 1 && (
-          <Button onClick={handlePrevStep} variant="outline">
-            <P4 color={theme.colors.white}>{trans("back")}</P4>
-          </Button>
-        )}
-        {currentStep < totalSteps ? (
-          <Button
-            onClick={handleNextStep}
-            fullWidth={false}
-            variant="contract"
-            color={theme.colors.secondary[400]}>
-            <P4 color={theme.colors.white}>{trans("continue")}</P4>
-          </Button>
-        ) : (
-          <Button onClick={handleSubmit} fullWidth={false}>
-            <P4 color={theme.colors.white}>{trans("submit")}</P4>
-          </Button>
-        )}
-      </Flex>
+        <Flex
+          justify={currentStep !== 1 ? "space-between" : "end"}
+          fullWidth
+          className="buttons">
+          {currentStep !== 1 && (
+            <Button onClick={handlePrevStep} type="button" variant="outline">
+              <P4 color={theme.colors.white}>{trans("back")}</P4>
+            </Button>
+          )}
+          {currentStep < totalSteps ? (
+            <Button
+              onClick={handleNextStep}
+              variant="contract"
+              type="button"
+              color={theme.colors.secondary[400]}>
+              <P4 color={theme.colors.white}>{trans("continue")}</P4>
+            </Button>
+          ) : (
+            <Button type="submit" loading={isSubmitting}>
+              <P4 color={theme.colors.white}>{trans("submit")}</P4>
+            </Button>
+          )}
+        </Flex>
+      </Form>
     </StepperWrapper>
   );
 };
 
-export default RentCollectionContent;
+export default RentPaymentContent;

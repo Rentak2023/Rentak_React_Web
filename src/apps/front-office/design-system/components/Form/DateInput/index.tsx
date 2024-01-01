@@ -8,14 +8,14 @@ import dayjs from "dayjs";
 import { trans } from "@mongez/localization";
 
 function DateInput({ placeholder, label, icon, id, ...props }: any) {
-  const { changeValue, error } = useFormControl(props, {
+  const { changeValue, error, visibleElementRef, otherProps } = useFormControl(props, {
     collectValue: (value: any) => {
       return dayjs(value.value).format('D/M/YYYY')
     },
   });
 
   return (
-    <Flex direction="column" fullWidth gap="0">
+    <Flex direction="column" fullWidth gap="0" ref={visibleElementRef}>
       <InputLabel htmlFor={id} required={props.required}>
         {trans(label)}
       </InputLabel>
@@ -27,7 +27,7 @@ function DateInput({ placeholder, label, icon, id, ...props }: any) {
               valueFormat="DD/MM/YYYY"
               wrapperClassName="datePicker"
               onChange={changeValue}
-              {...props}
+              {...otherProps}
             />
           </DateWrapper>
         </Wrapper>

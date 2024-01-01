@@ -632,6 +632,10 @@ groupedTranslations({
   agree:{
     en: "Agree",
     ar: "أوافق"
+  },
+  applyPromoCode: {
+    en: "Apply Promo Code",
+    ar: "تطبيق الكود الترويجي"
   }
   
 });

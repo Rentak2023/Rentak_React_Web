@@ -31,7 +31,7 @@
         "@mongez/react": "^3.0.6",
         "@mongez/react-atom": "^3.1.3",
         "@mongez/react-components": "^1.0.8",
-        "@mongez/react-form": "^2.0.15",
+        "@mongez/react-form": "^2.1.3",
         "@mongez/react-helmet": "^1.0.9",
         "@mongez/react-hooks": "^1.3.3",
         "@mongez/react-localization": "^1.0.5",
@@ -44,6 +44,7 @@
         "@tabler/icons-react": "^2.24.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-lottie-player": "^1.5.5",
         "sass": "^1.66.1",
         "stylis-plugin-rtl": "^2.1.1",
         "swiper": "^11.0.4"

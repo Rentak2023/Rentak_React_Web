@@ -14,7 +14,8 @@ function EmailInput({
   id,
   ...props
 }: InputPropsType) {
-  const { value, changeValue, error, visibleElementRef } = useFormControl(props);
+  const { value, changeValue, error, otherProps, visibleElementRef } =
+    useFormControl(props);
 
   return (
     <Flex ref={visibleElementRef} direction="column" gap="0" fullWidth>
@@ -29,7 +30,7 @@ function EmailInput({
             onChange={(e: any) => {
               changeValue(e.target.value);
             }}
-            {...props}
+            {...otherProps}
           />
         </Wrapper>
       </WrapperInput>

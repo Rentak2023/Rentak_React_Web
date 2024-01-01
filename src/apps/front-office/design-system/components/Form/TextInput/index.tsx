@@ -1,8 +1,4 @@
-import {
-  StyledInput,
-  Wrapper,
-  WrapperInput,
-} from "../styles";
+import { StyledInput, Wrapper, WrapperInput } from "../styles";
 import InputError from "../InputError";
 import InputLabel from "../InputLabel";
 import { Flex } from "../../Grids";
@@ -15,16 +11,11 @@ import {
 } from "@mongez/react-form";
 import { requiredRule } from "@mongez/react-form";
 import { trans } from "@mongez/localization";
+import { useEffect } from "react";
 
-function TextInput({
-  placeholder,
-  label,
-  icon,
-  defaultValue,
-  clearable,
-  ...props
-}: InputPropsType) {
-  const { id, value, changeValue, error, visibleElementRef } = useFormControl(props);
+function TextInput({ placeholder, label, icon, ...props }: InputPropsType) {
+  const { id, value, changeValue, error, name, visibleElementRef, otherProps } =
+    useFormControl(props);
 
   return (
     <Flex ref={visibleElementRef} direction="column" gap="0" fullWidth>
@@ -39,8 +30,7 @@ function TextInput({
             onChange={(e: any) => {
               changeValue(e.target.value);
             }}
-            
-            {...props}
+            {...otherProps}
           />
         </Wrapper>
       </WrapperInput>

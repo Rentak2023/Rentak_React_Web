@@ -13,17 +13,18 @@ function CheckboxInput({
   id,
   ...props
 }: InputPropsType) {
-  const { checked, setChecked, error, otherProps } = useFormControl(props);
+  const { checked, setChecked, error, visibleElementRef, otherProps } =
+    useFormControl(props);
 
   return (
-    <Flex direction="column" fullWidth gap="0">
+    <Flex direction="column" fullWidth gap="0" ref={visibleElementRef}>
       <CheckboxWrapper>
         <Checkbox
           placeholder={placeholder}
           defaultChecked={defaultChecked}
           label={label}
           checked={checked}
-          onChange={(e) => {
+          onChange={e => {
             setChecked(e.currentTarget.checked);
           }}
           {...otherProps}

@@ -1,13 +1,13 @@
 import { Col } from 'apps/front-office/design-system/components/Grids'
 import { H5, P4 } from 'apps/front-office/design-system/components/Typography'
 import React from 'react'
-import { rentPaymentAtom } from '../../atoms'
+import { rentCollectionAtom } from '../../atoms'
 import { trans } from '@mongez/localization'
 import { Space } from '@mantine/core'
 import CheckboxInput from 'apps/front-office/design-system/components/Form/CheckboxInput'
 
 const ConfirmationStep = () => {
-  const value = rentPaymentAtom.useValue()
+  const value = rentCollectionAtom.useValue()
 
   const list = [
     {

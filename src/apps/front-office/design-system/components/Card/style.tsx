@@ -8,6 +8,9 @@ export const Wrapper = styled.div`
   .title {
     margin-bottom: 67px;
   }
+  ${devices.mediumMax} {
+    padding: 1rem;
+  }
 `;
 
 export const StyledCard = styled.div`

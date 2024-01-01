@@ -63,7 +63,7 @@ const OwnerInfoStep = () => {
     setPaymentMethod(value);
   };
   return (
-    <Col span={10}>
+    <Col span={12} md={10}>
       <TextInput
         name="landlord_name"
         label={trans("ownerFullName")}
@@ -83,6 +83,7 @@ const OwnerInfoStep = () => {
         clearable
         value={paymentMethod}
         onChange={onChangePaymentMethod}
+        required
       />
       {paymentMethod === "4" && (
         <>

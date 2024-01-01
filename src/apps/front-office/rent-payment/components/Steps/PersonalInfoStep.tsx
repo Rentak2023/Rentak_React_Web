@@ -12,26 +12,36 @@ import { sendOtp, verifyOtp } from "../../services/services";
 import { showNotification } from "apps/front-office/design-system/components/Notifications/showNotification";
 import cache from "@mongez/cache";
 import { rentPaymentAtom } from "../../atoms";
+import { getActiveForm } from "@mongez/react-form";
 
 const PersonalInfoStep = () => {
-  const [userEmail, setUserEmail] = useState("");
-  const [userName, setUserName] = useState("");
-  const [nationalId, setNationalId] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [otp, setOtp] = useState("");
-
   const [userId, setUserId] = useState("");
 
-  const sendOtpHandler = async e => {
+  const sendOtpHandler = async () => {
     try {
-      const response : any = await sendOtp({
+      const form = getActiveForm();
+      if (!form) return;
+
+      const {
+        tenant_phone: phoneNumber,
+        tenant_email: userEmail,
+        tenant_name: userName,
+        tenant_national_id: nationalId,
+      } = form.values([
+        "tenant_phone",
+        "tenant_email",
+        "tenant_name",
+        "tenant_national_id",
+      ]);
+
+      const response: any = await sendOtp({
         user_phone: phoneNumber,
         user_email: userEmail,
         user_name: userName,
         national_id: nationalId,
       });
 
-      setUserId(response.data.userId)
+      setUserId(response.data.userId);
 
       showNotification({
         message: response.data.message,
@@ -46,12 +56,18 @@ const PersonalInfoStep = () => {
     }
   };
 
-  const verifyOtpHandler = async e => {
+  const verifyOtpHandler = async () => {
     try {
-      const response = await verifyOtp({ otp: otp, userId: userId });
-      cache.set('token', response.data.token);
+      const form = getActiveForm();
+      const response = await verifyOtp({
+        otp: form?.value("otp"),
+        userId: userId,
+      });
+
+      cache.set("token", response.data.token);
+
       showNotification({
-        message: trans('verifySuccess'),
+        message: trans("verifySuccess"),
       });
     } catch (error: any) {
       Object.entries(error.response.data.errors).map(([key, value]: any) => {
@@ -62,56 +78,43 @@ const PersonalInfoStep = () => {
       });
     }
   };
-  
+
   return (
-    <Col span={10}>
+    <Col span={12} md={10}>
       <TextInput
         name="tenant_name"
         label={trans("fullName")}
         placeholder={trans("fullName")}
-        value={userName}
-        onChange={e => {
-          rentPaymentAtom.update({username: e.target.value})
-          setUserName(e.target.value)
-        }}
         required
       />
       <TextInput
         name="tenant_national_id"
         label={trans("nationalId")}
         placeholder={trans("nationalId")}
-        value={nationalId}
-        onChange={e => setNationalId(e.target.value)}
         required
       />
       <EmailInput
         name="tenant_email"
         label={trans("email")}
         placeholder={trans("email")}
-        value={userEmail}
-        onChange={e => setUserEmail(e.target.value)}
         required
       />
-      <Flex gap="1rem" fullWidth align="end">
+      <Flex gap="1rem" fullWidth align="end" className="otp">
         <PhoneNumberInput
           name="tenant_phone"
           label={trans("phoneNumber")}
           placeholder={trans("phoneNumber")}
-          value={phoneNumber}
-          onChange={e => setPhoneNumber(e.target.value)}
           required
         />
         <Button onClick={sendOtpHandler}>
           <P4 color={theme.colors.white}>{trans("sendOtp")}</P4>
         </Button>
       </Flex>
-      <Flex gap="1rem" fullWidth align="end">
+      <Flex gap="1rem" fullWidth align="end" className="otp">
         <NumberInput
           name="otp"
           label={trans("otp")}
           placeholder={trans("otp")}
-          value={otp}
-          onChange={e => setOtp(e.target.value)}
         />
         <Button onClick={verifyOtpHandler}>
           <P4 color={theme.colors.white}>{trans("verifyOtp")}</P4>

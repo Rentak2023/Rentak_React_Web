@@ -34,7 +34,7 @@ const PaymentMethodsStep = () => {
   }, []);
   
   return (
-    <Col span={10}>
+    <Col span={12} md={10}>
       <SelectInput
         name="cash_in_payment_meyhod_id"
         label="paymentMethods"

@@ -19,6 +19,10 @@ export const HeaderWrapper = styled.div`
   bottom: 0;
   top: 60px;
   display: flex;
+  ${devices.mediumMax} {
+    flex-direction: column;
+    top: 120px;
+  }
   /* flex-direction: column; */
   justify-content: center;
   align-items: center;
@@ -27,5 +31,8 @@ export const HeaderWrapper = styled.div`
     ${devices.largeMax} {
      width: auto;
     }
+  }
+  svg{
+    max-width: 100%;
   }
 `;

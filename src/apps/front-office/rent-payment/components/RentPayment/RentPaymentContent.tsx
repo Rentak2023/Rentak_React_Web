@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Grid, Stepper } from "@mantine/core";
 import { trans } from "@mongez/localization";
 import { P4 } from "apps/front-office/design-system/components/Typography";
@@ -26,12 +26,10 @@ const RentPaymentContent = () => {
   const formRef = useRef<any>();
 
   const handleNextStep = () => {
-    const form = formRef.current;
+    const form = formRef.current as Form;
 
-    form.validateVisible().then((res) => {
-      console.log(res);
-
-      if (form.isValid) {
+    form.validateVisible().then(() => {
+      if (form.isValid()) {
         // move to the next step
         setCurrentStep(prevStep => Math.min(prevStep + 1, totalSteps));
       }
@@ -40,11 +38,9 @@ const RentPaymentContent = () => {
 
   const handlePrevStep = () => {
     const form = formRef.current;
-    
-    form.validateVisible().then((res) => {
-      console.log(res);
-      
-      if (form.isValid) {
+
+    form.validateVisible().then(() => {
+      if (form.isValid()) {
         // move to the Prev step
         setCurrentStep(prevStep => Math.max(prevStep - 1, 1));
       }
@@ -77,11 +73,11 @@ const RentPaymentContent = () => {
   };
 
   const allSteps = [
-    <PersonalInfoStep />,
-    <PaymentMethodsStep />,
-    <OwnerInfoStep />,
-    <UnitDescriptionStep />,
-    <ConfirmationStep />,
+    PersonalInfoStep,
+    PaymentMethodsStep,
+    OwnerInfoStep,
+    UnitDescriptionStep,
+    ConfirmationStep,
   ];
 
   return (
@@ -113,8 +109,12 @@ const RentPaymentContent = () => {
       <Form ref={formRef as any} onSubmit={handleSubmit}>
         <StepWrapper>
           <Grid>
-            {allSteps.map((stepCmp, index) => {
-              return <Col hidden={index !== currentStep - 1}>{stepCmp}</Col>;
+            {allSteps.map((Component, index) => {
+              return (
+                <Col key={index} hidden={index !== currentStep - 1}>
+                  <Component />
+                </Col>
+              );
             })}
           </Grid>
         </StepWrapper>
