@@ -3,7 +3,7 @@ import { theme } from "apps/front-office/design-system";
 import devices from "../../utils/devices";
 
 export const Wrapper = styled.div`
-  min-height: 847px;
+  /* min-height: 847px; */
   background-color: #fff;
   ${devices.xxLargeMax} {
     min-height: 647px;
