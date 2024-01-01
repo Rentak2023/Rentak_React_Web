@@ -636,6 +636,22 @@ groupedTranslations({
   applyPromoCode: {
     en: "Apply Promo Code",
     ar: "تطبيق الكود الترويجي"
+  },
+  success: {
+    en: "Success",
+    ar: "نجاح"
+  },
+  formWasSuccessfullySubmitted:{
+    en: "Your Form was successfully submitted.",
+    ar: "تم إرسال النموذج الخاص بك بنجاح."
+  },
+  error: {
+    en: "Error",
+    ar: "خطأ"
+  },
+  formWasFailed: {
+    en: "Your Form was unfortunately failed.",
+    ar: "لقد فشل النموذج الخاص بك للأسف."
   }
   
 });

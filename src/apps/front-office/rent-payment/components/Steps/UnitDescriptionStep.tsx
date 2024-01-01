@@ -46,11 +46,6 @@ const UnitDescriptionStep = () => {
     const parsedFees = Number(fees);
     const parsedPromoDiscount = Number(promoDiscount);
   
-    // Check if any of the inputs are not valid numbers
-    // if (isNaN(parsedBaseAmount) || isNaN(parsedFees) || isNaN(parsedPromoDiscount)) {
-    //   return NaN; // Return NaN in case of invalid input
-    // }
-  
     // Calculate the total with promo discount
     const total = parsedBaseAmount + (parsedBaseAmount * parsedFees) / 100;
     const discountAmount = (total * parsedPromoDiscount) / 100;
@@ -96,8 +91,6 @@ const UnitDescriptionStep = () => {
       return () => clearTimeout(timeoutId);
     }
   }, [promoCode]);
-  
-  console.log(total)
 
   const fees = rentAmount > 0 ? (productFees / 100) * rentAmount : productFees;
 

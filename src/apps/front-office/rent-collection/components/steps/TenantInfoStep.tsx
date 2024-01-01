@@ -5,7 +5,7 @@ import { Col } from "apps/front-office/design-system/components/Grids";
 
 const TenantInfoStep = () => {
   return (
-    <Col span={10}>
+    <Col span={12} md={10}>
       <TextInput
         name="full_name"
         label={trans("tenantFullName")}

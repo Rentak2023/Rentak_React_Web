@@ -59,7 +59,6 @@ const OwnerInfoStep = () => {
   }, []);
 
   const onChangePaymentMethod = value => {
-    console.log(value);
     setPaymentMethod(value);
   };
   return (
@@ -95,7 +94,7 @@ const OwnerInfoStep = () => {
             clearable
           />
           <TextInput
-            name="bank_account_number"
+            name="Bank Account Number"
             label={trans("bankAccountNumber")}
             placeholder={trans("bankAccountNumber")}
             required
@@ -105,14 +104,14 @@ const OwnerInfoStep = () => {
             label={trans("confirmBankAccountNumber")}
             placeholder={trans("confirmBankAccountNumber")}
             required
-            match="bank_account_number"
+            match="Bank Account Number"
           />
         </>
       )}
       {paymentMethod === "5" && (
         <>
           <TextInput
-            name="wallet_account_number"
+            name="Wallet Account Number"
             label={trans("walletAccountNumber")}
             placeholder={trans("walletAccountNumber")}
             required
@@ -122,7 +121,7 @@ const OwnerInfoStep = () => {
             label={trans("confirmWalletAccountNumber")}
             placeholder={trans("confirmWalletAccountNumber")}
             required
-            match="wallet_account_number"
+            match="Wallet Account Number"
           />
         </>
       )}

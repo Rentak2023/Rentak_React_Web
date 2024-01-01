@@ -18,11 +18,18 @@ import { showNotification } from "apps/front-office/design-system/components/Not
 import { sendRentPayment } from "../../services/services";
 import { labels } from "./labels";
 import SubmitButton from "apps/front-office/design-system/components/Form/SubmitButton";
+import { useDisclosure } from "@mantine/hooks";
+import SuccessModal from "apps/front-office/design-system/components/SuccessModal";
 
 const RentPaymentContent = () => {
   const totalSteps = 5;
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [
+    openedSuccessModal,
+    { open: openSuccessModal, close: closeSuccessModal },
+  ] = useDisclosure(false);
+
   const formRef = useRef<any>();
 
   const handleNextStep = () => {
@@ -57,9 +64,7 @@ const RentPaymentContent = () => {
         message: response.data.message,
       });
 
-      if (response.data.url) {
-        window.location.href = response.data.url;
-      }
+      openSuccessModal();
     } catch (error: any) {
       Object.entries(error.response.data.errors).map(([key, value]: any) => {
         return showNotification({
@@ -143,6 +148,7 @@ const RentPaymentContent = () => {
           )}
         </Flex>
       </Form>
+      <SuccessModal opened={openedSuccessModal} close={closeSuccessModal} />
     </StepperWrapper>
   );
 };

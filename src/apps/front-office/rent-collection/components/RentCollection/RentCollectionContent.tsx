@@ -46,11 +46,11 @@ const RentPaymentContent = () => {
     });
   };
 
-  const handleSubmit = async ({ values }) => {
+  const handleSubmit = async ({ formData }) => {
     // Handle form submission logic here
     setIsSubmitting(true);
     try {
-      const response = await sendRentCollection(values);
+      const response = await sendRentCollection(formData);
 
       showNotification({
         message: response.data.message,

@@ -85,6 +85,7 @@ const PersonalInfoStep = () => {
         name="tenant_name"
         label={trans("fullName")}
         placeholder={trans("fullName")}
+        onChange={(value) => rentPaymentAtom.update({username: value})}
         required
       />
       <TextInput
@@ -115,6 +116,7 @@ const PersonalInfoStep = () => {
           name="otp"
           label={trans("otp")}
           placeholder={trans("otp")}
+          required
         />
         <Button onClick={verifyOtpHandler}>
           <P4 color={theme.colors.white}>{trans("verifyOtp")}</P4>

@@ -33,13 +33,13 @@ export default function TopNav() {
             <Grid.Col span={4}>
               <Flex gap="40px" align="center">
                 <Logo />
-                {links.map((link) => (
+                {/* {links.map((link) => (
                   <Link key={link.id} to={link.url} className="nav-link">
                     <P4 color={theme.colors.secondary[500]} weight="600">
                       {link.text}
                     </P4>
                   </Link>
-                ))}
+                ))} */}
               </Flex>
             </Grid.Col>
             <Grid.Col span={4}>
