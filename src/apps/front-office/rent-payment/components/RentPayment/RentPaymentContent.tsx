@@ -59,12 +59,19 @@ const RentPaymentContent = () => {
     setIsSubmitting(true);
     try {
       const response = await sendRentPayment(values);
-
+      console.log(response.data)
       showNotification({
         message: response.data.message,
       });
 
       openSuccessModal();
+
+      setTimeout(() => {
+        if (response.data.payment_data.redirect_url) {
+          window.location.href = response.data.payment_data.redirect_url;
+        }
+      }, 1500);
+      
     } catch (error: any) {
       Object.entries(error.response.data.errors).map(([key, value]: any) => {
         return showNotification({
