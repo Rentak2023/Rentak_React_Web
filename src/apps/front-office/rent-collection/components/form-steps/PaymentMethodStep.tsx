@@ -64,7 +64,7 @@ const PaymentMethodStep = () => {
   return (
     <Col span={12} md={10}>
       <SelectInput
-        name="cash_out_payment_meyhod_id"
+        name="cash_out_payment_method_id"
         label="transferTo"
         data={paymentMethods}
         clearable
