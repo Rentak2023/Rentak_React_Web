@@ -17,12 +17,18 @@ import ConfirmationStep from "../form-steps/ConfirmationStep";
 import { showNotification } from "apps/front-office/design-system/components/Notifications/showNotification";
 import { sendRentCollection } from "../../services/services";
 import { labels } from "./labels";
+import { useDisclosure } from "@mantine/hooks";
+import SuccessModal from "apps/front-office/design-system/components/SuccessModal";
 
 const RentPaymentContent = () => {
   const totalSteps = 5;
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef<any>();
+  const [
+    openedSuccessModal,
+    { open: openSuccessModal, close: closeSuccessModal },
+  ] = useDisclosure(false);
 
   const handleNextStep = () => {
     const form = formRef.current as Form;
@@ -46,26 +52,37 @@ const RentPaymentContent = () => {
     });
   };
 
-  const handleSubmit = async ({ formData }) => {
+  const handleSubmit = async ({ values }) => {
     // Handle form submission logic here
     setIsSubmitting(true);
     try {
-      const response = await sendRentCollection(formData);
-
+      const response = await sendRentCollection(values);
+      console.log(response.data)
       showNotification({
         message: response.data.message,
       });
 
-      if (response.data.url) {
-        window.location.href = response.data.url;
-      }
+      openSuccessModal();
+
+      setTimeout(() => {
+        if (response.data.payment_data.redirect_url) {
+          window.location.href = response.data.payment_data.redirect_url;
+        }
+      }, 1500);
     } catch (error: any) {
-      Object.entries(error.response.data.errors).map(([key, value]: any) => {
-        return showNotification({
+      if(error.response.data.message){
+        showNotification({
           type: "danger",
-          message: value[0],
+          message: error.response.data.message,
         });
-      });
+      }else{
+        Object.entries(error.response.data.errors).map(([key, value]: any) => {
+          return showNotification({
+            type: "danger",
+            message: value[0],
+          });
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -142,6 +159,8 @@ const RentPaymentContent = () => {
           )}
         </Flex>
       </Form>
+      <SuccessModal opened={openedSuccessModal} close={closeSuccessModal} />
+
     </StepperWrapper>
   );
 };

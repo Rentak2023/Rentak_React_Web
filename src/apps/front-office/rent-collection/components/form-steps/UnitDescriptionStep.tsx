@@ -50,15 +50,16 @@ const UnitDescriptionStep = () => {
   }, [productFees, rentAmount]);
 
   const fees = rentAmount > 0 ? (productFees / 100) * rentAmount : productFees;
+  
   const days = [...Array(29)].map((day, index) => ({
     label: index + 1,
     value: index + 1
   }));
-  console.log(days)
+
   return (
     <Col span={12} md={10}>
       <TextInput
-        name="property_description"
+        name="unit_description"
         label={`${trans("unitDescription")} ( ${trans(
           "unitDescriptionHint",
         )} )`}
@@ -110,7 +111,7 @@ const UnitDescriptionStep = () => {
         required
       />
       <NumberInput
-        name="annualIncreasePercentage"
+        name="annual_increase_percentage"
         label={trans("annualIncreasePercentage")}
         placeholder={trans("annualIncreasePercentage")}
         min={1}

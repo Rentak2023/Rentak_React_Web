@@ -7,13 +7,13 @@ const TenantInfoStep = () => {
   return (
     <Col span={12} md={10}>
       <TextInput
-        name="full_name"
+        name="tenant_name"
         label={trans("tenantFullName")}
         placeholder={trans("fullName")}
         required
       />
       <PhoneNumberInput
-        name="phone"
+        name="tenant_phone"
         label={trans("tenantPhoneNumber")}
         placeholder={trans("phoneNumber")}
         required
