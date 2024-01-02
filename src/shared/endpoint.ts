@@ -5,6 +5,7 @@ import user from "apps/front-office/account/user";
 import URLS from "apps/front-office/utils/urls";
 import { AxiosResponse } from "axios";
 import { apiBaseUrl, apiKey, apiOS } from "./flags";
+import { current } from "@mongez/react";
 
 const endpoint = new Endpoint({
   putToPost: false,
@@ -30,6 +31,7 @@ const endpointEvents = endpoint.events;
 endpointEvents.beforeSending(config => {
   const headers: any = config.headers;
   headers["os"] = apiOS;
+  headers['lang'] = current('localeCode')
 });
 
 endpointEvents.onSuccess((response: AxiosResponse) => {

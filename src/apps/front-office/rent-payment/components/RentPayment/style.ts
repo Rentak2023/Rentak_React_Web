@@ -49,7 +49,7 @@ export const StepperWrapper = styled.div`
       width: auto;
       height: auto;
       min-height: auto;
-      padding: 28.912px 57px;
+      padding: 20px 45px;
       ${devices.mediumMax}{
         padding: 14px;
       }
