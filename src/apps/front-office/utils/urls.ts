@@ -22,7 +22,7 @@ const URLS = {
   invoices: "/invoices",
   rentPayment: "/rent-payment" || "https://rent-ak.com/Contract/Form?product_id=1",
   rentCollection: "/rent-collection" ||  "https://rent-ak.com/Contract/RentCollectionForm",
-  maintenancePayment: "https://rent-ak.com/Contract/Form?product_id=2",
+  maintenancePayment: "/maintenance-payment" || "https://rent-ak.com/Contract/Form?product_id=2",
   units: "https://rent-ak.com/Listing/Index",
 
   pages: {

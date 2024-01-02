@@ -44,6 +44,12 @@
         "/rent-collection"
       ],
       "name": "rent-collection"
+    },
+    {
+      "entry": [
+        "/maintenance-payment"
+      ],
+      "name": "maintenance-payment"
     }
   ]
 }
