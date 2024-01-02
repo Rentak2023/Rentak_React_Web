@@ -22,13 +22,14 @@ import SuccessModal from "apps/front-office/design-system/components/SuccessModa
 
 const RentPaymentContent = () => {
   const totalSteps = 5;
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const formRef = useRef<any>();
   const [
     openedSuccessModal,
     { open: openSuccessModal, close: closeSuccessModal },
   ] = useDisclosure(false);
+
+  const formRef = useRef<any>();
 
   const handleNextStep = () => {
     const form = formRef.current as Form;
@@ -47,7 +48,7 @@ const RentPaymentContent = () => {
     form.validateVisible().then(() => {
       if (form.isValid()) {
         // move to the Prev step
-        setCurrentStep(prevStep => Math.max(prevStep - 1, 1));
+        setCurrentStep(prevStep => Math.max(prevStep - 1, 0));
       }
     });
   };
@@ -57,7 +58,7 @@ const RentPaymentContent = () => {
     setIsSubmitting(true);
     try {
       const response = await sendRentCollection(values);
-      console.log(response.data)
+      console.log(response.data);
       showNotification({
         message: response.data.message,
       });
@@ -70,12 +71,12 @@ const RentPaymentContent = () => {
         }
       }, 1500);
     } catch (error: any) {
-      if(error.response.data.message){
+      if (error.response.data.message) {
         showNotification({
           type: "danger",
           message: error.response.data.message,
         });
-      }else{
+      } else {
         Object.entries(error.response.data.errors).map(([key, value]: any) => {
           return showNotification({
             type: "danger",
@@ -108,13 +109,14 @@ const RentPaymentContent = () => {
             display: "none",
           },
         }}
-        active={currentStep - 1}
+        active={currentStep}
+        onStepClick={setCurrentStep}
         className="stepper"
         color={theme.colors.secondary[500]}>
         {[...Array(totalSteps)].map((_, index) => (
           <Stepper.Step
             key={index}
-            onClick={() => setCurrentStep(index + 1)}
+            // onClick={() => setCurrentStep(index + 1)}
             label={labels[index]}
             description={<ArrowIcon type="right" size={36} />}>
             <Line className="line" />
@@ -127,7 +129,7 @@ const RentPaymentContent = () => {
           <Grid>
             {allSteps.map((Component, index) => {
               return (
-                <Col key={index} hidden={index !== currentStep - 1}>
+                <Col key={index} hidden={index !== currentStep}>
                   <Component />
                 </Col>
               );
@@ -136,15 +138,15 @@ const RentPaymentContent = () => {
         </StepWrapper>
 
         <Flex
-          justify={currentStep !== 1 ? "space-between" : "end"}
+          justify={currentStep !== 0 ? "space-between" : "end"}
           fullWidth
           className="buttons">
-          {currentStep !== 1 && (
+          {currentStep !== 0 && (
             <Button onClick={handlePrevStep} type="button" variant="outline">
               <P4 color={theme.colors.white}>{trans("back")}</P4>
             </Button>
           )}
-          {currentStep < totalSteps ? (
+          {currentStep < totalSteps - 1 ? (
             <Button
               onClick={handleNextStep}
               variant="contract"
@@ -160,7 +162,6 @@ const RentPaymentContent = () => {
         </Flex>
       </Form>
       <SuccessModal opened={openedSuccessModal} close={closeSuccessModal} />
-
     </StepperWrapper>
   );
 };

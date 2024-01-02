@@ -22,7 +22,7 @@ import SuccessModal from "apps/front-office/design-system/components/SuccessModa
 
 const MaintenancePaymentContent = () => {
   const totalSteps = 5;
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [
     openedSuccessModal,
@@ -48,7 +48,7 @@ const MaintenancePaymentContent = () => {
     form.validateVisible().then(() => {
       if (form.isValid()) {
         // move to the Prev step
-        setCurrentStep(prevStep => Math.max(prevStep - 1, 1));
+        setCurrentStep(prevStep => Math.max(prevStep - 1, 0));
       }
     });
   };
@@ -58,7 +58,6 @@ const MaintenancePaymentContent = () => {
     setIsSubmitting(true);
     try {
       const response = await sendMaintenancePayment(values);
-      console.log(response.data)
       showNotification({
         message: response.data.message,
       });
@@ -103,13 +102,14 @@ const MaintenancePaymentContent = () => {
             display: "none",
           },
         }}
-        active={currentStep - 1}
+        active={currentStep}
+        onStepClick={setCurrentStep}
         className="stepper"
         color={theme.colors.secondary[500]}>
         {[...Array(totalSteps)].map((_, index) => (
           <Stepper.Step
             key={index}
-            onClick={() => setCurrentStep(index + 1)}
+            // onClick={() => setCurrentStep(index + 1)}
             label={labels[index]}
             description={<ArrowIcon type="right" size={36} />}>
             <Line className="line" />
@@ -122,7 +122,7 @@ const MaintenancePaymentContent = () => {
           <Grid>
             {allSteps.map((Component, index) => {
               return (
-                <Col key={index} hidden={index !== currentStep - 1}>
+                <Col key={index} hidden={index !== currentStep}>
                   <Component />
                 </Col>
               );
@@ -131,15 +131,15 @@ const MaintenancePaymentContent = () => {
         </StepWrapper>
 
         <Flex
-          justify={currentStep !== 1 ? "space-between" : "end"}
+          justify={currentStep !== 0 ? "space-between" : "end"}
           fullWidth
           className="buttons">
-          {currentStep !== 1 && (
+          {currentStep !== 0 && (
             <Button onClick={handlePrevStep} type="button" variant="outline">
               <P4 color={theme.colors.white}>{trans("back")}</P4>
             </Button>
           )}
-          {currentStep < totalSteps ? (
+          {currentStep < totalSteps - 1 ? (
             <Button
               onClick={handleNextStep}
               variant="contract"
