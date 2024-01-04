@@ -20,12 +20,21 @@ const PaymentMethodsStep = () => {
       ));
       setPaymentMethods(formattedPaymentMethods)
     } catch (error: any) {
-      Object.entries(error.response.data.errors).map(([key, value]: any) => {
-        return showNotification({
+      console.log(error)
+      if (error.response.data.message) {
+        showNotification({
           type: "danger",
-          message: value[0],
+          message: error.response.data.message,
         });
-      });
+      }
+      if(error.response.data.errors){
+        Object.entries(error.response.data.errors).map(([key, value]: any) => {
+          return showNotification({
+            type: "danger",
+            message: value[0],
+          });
+        });
+      }
     }
   };
 
@@ -36,7 +45,7 @@ const PaymentMethodsStep = () => {
   return (
     <Col span={12} md={10}>
       <SelectInput
-        name="cash_in_payment_meyhod_id"
+        name="cash_in_payment_method_id"
         label="paymentMethods"
         data={paymentMethods}
         required

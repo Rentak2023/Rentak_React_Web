@@ -76,7 +76,8 @@ const RentPaymentContent = () => {
           type: "danger",
           message: error.response.data.message,
         });
-      } else {
+      }
+      if(error.response.data.errors){
         Object.entries(error.response.data.errors).map(([key, value]: any) => {
           return showNotification({
             type: "danger",
