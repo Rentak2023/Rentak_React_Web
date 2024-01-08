@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Grid, Stepper } from "@mantine/core";
 import { trans } from "@mongez/localization";
 import { P4 } from "apps/front-office/design-system/components/Typography";
@@ -19,6 +19,7 @@ import { sendRentCollection } from "../../services/services";
 import { labels } from "./labels";
 import { useDisclosure } from "@mantine/hooks";
 import SuccessModal from "apps/front-office/design-system/components/SuccessModal";
+import ReactGA from "react-ga";
 
 const RentPaymentContent = () => {
   const totalSteps = 5;
@@ -36,6 +37,40 @@ const RentPaymentContent = () => {
 
     form.validateVisible().then(() => {
       if (form.isValid()) {
+        switch (currentStep) {
+          case 0:
+            ReactGA.event({
+              category: "Rent Payment",
+              action: "Landlord Info Filled",
+            });
+            break;
+          case 1:
+            ReactGA.event({
+              category: "Rent Collection",
+              action: "Tenant Info Filled",
+            });
+            break;
+          case 2:
+            ReactGA.event({
+              category: "Rent Collection",
+              action: "Payment Method Filled",
+            });
+            break;
+          case 3:
+            ReactGA.event({
+              category: "Rent Collection",
+              action: "Unit Description Filled",
+            });
+            break;
+          case 4:
+            ReactGA.event({
+              category: "Rent Collection",
+              action: "Form Confirmation",
+            });
+            break;
+          default:
+            break;
+        }
         // move to the next step
         setCurrentStep(prevStep => Math.min(prevStep + 1, totalSteps));
       }
@@ -58,11 +93,13 @@ const RentPaymentContent = () => {
     setIsSubmitting(true);
     try {
       const response = await sendRentCollection(values);
-      console.log(response.data);
       showNotification({
         message: response.data.message,
       });
-
+      ReactGA.event({
+        category: "Rent Collection",
+        action: "Rent Collection Success",
+      });
       openSuccessModal();
 
       setTimeout(() => {
@@ -71,6 +108,10 @@ const RentPaymentContent = () => {
         }
       }, 1500);
     } catch (error: any) {
+      ReactGA.event({
+        category: "Rent Collection",
+        action: "Rent Collection Failed",
+      });
       if (error.response.data.message) {
         showNotification({
           type: "danger",
@@ -98,6 +139,13 @@ const RentPaymentContent = () => {
     ConfirmationStep,
   ];
 
+  useEffect(() => {
+    ReactGA.event({
+      category: "Rent Collection",
+      action: "Rent Collection Opened",
+    });
+  }, []);
+  
   return (
     <StepperWrapper>
       <Stepper

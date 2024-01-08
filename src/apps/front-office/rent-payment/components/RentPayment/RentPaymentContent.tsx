@@ -8,7 +8,7 @@ import { theme } from "apps/front-office/design-system";
 import { StepWrapper, StepperWrapper } from "./style";
 import { ArrowIcon } from "shared/assets/svgs";
 import { Line } from "apps/front-office/design-system/components/Shapes/Line";
-import { Form, useForm, useFormControl } from "@mongez/react-form";
+import { Form } from "@mongez/react-form";
 import PersonalInfoStep from "../Steps/PersonalInfoStep";
 import PaymentMethodsStep from "../Steps/PaymentMethodsStep";
 import OwnerInfoStep from "../Steps/OwnerInfoStep";
@@ -17,11 +17,9 @@ import ConfirmationStep from "../Steps/ConfirmationStep";
 import { showNotification } from "apps/front-office/design-system/components/Notifications/showNotification";
 import { sendRentPayment } from "../../services/services";
 import { labels } from "./labels";
-import SubmitButton from "apps/front-office/design-system/components/Form/SubmitButton";
 import { useDisclosure } from "@mantine/hooks";
 import SuccessModal from "apps/front-office/design-system/components/SuccessModal";
 import ReactGA from "react-ga";
-import { routerEvents } from "@mongez/react-router";
 
 const RentPaymentContent = () => {
   const totalSteps = 5;
@@ -101,13 +99,20 @@ const RentPaymentContent = () => {
       });
 
       openSuccessModal();
-
+      ReactGA.event({
+        category: "Rent Payment",
+        action: "Rent Payment Success",
+      });
       setTimeout(() => {
         if (response.data.payment_data.redirect_url) {
           window.location.href = response.data.payment_data.redirect_url;
         }
       }, 1500);
     } catch (error: any) {
+      ReactGA.event({
+        category: "Rent Payment",
+        action: "Rent Payment Failed",
+      });
       Object.entries(error.response.data.errors).map(([key, value]: any) => {
         return showNotification({
           type: "danger",
