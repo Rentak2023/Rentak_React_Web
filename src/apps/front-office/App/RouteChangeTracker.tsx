@@ -1,0 +1,15 @@
+import { routerEvents } from "@mongez/react-router";
+import React from "react";
+
+import ReactGA from "react-ga";
+
+const RouteChangeTracker = ({ route, navigationMode, previousRoute }: any) => {
+  previousRoute.listen((location, action) => {
+    ReactGA.set({ page: location.pathname });
+    ReactGA.pageview(location.pathname);
+  });
+
+  return <div></div>;
+};
+
+export default routerEvents.onNavigating(RouteChangeTracker);

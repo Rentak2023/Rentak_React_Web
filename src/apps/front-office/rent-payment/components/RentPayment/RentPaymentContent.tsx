@@ -20,6 +20,8 @@ import { labels } from "./labels";
 import SubmitButton from "apps/front-office/design-system/components/Form/SubmitButton";
 import { useDisclosure } from "@mantine/hooks";
 import SuccessModal from "apps/front-office/design-system/components/SuccessModal";
+import ReactGA from "react-ga";
+import { routerEvents } from "@mongez/react-router";
 
 const RentPaymentContent = () => {
   const totalSteps = 5;
@@ -37,6 +39,20 @@ const RentPaymentContent = () => {
 
     form.validateVisible().then(() => {
       if (form.isValid()) {
+        if(currentStep === 0){
+          ReactGA.event({
+            category: 'Rent Payment',
+            action: 'Tenant Info Filled'
+          });
+        }
+        switch (currentStep) {
+          case value:
+            
+            break;
+        
+          default:
+            break;
+        }
         // move to the next step
         setCurrentStep(prevStep => Math.min(prevStep + 1, totalSteps));
       }
@@ -91,6 +107,14 @@ const RentPaymentContent = () => {
     UnitDescriptionStep,
     ConfirmationStep,
   ];
+
+  useEffect(() => {
+    ReactGA.event({
+      category: 'Rent Payment',
+      action: 'Rent Payment Opened'
+    });
+  }, [])
+
 
   return (
     <StepperWrapper>
