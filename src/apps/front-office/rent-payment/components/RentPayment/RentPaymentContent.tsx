@@ -39,17 +39,37 @@ const RentPaymentContent = () => {
 
     form.validateVisible().then(() => {
       if (form.isValid()) {
-        if(currentStep === 0){
-          ReactGA.event({
-            category: 'Rent Payment',
-            action: 'Tenant Info Filled'
-          });
-        }
         switch (currentStep) {
-          case value:
-            
+          case 0:
+            ReactGA.event({
+              category: "Rent Payment",
+              action: "Tenant Info Filled",
+            });
             break;
-        
+          case 1:
+            ReactGA.event({
+              category: "Rent Payment",
+              action: "Payment Method Filled",
+            });
+            break;
+          case 2:
+            ReactGA.event({
+              category: "Rent Payment",
+              action: "Landlord Info Filled",
+            });
+            break;
+          case 3:
+            ReactGA.event({
+              category: "Rent Payment",
+              action: "Unit Description Filled",
+            });
+            break;
+          case 4:
+            ReactGA.event({
+              category: "Rent Payment",
+              action: "Form Confirmation",
+            });
+            break;
           default:
             break;
         }
@@ -75,7 +95,7 @@ const RentPaymentContent = () => {
     setIsSubmitting(true);
     try {
       const response = await sendRentPayment(values);
-      console.log(response.data)
+      console.log(response.data);
       showNotification({
         message: response.data.message,
       });
@@ -87,7 +107,6 @@ const RentPaymentContent = () => {
           window.location.href = response.data.payment_data.redirect_url;
         }
       }, 1500);
-      
     } catch (error: any) {
       Object.entries(error.response.data.errors).map(([key, value]: any) => {
         return showNotification({
@@ -110,11 +129,10 @@ const RentPaymentContent = () => {
 
   useEffect(() => {
     ReactGA.event({
-      category: 'Rent Payment',
-      action: 'Rent Payment Opened'
+      category: "Rent Payment",
+      action: "Rent Payment Opened",
     });
-  }, [])
-
+  }, []);
 
   return (
     <StepperWrapper>
