@@ -50,6 +50,12 @@
         "/maintenance-payment"
       ],
       "name": "maintenance-payment"
+    },
+    {
+      "entry": [
+        "/units"
+      ],
+      "name": "units"
     }
   ]
 }

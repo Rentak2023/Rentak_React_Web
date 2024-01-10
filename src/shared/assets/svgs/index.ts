@@ -25,3 +25,4 @@ export { default as FormIcon } from "./FormIcon";
 export { default as SuccessIcon } from "./SuccessIcon";
 export { default as ErrorIcon } from "./ErrorIcon";
 export { default as CloseModalIcon } from "./CloseModalIcon";
+export { default as UnitsIcon } from "./UnitsIcon";
