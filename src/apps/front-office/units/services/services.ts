@@ -1,17 +1,23 @@
+import { current } from "@mongez/react";
 import endpoint from "shared/endpoint";
 
-export function getPaymentMethodsOut() {
-  return endpoint.get("/payment-method/get_all_cash_out_payment_methods");
+export function getAllProperties(params) {
+  return endpoint.get(`/unit/get-all-units?lang=${current("localeCode")}`, {params});
 }
 
-export function getBanks() {
-  return endpoint.get("/bank/get-all-banks");
+export function getFinishingTypes() {
+  return endpoint.get(`/unit/get-all-finish-types?lang=${current("localeCode")}`);
 }
 
-export function getProducts() {
-  return endpoint.get("/api/Product/get-all-products");
+export function getPropertyTypes() {
+  return endpoint.get(`/unit/get-all-property-types?lang=${current("localeCode")}`);
 }
 
-export function sendRentCollection(formData) {
-  return endpoint.post("/contract/create_rent_collection_contract", formData);
+export function getCities() {
+  return endpoint.get(`/location/get-all-cities`);
 }
+
+export function getDistricts() {
+  return endpoint.get(`/location/get-all-governorates`);
+}
+

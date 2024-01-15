@@ -465,7 +465,7 @@ groupedTranslations({
     ar: "مساحة الوحدة"
   },
   contractPeriod: {
-    en: "Contract Period (In Months)",
+    en: "Contract duration (In Months)",
     ar: "مدة العقد (بالشهور)"
   },
   startDate:{
@@ -660,6 +660,78 @@ groupedTranslations({
   formWasFailed: {
     en: "Your Form was unfortunately failed.",
     ar: "لقد فشل النموذج الخاص بك للأسف."
+  },
+  showing: {
+    en: "Showing",
+    ar: "عرض"
+  },
+  results: {
+    en: "Results",
+    ar: "نتائج"
+  },
+  page: {
+    en: "Page",
+    ar: "صفحة"
+  },
+  of: {
+    en: "of",
+    ar: 'من'
+  },
+  listed: {
+    en: "Listed",
+    ar: "مدرج"
+  },
+  unitsRenting:{
+    en: "Units Renting",
+    ar: "إيجار الوحدات"
+  },
+  selectCity: {
+    en: "Select City",
+    ar: "اختر مدينة"
+  },
+  districts: {
+    en: "Districts",
+    ar: "المناطق"
+  },
+  selectDistrict: {
+    en: "Select District",
+    ar: "اختر المنطقة"
+  },
+  finishingTypes: {
+    en: "Finishing Types",
+    ar: "أنواع التشطيب"
+  },
+  propertyType: {
+    en: "Property Type",
+    ar: "نوع العقار"
+  },
+  selectRooms: {
+    en: "Select number of rooms",
+    ar: "اختر عدد الغرف"
+  },
+  selectToilets:{
+    en: "Select number of toilets",
+    ar: "اختر عدد الحمامات"
+  },
+  rooms: {
+    en: "Rooms",
+    ar: "الغرف"
+  },
+  toilets: {
+    en: "Toilets",
+    ar: "الحمامات"
+  },
+  findPlace: {
+    en: "Find your place in",
+    ar: ""
+  },
+  searchPlaceholder: {
+    en: 'Search address, city, location',
+    ar: "عنوان البحث، المدينة، الموقع"
+  },
+  resetOptions: {
+    en: "Reset all options",
+    ar: "إعادة تعيين كافة الخيارات"
   }
   
 });

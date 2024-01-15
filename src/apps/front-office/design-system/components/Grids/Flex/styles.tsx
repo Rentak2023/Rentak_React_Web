@@ -6,7 +6,7 @@ import { StyledFlexWrapper } from "./type";
 import devices from "../../../utils/devices";
 
 const Wrapper = styled("div", {
-  shouldForwardProp: (prop) =>
+  shouldForwardProp: prop =>
     isPropValid(prop) &&
     !["gap", "width", "height", "direction"].includes(prop),
 })<StyledFlexWrapper>`
@@ -62,6 +62,11 @@ const Wrapper = styled("div", {
     flex &&
     css`
       flex: ${flex};
+    `}
+    ${({ flexWrap }) =>
+    flexWrap &&
+    css`
+      flex-wrap: ${flexWrap};
     `}
     ${({ gap, direction, persistentGap }) =>
     gap &&

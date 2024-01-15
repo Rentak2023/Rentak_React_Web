@@ -12,9 +12,10 @@ import {
 import { requiredRule } from "@mongez/react-form";
 import { trans } from "@mongez/localization";
 import { useEffect } from "react";
+import { SearchIcon } from "shared/assets/svgs";
 
 function TextInput({ placeholder, label, icon, ...props }: InputPropsType) {
-  const { id, value, changeValue, error, name, visibleElementRef, otherProps } =
+  const { id, value, changeValue, error, visibleElementRef, otherProps } =
     useFormControl(props);
 
   return (
@@ -22,8 +23,9 @@ function TextInput({ placeholder, label, icon, ...props }: InputPropsType) {
       <InputLabel htmlFor={id} required={props.required}>
         {trans(label)}
       </InputLabel>
-      <WrapperInput error={error}>
+      <WrapperInput error={error} className="input-wrapper">
         <Wrapper radius={props.bigRadius}>
+          {icon && <SearchIcon />}
           <StyledInput
             placeholder={placeholder}
             value={value}

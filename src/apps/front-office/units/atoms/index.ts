@@ -1,8 +1,8 @@
 import { atom } from "@mongez/react-atom";
 
-export const rentCollectionAtom = atom({
-  key: "rentCollection",
+export const propertiesAtom = atom({
+  key: "properties",
   default: {
-    username: '',
+    properties: []
   }
 })

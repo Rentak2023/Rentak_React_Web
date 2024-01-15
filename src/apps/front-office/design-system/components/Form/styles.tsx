@@ -1,9 +1,10 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Flex } from "../Grids";
-import { Select, Input, Textarea, FileInput, Button } from "@mantine/core";
+import { Select, Input, Textarea, FileInput, Button, Radio } from "@mantine/core";
 import { theme } from "../../utils/theme";
 import devices from "../../utils/devices";
+import { RangeSlider } from '@mantine/core';
 
 type Types = any & {
   error?: boolean;
@@ -13,9 +14,9 @@ type Types = any & {
   noStyle?: boolean;
   bg?: boolean;
 };
-export const SubmitButtonWrapper = styled.div`
+export const SubmitButtonWrapper = styled.div<any>`
   /* margin: 16px 0; */
-  width: 100%;
+  width: ${({ fullWidth }) => fullWidth ?  "100%" : "auto"};
 `;
 export const WrapperInput = styled(Flex)<Types>`
   width: 100%;
@@ -153,15 +154,49 @@ export const StyledSelectInput = styled(Select)<Types>`
 export const CheckboxWrapper = styled(Flex)`
   label: Checkbox-wrapper;
   margin: 0.5rem 0;
-  .mantine-Checkbox-body {
-    align-items: center;
+  input:checked{
+    border-color: ${theme.colors.secondary[500]};
+    background-color: ${theme.colors.secondary[500]};
   }
+`;
 
-  .mantine-Checkbox-input {
-    &:checked {
-      background-color: ${theme.colors.primaryColor};
+export const StyledRadio = styled(Radio)`
+  input:checked{
+    background-color: #fff;
+    border-color: ${theme.colors.secondary[500]};
+  }
+  svg{
+    fill: ${theme.colors.secondary[500]};
+    path{
+      fill: ${theme.colors.secondary[500]};
     }
-    color: ${theme.colors.primaryColor};
-    border-color: ${theme.colors.primaryColor};
+  }
+`;
+
+export const StyledRangeSlider = styled(RangeSlider)`
+  .ltr-Slider-track::before,
+  .rtl-Slider-track::before{
+    border-radius: 0;
+  }
+  .ltr-Slider-bar,
+  .rtl-Slider-bar{
+    background-color: ${theme.colors.secondary[500]};
+  }
+  .ltr-Slider-thumb,
+  .rtl-Slider-thumb{
+    background-color: ${theme.colors.secondary[500]};
+    border-color: transparent;
+    width: 22px;
+    height: 22px;
+  }
+  .ltr-Slider-track,
+  .rtl-Slider-track{
+    height: 5px;
+  }
+  .ltr-Slider-markLabel,
+  .rtl-Slider-markLabel{
+    color: ${theme.colors.secondary[600]};
+    position: absolute;
+    top: -45px;
   }
 `;

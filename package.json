@@ -42,10 +42,12 @@
         "@mongez/user": "^1.0.12",
         "@mongez/validator": "^1.0.18",
         "@tabler/icons-react": "^2.24.0",
+        "rc-slider": "^9.6.5",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-ga": "^3.3.1",
         "react-lottie-player": "^1.5.5",
+        "react-responsive-carousel": "^3.2.23",
         "sass": "^1.66.1",
         "stylis-plugin-rtl": "^2.1.1",
         "swiper": "^11.0.4"

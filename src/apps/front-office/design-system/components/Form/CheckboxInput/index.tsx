@@ -17,7 +17,7 @@ function CheckboxInput({
     useFormControl(props);
 
   return (
-    <Flex direction="column" fullWidth gap="0" ref={visibleElementRef}>
+    <Flex direction="column" gap="0" ref={visibleElementRef}>
       <CheckboxWrapper>
         <Checkbox
           placeholder={placeholder}

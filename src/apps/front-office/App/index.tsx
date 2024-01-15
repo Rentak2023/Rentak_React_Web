@@ -13,6 +13,7 @@ import React, { useState } from "react";
 import { getPrimaryFont } from "../design-system";
 import ProgressBar from "../design-system/Indicators/ProgressBar";
 import { cacheLTR, cacheRTL, cacheValue } from "./LayoutSettings";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 const themeCacheKey = "theme-mode";
 

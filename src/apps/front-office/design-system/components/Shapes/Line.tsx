@@ -5,6 +5,8 @@ export const Line = styled.div<any>`
   height: 1px;
   width: 100%;
   background: ${({color}) => color ?? "#e1e1e6"};
+  margin: ${({margin}) => margin ?? "0"};
+
   /* ${({ color }) =>
     color &&
     css`

@@ -12,6 +12,7 @@ export type FlexPropsType = {
   align?: CSS.Property.AlignItems;
   gap?: CSS.Property.Gap;
   flex?: CSS.Property.Flex;
+  flexWrap?: CSS.Property.FlexWrap;
   fullWidth?: boolean;
   fullHeight?: boolean;
   persistentGap?: boolean;
