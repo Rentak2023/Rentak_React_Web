@@ -3,7 +3,7 @@ import { FormControlProps } from "@mongez/react-form";
 
 export type InputPropsType = InputProps &
   FormControlProps & {
-    name: string;
+    name?: string;
     defaultValue?: any;
     required?: boolean;
     icon?: boolean;

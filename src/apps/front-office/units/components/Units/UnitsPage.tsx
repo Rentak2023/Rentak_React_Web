@@ -6,11 +6,21 @@ import { UnitsIcon } from "shared/assets/svgs";
 import SearchForm from "../SearchForm";
 import Properties from "../Properties";
 import Testimonials from "../Testimonials";
+import ReactGA from "react-ga";
+import { useEffect } from "react";
 
 function UnitsPage() {
+  
+  useEffect(() => {
+    ReactGA.event({
+      category: "Units",
+      action: "Units Page Opened",
+    });
+  }, []);
+
   return (
     <>
-      <Helmet title={trans("rentCollection")} />
+      <Helmet title={trans("units")} />
       <>
         <PageHeader
           title="unitsRenting"

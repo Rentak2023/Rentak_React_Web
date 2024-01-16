@@ -4,9 +4,9 @@ import { Flex } from "apps/front-office/design-system/components/Grids";
 
 const RoomsAndToilets = () => {
   return (
-    <Flex gap="57px" fullWidth>
+    <Flex gap="57px" fullWidth className="flex">
       <SelectInput
-        name="city"
+        name="room_numers"
         label="rooms"
         placeholder={trans("selectRooms")}
         data={[
@@ -14,11 +14,11 @@ const RoomsAndToilets = () => {
           { label: 3, value: "3" },
           { label: 4, value: "4" },
         ]}
-        required
+        
         clearable
       />
       <SelectInput
-        name="city"
+        name="bathroom_numbers"
         label="toilets"
         placeholder={trans("selectToilets")}
         data={[
@@ -26,7 +26,6 @@ const RoomsAndToilets = () => {
           { label: 2, value: "2" },
           { label: 3, value: "3" },
         ]}
-        required
         clearable
       />
     </Flex>

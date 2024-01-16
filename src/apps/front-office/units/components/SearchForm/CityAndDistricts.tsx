@@ -39,7 +39,7 @@ const CityAndDistricts = () => {
   }, []);
 
   return (
-    <Flex gap="57px" fullWidth>
+    <Flex gap="57px" fullWidth className="flex">
       <SelectInput
         name="city_id"
         label="city"

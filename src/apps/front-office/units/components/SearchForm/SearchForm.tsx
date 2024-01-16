@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { FormCard, FormWrapper } from "./style";
 import { Form } from "@mongez/react-form";
 import {
@@ -18,12 +18,55 @@ import { theme } from "apps/front-office/design-system";
 import SearchInput from "./SearchInput";
 import Button from "apps/front-office/design-system/components/Button";
 import { ResetIcon } from "shared/assets/svgs";
+import { propertiesAtom } from "../../atoms";
+import { showNotification } from "apps/front-office/design-system/components/Notifications/showNotification";
+import ReactGA from "react-ga";
+import { getAllProperties } from "../../services/services";
 
 const SearchForm = () => {
+  const [properties, setProperties] = propertiesAtom.useState();
   const formRef = useRef<any>();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const searchHandler = ({ values }) => {
+  const searchHandler = async ({ values }) => {
     console.log(values);
+    setIsSubmitting(true);
+    try {
+      const response = await getAllProperties(values);
+      
+      showNotification({
+        message: response.data.message,
+      });
+
+      setProperties({ properties: response.data.items });
+
+      ReactGA.event({
+        category: "Search",
+        action: "Search Success",
+      });
+
+    } catch (error: any) {
+      ReactGA.event({
+        category: "Search",
+        action: "Search Failed",
+      });
+      if (error.response.data.message) {
+        showNotification({
+          type: "danger",
+          message: error.response.data.message,
+        });
+      }
+      if(error.response.data.errors){
+        Object.entries(error.response.data.errors).map(([key, value]: any) => {
+          return showNotification({
+            type: "danger",
+            message: value[0],
+          });
+        });
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const resetFormHandler = () => {
@@ -36,12 +79,12 @@ const SearchForm = () => {
       <Container>
         <Form onSubmit={searchHandler} ref={formRef}>
           <FormCard>
-            <Flex justify="space-between" fullWidth>
+            <Flex justify="space-between" fullWidth className="flex search-and-reset">
               <Flex direction="column">
                 <P4 color={theme.colors.grey[500]}>{trans("findPlace")}</P4>
                 <SearchInput />
               </Flex>
-              <Flex>
+              <Flex className="reset">
                 <Button noStyle onClick={resetFormHandler}>
                   <Flex align="center">
                     <ResetIcon /> <P4>{trans("resetOptions")}</P4>
@@ -57,7 +100,7 @@ const SearchForm = () => {
               <RoomsAndToilets />
               <PriceRange />
               <Flex justify="end" fullWidth>
-                <SubmitButton>
+                <SubmitButton isSubmitting={isSubmitting}>
                   <P4
                     color={theme.colors.white}
                     style={{ textTransform: "uppercase" }}>

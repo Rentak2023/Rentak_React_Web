@@ -14,7 +14,7 @@ function RadioInput({
   id,
   ...props
 }: InputPropsType) {
-  const { checked, setChecked, error, visibleElementRef, otherProps } =
+  const { value, changeValue, error, visibleElementRef, otherProps } =
     useFormControl(props);
 
   return (
@@ -22,9 +22,11 @@ function RadioInput({
       <StyledRadio
         placeholder={placeholder}
         label={label}
-        checked={checked}
+        value={value}
+        // checked={checked}
         onChange={e => {
-          setChecked(e.currentTarget.checked);
+          console.log(e.currentTarget.value)
+          changeValue(e.currentTarget.value);
         }}
         {...otherProps}
       />

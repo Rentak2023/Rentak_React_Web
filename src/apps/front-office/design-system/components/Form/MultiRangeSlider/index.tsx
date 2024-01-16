@@ -1,5 +1,6 @@
 import { useFormControl } from '@mongez/react-form';
 import { StyledRangeSlider } from '../styles';
+import { P4 } from '../../Typography';
 
 const MultiRangeSlider = (props) => {
   const { value, changeValue, error, visibleElementRef, otherProps } =
@@ -16,8 +17,8 @@ const MultiRangeSlider = (props) => {
         value={value}
         {...otherProps}
         marks={[
-          { value: props.min, label: props.min },
-          { value: props.max, label: props.max },
+          { value: props.min, label: <P4>{Math.floor(props.min / 1000)}k EGP</P4> },
+          { value: props.max, label: <P4>{Math.floor(props.max / 1000)}k EGP</P4>},
         ]}
       />
     </div>

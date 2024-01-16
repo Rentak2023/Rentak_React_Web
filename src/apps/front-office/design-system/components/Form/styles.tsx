@@ -199,4 +199,10 @@ export const StyledRangeSlider = styled(RangeSlider)`
     position: absolute;
     top: -45px;
   }
+  .ltr-Slider-label,
+  .rtl-Slider-label{
+    /* display: none; */
+    background-color: transparent;
+    color: ${theme.colors.secondary[500]}
+  }
 `;

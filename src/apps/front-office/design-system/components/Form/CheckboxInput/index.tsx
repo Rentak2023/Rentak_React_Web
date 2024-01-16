@@ -13,7 +13,7 @@ function CheckboxInput({
   id,
   ...props
 }: InputPropsType) {
-  const { checked, setChecked, error, visibleElementRef, otherProps } =
+  const { value, changeValue, checked, setChecked, error, visibleElementRef, otherProps } =
     useFormControl(props);
 
   return (
@@ -23,9 +23,10 @@ function CheckboxInput({
           placeholder={placeholder}
           defaultChecked={defaultChecked}
           label={label}
-          checked={checked}
+          value={value}
           onChange={e => {
-            setChecked(e.currentTarget.checked);
+            console.log(e.currentTarget.value)
+            changeValue(e.currentTarget.value);
           }}
           {...otherProps}
         />
