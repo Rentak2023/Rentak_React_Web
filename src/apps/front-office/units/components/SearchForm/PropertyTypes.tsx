@@ -29,7 +29,8 @@ const PropertyTypes = () => {
           <CheckboxInput
             key={type.id}
             name="property_type"
-            value={type.id}
+            multiple
+            defaultValue={type.id}
             label={type.type_name}
           />
         ))}

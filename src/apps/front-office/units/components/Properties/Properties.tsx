@@ -2,18 +2,23 @@ import React, { Fragment, useEffect, useState } from "react";
 import { getAllProperties } from "../../services/services";
 import Loader from "apps/front-office/design-system/components/Loader";
 import Property from "./Property";
-import { Grid } from "@mantine/core";
+import { Grid, Space } from "@mantine/core";
 import {
   Col,
   Container,
+  Flex,
 } from "apps/front-office/design-system/components/Grids";
 import { propertiesAtom } from "../../atoms";
 import { Pagination as MantinePagination } from "@mantine/core";
 import { PaginationWrapper, PropertiesWrapper, Wrapper } from "./style";
 import { ArrowIcon, DirectionIcon } from "shared/assets/svgs";
-import { Small } from "apps/front-office/design-system/components/Typography";
+import {
+  P4,
+  Small,
+} from "apps/front-office/design-system/components/Typography";
 import { theme } from "apps/front-office/design-system";
 import { trans } from "@mongez/localization";
+import Is from "@mongez/supportive-is";
 
 const Properties = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -51,31 +56,41 @@ const Properties = () => {
   return (
     <Wrapper>
       <Container>
-        <Small color={theme.colors.secondary[400]} className="results">
-          {`${trans("showing")} ${pageSize} ${trans("results")}, ${trans(
-            "page",
-          )} ${currentPage} ${trans("of")} ${totalPages} `}
-        </Small>
-        <PropertiesWrapper>
-          <Grid>
-            {properties.properties.map((property: any) => (
-              <Fragment key={property.property_id}>
-                <Col span={12} md={6} lg={4}>
-                  <Property property={property} />
-                </Col>
-              </Fragment>
-            ))}
-          </Grid>
-          <PaginationWrapper>
-            <MantinePagination
-              value={currentPage}
-              total={totalPages}
-              onChange={handlePageChange}
-              nextIcon={() => <DirectionIcon type="right" />}
-              previousIcon={() => <DirectionIcon type="left" />}
-            />
-          </PaginationWrapper>
-        </PropertiesWrapper>
+        {Is.empty(properties.properties) ? (
+          <Flex justify="center" align="center" fullWidth>
+            <Space h={100}/>
+            <P4>{trans("noItems")}</P4>
+            <Space h={100}/>
+          </Flex>
+        ) : (
+          <>
+            <Small color={theme.colors.secondary[400]} className="results">
+              {`${trans("showing")} ${pageSize} ${trans("results")}, ${trans(
+                "page",
+              )} ${currentPage} ${trans("of")} ${totalPages} `}
+            </Small>
+            <PropertiesWrapper>
+              <Grid>
+                {properties.properties.map((property: any) => (
+                  <Fragment key={property.property_id}>
+                    <Col span={12} md={6} lg={4}>
+                      <Property property={property} />
+                    </Col>
+                  </Fragment>
+                ))}
+              </Grid>
+              <PaginationWrapper>
+                <MantinePagination
+                  value={currentPage}
+                  total={totalPages}
+                  onChange={handlePageChange}
+                  nextIcon={() => <DirectionIcon type="right" />}
+                  previousIcon={() => <DirectionIcon type="left" />}
+                />
+              </PaginationWrapper>
+            </PropertiesWrapper>
+          </>
+        )}
       </Container>
     </Wrapper>
   );

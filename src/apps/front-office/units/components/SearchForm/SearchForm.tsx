@@ -32,10 +32,10 @@ const SearchForm = () => {
     console.log(values);
     setIsSubmitting(true);
     try {
-      const response = await getAllProperties(values);
+      const response : any = await getAllProperties(values);
       
       showNotification({
-        message: response.data.message,
+        message: response.message,
       });
 
       setProperties({ properties: response.data.items });
@@ -71,7 +71,6 @@ const SearchForm = () => {
 
   const resetFormHandler = () => {
     const form = formRef.current as Form;
-
     form.reset();
   }
   return (

@@ -732,6 +732,10 @@ groupedTranslations({
   resetOptions: {
     en: "Reset all options",
     ar: "إعادة تعيين كافة الخيارات"
+  },
+  noItems: {
+    en: "There are no results for your search.",
+    ar: "لا توجد نتائج للبحث."
   }
   
 });

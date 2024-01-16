@@ -29,7 +29,7 @@ const FinishingTypes = () => {
             <RadioInput
               key={type.id}
               name="finish_type"
-              value={type.id}
+              defaultValue={type.id}
               label={type.type_name}
             />
           ))}

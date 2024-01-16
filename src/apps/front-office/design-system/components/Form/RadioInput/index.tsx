@@ -1,7 +1,4 @@
-import {
-  StyledRadio,
-  
-} from "../styles";
+import { StyledRadio } from "../styles";
 import InputError from "../InputError";
 import { Flex } from "../../Grids";
 import { InputPropsType } from "../types";
@@ -14,19 +11,34 @@ function RadioInput({
   id,
   ...props
 }: InputPropsType) {
-  const { value, changeValue, error, visibleElementRef, otherProps } =
-    useFormControl(props);
+  const {
+    checked,
+    value,
+    setChecked,
+    error,
+    name,
+    visibleElementRef,
+    otherProps,
+  } = useFormControl(props, {
+    multiple: false,
+    isCollectable(formControl) {
+      return formControl.checked && Boolean(formControl.value);
+    },
+    collectValue: formControl => {
+      return formControl.checked ? Number(formControl.value) : null;
+    },
+  });
 
   return (
     <Flex direction="column" ref={visibleElementRef}>
       <StyledRadio
         placeholder={placeholder}
         label={label}
+        name={name}
         value={value}
-        // checked={checked}
+        checked={checked}
         onChange={e => {
-          console.log(e.currentTarget.value)
-          changeValue(e.currentTarget.value);
+          setChecked(e.currentTarget.checked);
         }}
         {...otherProps}
       />
@@ -39,6 +51,5 @@ export default RadioInput;
 
 RadioInput.defaultProps = {
   type: "radio",
-  defaultValue: 1,
   rules: [requiredRule],
 };
