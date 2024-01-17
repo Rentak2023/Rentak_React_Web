@@ -16,7 +16,7 @@ import Properties from "../Properties";
 export default function HomePage() {
   return (
     <>
-      <Helmet title={trans(mainTranslation.home)} appendAppName={false} />
+      <Helmet title={trans('rentakApp')} appendAppName={false} />
 
       <MainSlider />
       {/* <BookingStrip /> */}

@@ -1,11 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { Flex } from "apps/front-office/design-system/components/Grids";
-import Property from "./Property";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { ArrowIcon, DirectionIcon } from "shared/assets/svgs";
-import { Overlay } from "./style";
+import { ArrowIcon } from "shared/assets/svgs";
+import Property from "apps/front-office/design-system/components/Property";
 
 const PropertiesSlider = ({ properties }) => {
   return (

@@ -16,6 +16,10 @@ groupedTranslations({
     en: "Home Page",
     ar: "الصفحة الرئيسية",
   },
+  rentakApp: {
+    en: "rentak App",
+    ar: "رينتك"
+  },
   // Header
   loginRegister:{
     en: "Login | Register",
@@ -150,6 +154,13 @@ groupedTranslations({
   serviceFourButtonText: {
     en: "Explore Properties",
     ar: "الوحدات المتاحة"
+  },
+  serviceFiveTitle: {
+    en: "Rent Contract",
+    ar: "عقد الإيجار"
+  },
+  serviceFiveDescription: {
+
   },
   whyRentakHeader: {
     en: "Owners’ Hub",

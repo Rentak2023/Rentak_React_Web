@@ -22,6 +22,8 @@ import { propertiesAtom } from "../../atoms";
 import { showNotification } from "apps/front-office/design-system/components/Notifications/showNotification";
 import ReactGA from "react-ga";
 import { getAllProperties } from "../../services/services";
+import { filterMaxPrice, filterMinPrice } from "./helpers";
+import cache from "@mongez/cache";
 
 const SearchForm = () => {
   const [properties, setProperties] = propertiesAtom.useState();
@@ -31,11 +33,17 @@ const SearchForm = () => {
   const searchHandler = async ({ values }) => {
     console.log(values);
     setIsSubmitting(true);
+    const formattedValues = {
+      price_from: Math.min(...values.price),
+      price_to: Math.max(...values.price),
+      ...values
+    }
+    
     try {
-      const response : any = await getAllProperties(values);
+      const response : any = await getAllProperties(formattedValues);
       
       showNotification({
-        message: response.message,
+        message: response.data.message,
       });
 
       setProperties({ properties: response.data.items });

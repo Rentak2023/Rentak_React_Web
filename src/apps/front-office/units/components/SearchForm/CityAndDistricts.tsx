@@ -41,17 +41,17 @@ const CityAndDistricts = () => {
   return (
     <Flex gap="57px" fullWidth className="flex">
       <SelectInput
-        name="city_id"
+        name="governoment_id"
         label="city"
         placeholder={trans("selectCity")}
-        data={cities}
+        data={districts}
         clearable
       />
       <SelectInput
-        name="governoment_id"
+        name="city_id"
         label="districts"
         placeholder={trans("selectDistrict")}
-        data={districts}
+        data={cities}
         clearable
       />
     </Flex>

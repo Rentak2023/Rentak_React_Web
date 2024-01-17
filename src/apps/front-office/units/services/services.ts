@@ -21,3 +21,7 @@ export function getDistricts() {
   return endpoint.get(`/location/get-all-governorates`);
 }
 
+export function getMinMaxPrice() {
+  return endpoint.get(`/unit/get-min-max-price`);
+}
+

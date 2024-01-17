@@ -30,6 +30,12 @@ export const PropertyWrapper = styled.div<PropertyWrapperProps>`
     margin-bottom: 35px;
   }
   border-radius: 12px;
+  .address{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 275px;
+  }
 `;
 
 export const DescriptionWrapper = styled.div`
@@ -45,9 +51,9 @@ export const DescriptionWrapper = styled.div`
 `;
 
 export const PropertyType = styled.div`
-  border-radius: 30px;
+  /* border-radius: 30px;
   min-width: 93px;
-  min-height: 37px;
+  min-height: 37px; */
   flex-shrink: 0;
   display: flex;
   align-items: center;

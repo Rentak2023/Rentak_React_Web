@@ -81,7 +81,7 @@ const Property = ({ property }) => {
           </Flex>
           <Flex align="center" gap="0.5rem">
             <LocationIcon />
-            <Small>{property.location.address_in_detail}</Small>
+            <Small className="address">{property.location.address_in_detail}</Small>
           </Flex>
           <div className="description">
             <Small>

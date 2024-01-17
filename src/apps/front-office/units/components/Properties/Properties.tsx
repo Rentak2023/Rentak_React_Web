@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { getAllProperties } from "../../services/services";
 import Loader from "apps/front-office/design-system/components/Loader";
-import Property from "./Property";
 import { Grid, Space } from "@mantine/core";
 import {
   Col,
@@ -11,7 +10,7 @@ import {
 import { propertiesAtom } from "../../atoms";
 import { Pagination as MantinePagination } from "@mantine/core";
 import { PaginationWrapper, PropertiesWrapper, Wrapper } from "./style";
-import { ArrowIcon, DirectionIcon } from "shared/assets/svgs";
+import { DirectionIcon } from "shared/assets/svgs";
 import {
   P4,
   Small,
@@ -19,6 +18,7 @@ import {
 import { theme } from "apps/front-office/design-system";
 import { trans } from "@mongez/localization";
 import Is from "@mongez/supportive-is";
+import Property from "apps/front-office/design-system/components/Property";
 
 const Properties = () => {
   const [isLoading, setIsLoading] = useState(false);

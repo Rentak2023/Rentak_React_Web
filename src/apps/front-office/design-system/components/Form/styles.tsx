@@ -197,7 +197,7 @@ export const StyledRangeSlider = styled(RangeSlider)`
   .rtl-Slider-markLabel{
     color: ${theme.colors.secondary[600]};
     position: absolute;
-    top: -45px;
+    /* top: -45px; */
   }
   .ltr-Slider-label,
   .rtl-Slider-label{

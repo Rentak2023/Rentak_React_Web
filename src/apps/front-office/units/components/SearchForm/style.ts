@@ -48,5 +48,5 @@ export const SearchInputWrapper = styled.div`
 `;
 
 export const PriceRangeWrapper = styled.div`
-  margin-top: 57px;
+  /* margin-bottom: 57px; */
 `;

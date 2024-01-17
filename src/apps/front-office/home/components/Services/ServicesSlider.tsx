@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ServicesType } from "./types";
 import Service from "./Service";
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import useBreakpoints from "apps/front-office/common/hooks/useBreakpoints";
 import { ArrowIcon } from "shared/assets/svgs";
 
@@ -12,7 +12,7 @@ const ServicesSlider = ({ services }: ServicesType) => {
     <Swiper
       spaceBetween={30}
       slidesPerView={4}
-      modules={[Navigation]}
+      modules={[Navigation, Pagination]}
       navigation={{
         nextEl: ".custom--next",
         prevEl: ".custom--prev",
@@ -49,12 +49,12 @@ const ServicesSlider = ({ services }: ServicesType) => {
           />
         </SwiperSlide>
       ))}
-      {/* <div className="custom--prev">
+      <div className="custom--prev">
         <ArrowIcon type="left" />
       </div>
       <div className="custom--next">
         <ArrowIcon type="right" />
-      </div> */}
+      </div>
     </Swiper>
   );
 };

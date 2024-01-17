@@ -19,7 +19,7 @@ const UnitDescriptionStep = () => {
     try {
       const response = await getProducts();
       const rentPaymentProduct = response.data.find(
-        product => product.id === 2,
+        product => product.id === 3,
       );
       setProductFees(rentPaymentProduct.fees);
     } catch (error: any) {

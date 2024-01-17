@@ -1,16 +1,27 @@
 import MultiRangeSlider from 'apps/front-office/design-system/components/Form/MultiRangeSlider'
 import { Flex } from 'apps/front-office/design-system/components/Grids'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { propertiesAtom } from '../../atoms';
 import { filterMaxPrice, filterMinPrice } from './helpers';
 import { PriceRangeWrapper } from './style';
+import { getMinMaxPrice } from '../../services/services';
 
 const PriceRange = () => {
-  const [properties, setProperties] = propertiesAtom.useState();
+  const [minPrice, setMinPrice] = useState();
+  const [maxPrice, setMaxPrice] = useState();
 
-  // Call the function to get objects with the minimum price
-  const minPrice = filterMinPrice(properties?.properties);
-  const maxPrice = filterMaxPrice(properties?.properties);
+  const getMinMaxPriceHandler = async () => {
+    try {
+      const response = await getMinMaxPrice();
+      setMinPrice(response.data.min_price);
+      setMaxPrice(response.data.max_price);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getMinMaxPriceHandler();
+  }, []);
 
   return (
     <PriceRangeWrapper>

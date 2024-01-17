@@ -38,6 +38,13 @@ const services = [
     link: URLS.units,
     color: "rgba(255, 204, 0, 0.10)",
   },
+  {
+    icon: <ServicesIcon type={5} size={240} />,
+    title: trans("serviceFiveTitle"),
+    description: trans("serviceFiveDescription"),
+    link: URLS.contract,
+    color: "rgba(216, 187, 235, 0.10)",
+  },
 ];
 
 const Services = () => {
