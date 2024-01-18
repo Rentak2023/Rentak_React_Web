@@ -13,6 +13,7 @@ import { trans } from "@mongez/localization";
 import { P3, P4 } from "../Typography";
 import { theme } from "../../utils/theme";
 import Link from "./Link";
+import Lang from "./Lang";
 
 const links = [
   {
@@ -55,6 +56,7 @@ const links = [
     text: trans("faq"),
     children: null,
   },
+
   // {
   //   url: URLS.invoices,
   //   icon: <SidebarIcon type="invoices" color={theme.colors.secondary[600]} />,
@@ -111,6 +113,7 @@ const DrawerPage = ({ opened, close }: any) => {
                   {links.map(link => (
                     <Link link={link} />
                   ))}
+                  <Lang />
                 </Flex>
               </UserWrapper>
             </Wrapper>

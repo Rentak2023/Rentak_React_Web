@@ -18,7 +18,7 @@ import { theme } from "apps/front-office/design-system";
 import SearchInput from "./SearchInput";
 import Button from "apps/front-office/design-system/components/Button";
 import { ResetIcon } from "shared/assets/svgs";
-import { propertiesAtom } from "../../atoms";
+import { currentPageAtom, paramsAtom, propertiesAtom } from "../../atoms";
 import { showNotification } from "apps/front-office/design-system/components/Notifications/showNotification";
 import ReactGA from "react-ga";
 import { getAllProperties } from "../../services/services";
@@ -27,6 +27,9 @@ import cache from "@mongez/cache";
 
 const SearchForm = () => {
   const [properties, setProperties] = propertiesAtom.useState();
+  const [searchParams, setSearchParams] = paramsAtom.useState();
+  const [currentPage, setCurrentPage] = currentPageAtom.useState();
+
   const formRef = useRef<any>();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -36,15 +39,18 @@ const SearchForm = () => {
     const formattedValues = {
       price_from: Math.min(...values.price),
       price_to: Math.max(...values.price),
+      page: currentPage.currentPage,
       ...values
     }
+
+    setSearchParams({params: formattedValues})
     
     try {
       const response : any = await getAllProperties(formattedValues);
       
-      showNotification({
-        message: response.data.message,
-      });
+      // showNotification({
+      //   message: response.data.message,
+      // });
 
       setProperties({ properties: response.data.items });
 

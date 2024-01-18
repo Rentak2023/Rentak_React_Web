@@ -6,3 +6,17 @@ export const propertiesAtom = atom({
     properties: [],
   }
 });
+
+export const currentPageAtom = atom({
+  key: "currentPage",
+  default: {
+    currentPage: 1
+  }
+});
+
+export const paramsAtom = atom({
+  key: "searchParams",
+  default: {
+    params: {}
+  }
+});

@@ -47,3 +47,9 @@ export const Wrapper = styled.div`
 `;
 
 export const UserWrapper = styled.div``;
+export const LangWrapper = styled.div`
+  button{
+    padding: 26px;
+    height: auto;
+  }
+`;

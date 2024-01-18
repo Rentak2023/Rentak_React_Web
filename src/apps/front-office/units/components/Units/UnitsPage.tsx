@@ -29,7 +29,7 @@ function UnitsPage() {
         />
         <SearchForm />
         <Properties />
-        <Testimonials />
+        {/* <Testimonials /> */}
       </>
     </>
   );

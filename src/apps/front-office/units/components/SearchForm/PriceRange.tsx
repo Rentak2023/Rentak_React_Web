@@ -7,7 +7,7 @@ import { PriceRangeWrapper } from './style';
 import { getMinMaxPrice } from '../../services/services';
 
 const PriceRange = () => {
-  const [minPrice, setMinPrice] = useState();
+  const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState();
 
   const getMinMaxPriceHandler = async () => {
