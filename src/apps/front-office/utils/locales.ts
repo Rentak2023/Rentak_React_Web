@@ -160,7 +160,8 @@ groupedTranslations({
     ar: "عقد الإيجار"
   },
   serviceFiveDescription: {
-
+    en: "Create a rent contract for free just by scanning the tenant and landlord's IDs",
+    ar: "انشئ عقد ايجار في ثواني معدودة برفع صورة بطاقات المالك و المستاجر الشخصية"
   },
   whyRentakHeader: {
     en: "Owners’ Hub",
@@ -624,10 +625,27 @@ groupedTranslations({
     en: "continue",
     ar: "استمرار"
   },
+  rentCollectionSubTitle: {
+    en: "Automate your rent collection process",
+    ar: " عملية تحصيل الإيجار الخاص بك"
+  },
+  rentCollectionDescription: {
+    en: "Our automated rent collection system ensures seamless payments. Plus, offer your tenants flexible options like credit card payments, with a 55-day grace period, interest-free.",
+    ar: "يضمن نظامنا الآلي لتحصيل الإيجار دفعات سلسة. بالإضافة إلى ذلك، قدم للمستأجرين خيارات مرنة مثل الدفع ببطاقات الائتمان، مع فترة سماح مدتها 55 يومًا، بدون فوائد."
+  },
   rentNow:{
     en: "Rent now .. Pay Later",
     ar: "استأجر الآن .. ادفع لاحقًا"
   },
+  rentPaymentDescription: {
+    en: "For any Home, Villa, Chalet or Hotel Room, from any website or even through your connections.",
+    ar: "لأي منزل أو فيلا أو شاليه أو غرفة فندق، من أي موقع ويب أو حتى من خلال اتصالاتك."
+  },
+  completeRentPaymentForm: {
+    en: "complete the form below to access our specialized payment service, allowing you to conveniently spread your payments over 60 months or pay your rent with a credit card at zero interest.",
+    ar: "أكمل النموذج أدناه للوصول إلى خدمة الدفع المتخصصة لدينا، مما يسمح لك بتوزيع دفعاتك بسهولة على مدى 60 شهرًا أو دفع الإيجار باستخدام بطاقة ائتمان بدون فوائد."
+  },
+
   bankAccountNumber:{
     en: "Bank Account Number",
     ar: "رقم الحساب المصرفي"

@@ -13,11 +13,12 @@ function RentPaymentPage() {
         <PageHeader
           title="rentPayment"
           subTitle="rentNow"
+          description="rentPaymentDescription"
           icon={<FormIcon />}
         />
         <Card
           title="fillForm"
-          subtitle="completeForm"
+          subtitle="completeRentPaymentForm"
         >
           <RentPaymentContent />
         </Card>

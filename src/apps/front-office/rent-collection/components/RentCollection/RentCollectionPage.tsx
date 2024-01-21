@@ -12,7 +12,8 @@ function RentCollectionPage() {
       <>
         <PageHeader
           title="rentCollection"
-          subTitle="rentNow"
+          subTitle="rentCollectionSubTitle"
+          description="rentCollectionDescription"
           icon={<FormIcon />}
         />
         <Card
