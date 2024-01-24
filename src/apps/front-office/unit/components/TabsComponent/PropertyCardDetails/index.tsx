@@ -62,7 +62,7 @@ const PropertyCardDetails = ({ property }) => {
               {property.price} EGP
             </H5>
           </Flex>
-          <Flex justify="space-between" fullWidth>
+          <Flex justify="space-between" fullWidth flexWrap="wrap" gap="20px">
             {detailsList.map(detail => (
               <Flex gap="15px">
                 <IconWrapper>{detail.icon}</IconWrapper>
@@ -74,7 +74,7 @@ const PropertyCardDetails = ({ property }) => {
             ))}
           </Flex>
           <H5 weight="600">{trans("propertyDetails")}</H5>
-          <Flex justify="space-between" fullWidth>
+          <Flex justify="space-between" fullWidth flexWrap="wrap" gap="20px">
             <Flex direction="column">
               <Small weight="600">{trans("propertyId")}</Small>
               <Small weight="400">{property?.id}</Small>

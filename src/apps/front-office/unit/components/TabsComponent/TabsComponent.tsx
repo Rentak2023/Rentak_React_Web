@@ -16,9 +16,9 @@ const TabsComponent = ({ property }) => {
             <Tabs.Tab value="first">
               <H4 weight="500">{trans("unitOverview")}</H4>
             </Tabs.Tab>
-            <Tabs.Tab value="second" color="blue">
+            {/* <Tabs.Tab value="second" color="blue">
               <H4 weight="500">{trans("inspection")}</H4>
-            </Tabs.Tab>
+            </Tabs.Tab> */}
           </Tabs.List>
 
           <Tabs.Panel value="first" pt="xs">
