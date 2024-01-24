@@ -566,8 +566,8 @@ groupedTranslations({
     ar: "اكتب وصف الوحدة كما تريد أن يظهر في نموذج النقل"
   },
   totalAmountHint: {
-    en: "Rent Amount + 5% Admin Fees",
-    ar: "مبلغ الإيجار + 5% رسوم إدارية"
+    en: "Rent Amount + :fees% Admin Fees",
+    ar: "مبلغ الإيجار + :fees% رسوم إدارية"
   },
   serviceFees: {
     en: "Service Fees",
@@ -765,6 +765,53 @@ groupedTranslations({
   noItems: {
     en: "There are no results for your search.",
     ar: "لا توجد نتائج للبحث."
+  },
+  unitOverview: {
+    en: "Unit Overview",
+    ar: "نظرة عامة على الوحدة"
+  },
+  inspection: {
+    en: "Inspection",
+    ar: "التفتيش"
+  },
+  finishType: {
+    en: "Finish Type",
+    ar: "نوع التشطيب"
+  },
+  propertyDetails:{
+    en: "Property Details",
+    ar: "تفاصيل الوحدة"
+  },
+  availableNow: {
+    en: "Available Now",
+    ar: "متوفر في الوقت الحاضر"
+  },
+  m2:{
+    en: "m2",
+    ar: "متر مربع"
+  },
+  propertyId:{
+    en: "Property ID",
+    ar: "معرف الوحدة"
+  },
+  propertyStatus:{
+    en: "Property Status",
+    ar: "حالة الوحدة"
+  },
+  propertySize:{
+    en: "Property Size",
+    ar: "حجم الوحدة"
+  },
+  arrangeAVisit: {
+    en: "Arrange A Visit",
+    ar: "قم بترتيب زيارة"
+  },
+  submitVisitRequest:{
+    en: "Submit a Visit Request",
+    ar: "تقديم طلب زيارة"
+  },
+  unitInspections: {
+    en: "Unit Inspections",
+    ar: "تفتيش الوحدة"
   }
-  
 });

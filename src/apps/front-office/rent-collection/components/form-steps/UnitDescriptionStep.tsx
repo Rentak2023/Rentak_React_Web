@@ -9,6 +9,7 @@ import { showNotification } from "apps/front-office/design-system/components/Not
 import { useEffect, useState } from "react";
 import { getProducts } from "../../services/services";
 import { HiddenInput } from "@mongez/react-form";
+import { rentCollectionFeesAtom } from "../../atoms";
 
 const UnitDescriptionStep = () => {
   const [productFees, setProductFees] = useState<any>(0);
@@ -22,6 +23,8 @@ const UnitDescriptionStep = () => {
         product => product.id === 3,
       );
       setProductFees(rentPaymentProduct.fees);
+      rentCollectionFeesAtom.update({fees: rentPaymentProduct.fees})
+
     } catch (error: any) {
       Object.entries(error.response.data.errors).map(([key, value]: any) => {
         return showNotification({
@@ -93,7 +96,7 @@ const UnitDescriptionStep = () => {
       </Grid>
       <NumberInput
         name="total_amount"
-        label={`${trans("totalAmount")} ( ${trans("totalAmountHint")} )`}
+        label={`${trans("totalAmount")} ( ${trans("totalAmountHint", {fees: fees})} )`}
         placeholder={trans("totalAmount")}
         min={1}
         value={total}

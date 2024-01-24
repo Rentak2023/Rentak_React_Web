@@ -26,7 +26,6 @@ const Properties = () => {
   const [currentPage, setCurrentPage] = currentPageAtom.useState();
   const [searchParams, setSearchParams] = paramsAtom.useState();
 
-  // const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 10; // Adjust the page size as needed
   const [totalPages, setTotalPages] = useState(0);
 
@@ -57,6 +56,7 @@ const Properties = () => {
   };
 
   if (isLoading) return <Loader />;
+
   return (
     <>
       <Wrapper>

@@ -11,7 +11,7 @@ import NumberInput from "apps/front-office/design-system/components/Form/NumberI
 import { sendOtp, verifyOtp } from "../../services/services";
 import { showNotification } from "apps/front-office/design-system/components/Notifications/showNotification";
 import cache from "@mongez/cache";
-import { rentPaymentAtom } from "../../atoms";
+import { maintenancePaymentAtom } from "../../atoms";
 import { getActiveForm } from "@mongez/react-form";
 
 const PersonalInfoStep = () => {
@@ -85,7 +85,7 @@ const PersonalInfoStep = () => {
         name="tenant_name"
         label={trans("fullName")}
         placeholder={trans("fullName")}
-        onChange={(value) => rentPaymentAtom.update({username: value})}
+        onChange={(value) => maintenancePaymentAtom.update({username: value})}
         required
       />
       <TextInput

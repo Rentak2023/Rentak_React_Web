@@ -54,7 +54,8 @@ const URLS = {
   serviceFour: "",
 
   //Properties
-  property: (property) => `https://rent-ak.com/Listing/Details/${property.id}`,
+  unit: "/unit/:id",
+  property: (property) => `/unit/${property.id}` || `https://rent-ak.com/Listing/Details/${property.id}`,
   //Contract
   contract: "/contract"
 

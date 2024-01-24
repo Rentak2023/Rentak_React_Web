@@ -20,7 +20,7 @@ function TextAreaInput({
   clearable,
   ...props
 }: InputPropsType) {
-  const { id, value, changeValue, error } = useFormControl(props);
+  const { id, value, changeValue, error, otherProps } = useFormControl(props);
 
   return (
     <Flex direction="column" gap="0" fullWidth>
@@ -35,7 +35,7 @@ function TextAreaInput({
             changeValue(e.target.value);
           }}
           cols={5}
-          {...props}
+          {...otherProps}
         />
       </WrapperInput>
       <InputError error={error} />

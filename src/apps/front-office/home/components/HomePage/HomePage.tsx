@@ -10,8 +10,8 @@ import HowItWorks from "../HowItWorks";
 import TenantsHub from "../TenantsHub";
 import Brands from "../Brands";
 import Comments from "../Comments";
-import ContactUs from "../ContactUs";
 import Properties from "../Properties";
+import ContactUs from "apps/front-office/design-system/components/ContactUs";
 
 export default function HomePage() {
   return (

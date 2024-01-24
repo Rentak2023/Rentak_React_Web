@@ -23,6 +23,15 @@ export const BaseButton = styled(MantineButton)`
       );
     }}
   }
+  ${({ color }: ButtonProps) => {
+      return (
+        color &&
+        css`
+          border: 1px solid ${color};
+          background-color: ${color};
+        `
+      );
+    }}
   ${({ radius }: ButtonProps) => {
     return (
       !radius &&

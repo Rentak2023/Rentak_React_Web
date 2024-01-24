@@ -34,3 +34,5 @@ export { default as PropertyWhatsappIcon } from "./PropertyWhatsappIcon";
 export { default as PropertyPhoneIcon } from "./PropertyPhoneIcon";
 export { default as ResetIcon } from "./ResetIcon";
 export { default as SearchIcon } from "./SearchIcon";
+export { default as StatusIcon } from "./StatusIcon";
+export { default as TypeIcon } from "./TypeIcon";

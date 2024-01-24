@@ -15,9 +15,9 @@ import TextAreaInput from "apps/front-office/design-system/components/Form/TextA
 import PhoneNumberInput from "apps/front-office/design-system/components/Form/PhoneNumberInput";
 import SubmitButton from "apps/front-office/design-system/components/Form/SubmitButton";
 import SocialMedia from "./SocialMedia";
-import { contactUs } from "../../services/contact-us-service";
 import { useState } from "react";
 import { showNotification } from "apps/front-office/design-system/components/Notifications/showNotification";
+import { contactUs } from "apps/front-office/home/services/contact-us-service";
 
 const ContactUsCard = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
