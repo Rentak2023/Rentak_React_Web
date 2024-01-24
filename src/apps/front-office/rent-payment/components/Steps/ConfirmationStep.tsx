@@ -1,13 +1,14 @@
 import { Col } from 'apps/front-office/design-system/components/Grids'
 import { H5, P4 } from 'apps/front-office/design-system/components/Typography'
 import React from 'react'
-import { rentPaymentAtom } from '../../atoms'
+import { rentPaymentAtom, rentPaymentFeesAtom } from '../../atoms'
 import { trans } from '@mongez/localization'
 import { Space } from '@mantine/core'
 import CheckboxInput from 'apps/front-office/design-system/components/Form/CheckboxInput'
 
 const ConfirmationStep = () => {
   const value = rentPaymentAtom.useValue()
+  const fees = rentPaymentFeesAtom.useValue()
 
   const list = [
     {
@@ -16,7 +17,7 @@ const ConfirmationStep = () => {
     },
     {
       id: 2,
-      text: <P4>كما أقر بأن شركة "رينتك" هي جهة تحويل للمبلغ المذكور أعلاه للمستفيد بقيمة 5.00% كمصاريف إدارية، ويتم التحويل في خلال أربعة أيام عمل.      </P4>
+      text: <P4>كما أقر بأن شركة "رينتك" هي جهة تحويل للمبلغ المذكور أعلاه للمستفيد بقيمة {fees.fees}% كمصاريف إدارية، ويتم التحويل في خلال أربعة أيام عمل.      </P4>
     },
     {
       id: 3,

@@ -12,6 +12,7 @@ import { HiddenInput } from "@mongez/react-form";
 import Button from "apps/front-office/design-system/components/Button";
 import { theme } from "apps/front-office/design-system";
 import { P4 } from "apps/front-office/design-system/components/Typography";
+import { rentPaymentFeesAtom } from "../../atoms";
 
 const UnitDescriptionStep = () => {
   const [productFees, setProductFees] = useState<any>(0);
@@ -27,6 +28,8 @@ const UnitDescriptionStep = () => {
         product => product.id === 1,
       );
       setProductFees(rentPaymentProduct.fees);
+      rentPaymentFeesAtom.update({fees: rentPaymentProduct.fees})
+
     } catch (error: any) {
       Object.entries(error.response.data.errors).map(([key, value]: any) => {
         return showNotification({
@@ -154,7 +157,7 @@ const UnitDescriptionStep = () => {
       </Flex>
       <NumberInput
         name="total_amount"
-        label={`${trans("totalAmount")} ( ${trans("totalAmountHint")} )`}
+        label={`${trans("totalAmount")} ( ${trans("totalAmountHint", {fees: fees})} )`}
         placeholder={trans("totalAmount")}
         min={1}
         readOnly

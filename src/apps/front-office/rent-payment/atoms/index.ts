@@ -5,4 +5,11 @@ export const rentPaymentAtom = atom({
   default: {
     username: '',
   }
+});
+
+export const rentPaymentFeesAtom = atom({
+  key: "rentPaymentFees",
+  default: {
+    fees: 0,
+  }
 })
