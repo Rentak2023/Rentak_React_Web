@@ -13,7 +13,7 @@ export default function SubmitButton({
   ...props
 }: SubmitButtonProps) {
   return (
-    <SubmitButtonWrapper>
+    <SubmitButtonWrapper fullWidth={props.fullWidth}>
       <Button
         type="submit"
         loading={props.isSubmitting}

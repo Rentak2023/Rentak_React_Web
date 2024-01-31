@@ -13,8 +13,8 @@ export function getPropertyTypes() {
   return endpoint.get(`/unit/get-all-property-types?lang=${current("localeCode")}`);
 }
 
-export function getCities() {
-  return endpoint.get(`/location/get-all-cities`);
+export function getCities(params) {
+  return endpoint.get(`/location/get-all-cities`, {params});
 }
 
 export function getDistricts() {

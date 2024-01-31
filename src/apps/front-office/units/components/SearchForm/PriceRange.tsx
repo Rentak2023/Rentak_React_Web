@@ -8,20 +8,23 @@ import { getMinMaxPrice } from '../../services/services';
 
 const PriceRange = () => {
   const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState();
+  const [maxPrice, setMaxPrice] = useState(0);
+  const [defaultValue, setDefaultValue] = useState([0, 0]);
 
   const getMinMaxPriceHandler = async () => {
     try {
       const response = await getMinMaxPrice();
       setMinPrice(response.data.min_price);
       setMaxPrice(response.data.max_price);
+      setDefaultValue([minPrice, maxPrice])
     } catch (error) {
       console.log(error);
     }
   };
+
   useEffect(() => {
     getMinMaxPriceHandler();
-  }, []);
+  }, [minPrice, maxPrice]);
 
   return (
     <PriceRangeWrapper>
@@ -30,7 +33,7 @@ const PriceRange = () => {
           min={minPrice}
           max={maxPrice}
           name="price"
-          defaultValue={[minPrice, maxPrice]}
+          defaultValue={defaultValue}
         />
       </Flex>
     </PriceRangeWrapper>

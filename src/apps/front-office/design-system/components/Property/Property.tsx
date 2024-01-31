@@ -57,11 +57,11 @@ const Property = ({ property }) => {
         <img src={property.picture} />
         <DescriptionWrapper>
           <Flex
-            justify={property.property_type.type_name ? "space-between" : "end"}
+            justify="space-between"
             fullWidth>
-            {property.property_type.type_name && (
+            {property.property_name && (
               <PropertyType>
-                <P3 weight="500">{property.property_type.type_name}</P3>
+                <P3 weight="500">{property.property_name}</P3>
               </PropertyType>
             )}
             <Rate>

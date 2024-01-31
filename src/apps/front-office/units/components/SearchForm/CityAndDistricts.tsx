@@ -8,10 +8,11 @@ const CityAndDistricts = () => {
 
   const [cities, setCities] = useState([]);
   const [districts, setDistricts] = useState([]);
+  const [government, setGovernment] = useState("");
 
   const getCitiesHandler = async () => {
     try {
-      const response = await getCities();
+      const response = await getCities({governoment_id: government});
       const formattedCities = response.data.map(city => ({
         label: city.city_name,
         value: city.city_id
@@ -36,8 +37,11 @@ const CityAndDistricts = () => {
   useEffect(() => {
     getCitiesHandler();
     getDistrictsHandler();
-  }, []);
+  }, [government]);
 
+  const onChangeGovernment = (value) => {
+    setGovernment(value)
+  }
   return (
     <Flex gap="57px" fullWidth className="flex">
       <SelectInput
@@ -46,6 +50,7 @@ const CityAndDistricts = () => {
         placeholder={trans("selectCity")}
         data={districts}
         clearable
+        onChange={onChangeGovernment}
       />
       <SelectInput
         name="city_id"

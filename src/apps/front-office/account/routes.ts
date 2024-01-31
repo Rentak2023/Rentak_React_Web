@@ -1,5 +1,11 @@
-import { reverseGuardedRoutes } from "../utils/router";
+import React from "react";
+import { publicRoutes } from "../utils/router";
+import URLS from "../utils/urls";
 
-reverseGuardedRoutes([
+publicRoutes([
   // login routes
+  {
+    path: URLS.auth.login,
+    component: React.lazy(() => import("./components/LoginAndRegister")),
+  },
 ]);

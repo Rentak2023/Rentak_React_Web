@@ -36,3 +36,4 @@ export { default as ResetIcon } from "./ResetIcon";
 export { default as SearchIcon } from "./SearchIcon";
 export { default as StatusIcon } from "./StatusIcon";
 export { default as TypeIcon } from "./TypeIcon";
+export { default as EyeOffIcon } from "./EyeOffIcon";

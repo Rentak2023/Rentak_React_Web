@@ -10,7 +10,7 @@ const URLS = {
   },
   faq: "https://rent-ak.com/Home/FAQs",
   auth: {
-    login: "https://rent-ak.com/Account/Login",
+    login: "/login" || "https://rent-ak.com/Account/Login",
     forgetPassword: "/forget-password",
     resetPassword: "/rest-password",
     register: "/register",

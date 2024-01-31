@@ -5,3 +5,7 @@ export function getProperty(params) {
   return endpoint.get(`/unit/get-unit-details?lang=${current("localeCode")}`, {params});
 }
 
+export function visit(formData) {
+  return endpoint.post(`/unit/visit`, formData);
+}
+

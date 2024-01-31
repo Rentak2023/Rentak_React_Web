@@ -123,11 +123,20 @@ export default function ContractContent() {
               min={1}
             />
           </Flex>
+          <Flex gap="57px" fullWidth className="row">
+            <NumberInput
+              name="insurance_amount"
+              label="insuranceAmount"
+              placeholder={trans("insuranceAmount")}
+              required
+              min={1}
+            />
+          </Flex>
           <Flex gap="57px" fullWidth>
             <SubmitButton
               isSubmitting={isSubmitting}
               variant="contract"
-              fullwidth>
+              fullWidth>
               <P4
                 color={theme.colors.white}
                 style={{ textTransform: "uppercase" }}>

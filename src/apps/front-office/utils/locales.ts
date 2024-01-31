@@ -432,6 +432,10 @@ groupedTranslations({
     ar: "إرسال"
   },
   //Contract Page 
+  insuranceAmount: {
+    en: "Insurance Amount",
+    ar: "مبلغ التأمين"
+  },
   contractInfo: {
     en: "Contract Info",
     ar: "معلومات العقد"
@@ -813,5 +817,54 @@ groupedTranslations({
   unitInspections: {
     en: "Unit Inspections",
     ar: "تفتيش الوحدة"
+  },
+  selectDate: {
+    en: "Select Date",
+    ar: "حدد تاريخ"
+  },
+  specialRequest: {
+    en: "Special Request",
+    ar: "طلب خاص"
+  },
+  //auth
+  signup: {
+    en: "Sign Up",
+    ar: "التسجيل"
+  },
+  yourFullName: {
+    en: "Your Full Name",
+    ar: "اسمك بالكامل"
+  },
+  yourPhone: {
+    en: "Your Phone",
+    ar: "رقم هاتفك"
+  },
+  yourEmail: {
+    en: "Your Email",
+    ar: "بريدك الالكتروني"
+  },
+  ForgetPassword: {
+    en: "Forget Your Password",
+    ar: "نسيت كلمة مرورك"
+  },
+  yourEmailOrPhone: { 
+    en: "Your Email Or Phone Number",
+    ar: "البريد الإلكتروني الخاص بك أو رقم الهاتف"
+  },
+  yourPassword: {
+    en: "Your Password",
+    ar: "كلمة مرورك"
+  },
+  hide: {
+    en: "Hide",
+    ar: "إخفاء"
+  },
+  show: {
+    en: "Show",
+    ar: "إظهار"
+  },
+  successfullyLogin:{
+    en: "",
+    ar: ""
   }
 });

@@ -11,14 +11,14 @@ export function getGuestToken() {
  * Perform login
  */
 export function login(data: any) {
-  return endpoint.post("/login", data);
+  return endpoint.post("/auth/login", data);
 }
 
 /**
  * Create new account
  */
 export function register(data: any) {
-  return endpoint.post("/register", data);
+  return endpoint.post("/auth/register", data);
 }
 
 /**
