@@ -1,29 +1,36 @@
 import React, { useState } from "react";
 import { LogoWrapper, TabWrapper } from "../style";
 import Logo from "shared/assets/images/auth-logo.png";
-import EmailInput from "apps/front-office/design-system/components/Form/EmailInput";
 import { trans } from "@mongez/localization";
 import PasswordInput from "apps/front-office/design-system/components/Form/PasswordInput";
 import { Form } from "@mongez/react-form";
 import { Flex } from "apps/front-office/design-system/components/Grids";
-import ForgetPassword from "./ForgetPassword";
 import SubmitButton from "apps/front-office/design-system/components/Form/SubmitButton";
 import { showNotification } from "apps/front-office/design-system/components/Notifications/showNotification";
 import { login } from "apps/front-office/account/service/auth";
 import TextInput from "apps/front-office/design-system/components/Form/TextInput";
 import { P4 } from "apps/front-office/design-system/components/Typography";
 import { theme } from "apps/front-office/design-system";
+import { Tabs } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
+import LoginTypeModal from "./LoginTypeModal";
+import Button from "apps/front-office/design-system/components/Button";
+import { navigateTo } from "@mongez/react-router";
+import URLS from "apps/front-office/utils/urls";
 
 const Login = () => {
+  const [
+    openedLoginTypeModal,
+    { open: openLoginTypeModal, close: closeLoginTypeModal },
+  ] = useDisclosure(false);
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const submitLogin = async ({ values }) => {
     setIsSubmitting(true);
     try {
       await login(values);
-      // showNotification({
-      //   message: trans("successfullyLogin"),
-      // });
+      openLoginTypeModal();
     } catch (error: any) {
       if (error.response.data.message) {
         showNotification({
@@ -63,17 +70,29 @@ const Login = () => {
             icon
             required
           />
-          <ForgetPassword />
+          <Flex justify="end" fullWidth onClick={() => navigateTo(URLS.auth.forgetPassword)}>
+            <Button noStyle>
+              <P4 color={theme.colors.primaryColor}>{trans("forgetPassword")}</P4>
+            </Button>
+          </Flex>
           <SubmitButton
             isSubmitting={isSubmitting}
             fullWidth
             className="submit--button">
-            
             <P4 color={theme.colors.white}>{trans("login")}</P4>
-
           </SubmitButton>
+          <Flex gap="0.5rem" justify="center" fullWidth>
+            <P4>{trans("notHaveAccount")}</P4>
+            <Tabs.Tab value="signup" className="link-tab">
+              {trans("signup")}
+            </Tabs.Tab>
+          </Flex>
         </Flex>
       </Form>
+      <LoginTypeModal
+        opened={openedLoginTypeModal}
+        close={closeLoginTypeModal}
+      />
     </TabWrapper>
   );
 };

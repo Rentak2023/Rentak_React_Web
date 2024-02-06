@@ -24,9 +24,9 @@ const ArrangeVisitForm = ({ property }) => {
   const onSubmit = async ({ values }) => {
     setIsSubmitting(true);
     try {
-      const response = await visit(values);
+      const response : any = await visit(values);
       showNotification({
-        message: response.data.message,
+        message: trans('tourScheduled'),
       });
     } catch (error: any) {
       if (error.response.data.message) {

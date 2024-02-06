@@ -8,4 +8,8 @@ publicRoutes([
     path: URLS.auth.login,
     component: React.lazy(() => import("./components/LoginAndRegister")),
   },
+  {
+    path: URLS.auth.forgetPassword,
+    component: React.lazy(() => import("./components/ForgetPassword")),
+  },
 ]);

@@ -13,7 +13,7 @@ import {
   useFormControl,
 } from "@mongez/react-form";
 import { trans } from "@mongez/localization";
-import { EyeOffIcon } from "shared/assets/svgs";
+import { EyeIcon, EyeOffIcon } from "shared/assets/svgs";
 
 function PasswordInput({ placeholder, label, icon, ...props }: InputPropsType) {
   const { id, value, changeValue, error, otherProps } = useFormControl(props);
@@ -33,7 +33,7 @@ function PasswordInput({ placeholder, label, icon, ...props }: InputPropsType) {
               gap="5px"
               style={{ cursor: "pointer" }}
               onClick={showPasswordHandler}>
-              {showPassword ? <><EyeOffIcon /> {trans("hide")}</> : <><EyeOffIcon /> {trans('show')}</>}
+              {showPassword ? <><EyeOffIcon /> {trans("hide")}</> : <><EyeIcon /> {trans('show')}</>}
             </Flex>
           )}
         </Flex>

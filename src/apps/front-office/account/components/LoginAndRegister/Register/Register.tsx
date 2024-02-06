@@ -13,6 +13,7 @@ import TextInput from "apps/front-office/design-system/components/Form/TextInput
 import { P4 } from "apps/front-office/design-system/components/Typography";
 import { theme } from "apps/front-office/design-system";
 import PhoneNumberInput from "apps/front-office/design-system/components/Form/PhoneNumberInput";
+import { Tabs } from "@mantine/core";
 
 const Register = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -81,6 +82,12 @@ const Register = () => {
             className="submit--button">
             <P4 color={theme.colors.white}>{trans("signup")}</P4>
           </SubmitButton>
+          <Flex gap="0.5rem" justify="center" fullWidth>
+            <P4>{trans("alreadyHaveAccount")}</P4>
+            <Tabs.Tab value="login" className="link-tab">
+              {trans("login")}
+            </Tabs.Tab>
+          </Flex>
         </Flex>
       </Form>
     </TabWrapper>

@@ -43,7 +43,7 @@ function UnitPage({ params }) {
     <>
       <Helmet title={trans("unit")} />
       <TabsComponent property={property} />
-      <ContactUs />
+      {/* <ContactUs /> */}
     </>
   );
 }

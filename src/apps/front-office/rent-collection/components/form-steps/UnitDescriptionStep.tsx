@@ -43,7 +43,7 @@ const UnitDescriptionStep = () => {
     const parsedBaseAmount = Number(baseAmount);
     const parsedFees = Number(fees);
     // Calculate the total with promo discount
-    const total = parsedBaseAmount + (parsedBaseAmount * parsedFees) / 100;
+    const total = parsedBaseAmount;
   
     return total;
   };
@@ -96,7 +96,7 @@ const UnitDescriptionStep = () => {
       </Grid>
       <NumberInput
         name="total_amount"
-        label={`${trans("totalAmount")} ( ${trans("totalAmountHint", {fees: fees})} )`}
+        label={`${trans("totalAmount")}`}
         placeholder={trans("totalAmount")}
         min={1}
         value={total}

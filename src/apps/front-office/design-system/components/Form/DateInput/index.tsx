@@ -10,7 +10,7 @@ import { trans } from "@mongez/localization";
 function DateInput({ placeholder, label, icon, id, ...props }: any) {
   const { changeValue, error, visibleElementRef, otherProps } = useFormControl(props, {
     collectValue: (value: any) => {
-      return dayjs(value.value).format('D/M/YYYY')
+      return dayjs(value.value).format('YYYY-M-D')
     },
   });
 

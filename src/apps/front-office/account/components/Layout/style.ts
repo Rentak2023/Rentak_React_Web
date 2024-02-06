@@ -11,11 +11,16 @@ export const Wrapper = styled.div`
   margin-top: 120px;
   padding-top: 65px;
   padding-bottom: 151px;
+  .submit--button {
+    border-radius: 40px;
+    background-color: ${theme.colors.primaryColor};
+    border: none;
+  }
 `;
 export const Card = styled.div`
-  display: flex;
   width: 732px;
   padding: 52px 64px;
+  /* display: flex; */
   /* height: 1147px;
   flex-direction: column;
   justify-content: center;
@@ -56,13 +61,4 @@ export const Card = styled.div`
       color: ${theme.colors.primaryColor}
     }
   }
-`;
-
-export const TabWrapper = styled.div`
-  padding: 20px;
-`;
-export const LogoWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;

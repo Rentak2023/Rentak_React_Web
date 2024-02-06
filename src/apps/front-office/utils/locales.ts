@@ -843,9 +843,9 @@ groupedTranslations({
     en: "Your Email",
     ar: "بريدك الالكتروني"
   },
-  ForgetPassword: {
-    en: "Forget Your Password",
-    ar: "نسيت كلمة مرورك"
+  forgetPassword: {
+    en: "Forget Your Password ?",
+    ar: " ؟ نسيت كلمة مرورك"
   },
   yourEmailOrPhone: { 
     en: "Your Email Or Phone Number",
@@ -863,8 +863,24 @@ groupedTranslations({
     en: "Show",
     ar: "إظهار"
   },
-  successfullyLogin:{
-    en: "",
-    ar: ""
+  notHaveAccount:{
+    en: "Don’t have an ccount?",
+    ar: "ليس لديك حساب؟"
+  },
+  alreadyHaveAccount: {
+    en: "Already Have an Account?",
+    ar: "لديك حساب بالفعل؟"
+  },
+  backToLogin: {
+    en: "Back To Login",
+    ar: "الرجوع الي تسجيل الدخول"
+  },
+  forgetPasswordSubTitle: {
+    en: "Don’t worry, happens to all of us. Enter your Phone number below to recover your password",
+    ar: "لا تقلق، هذا يحدث لنا جميعاً. أدخل رقم هاتفك أدناه لاستعادة كلمة المرور الخاصة بك"
+  },
+  tourScheduled:{
+    en: "Tour scheduled successfully , rentak agent will contact you in 2 business days , Thanks",
+    ar: "تمت جدولة الجولة بنجاح، وسيتصل بك وكيل رينتك خلال يومي عمل، شكرًا"
   }
 });
