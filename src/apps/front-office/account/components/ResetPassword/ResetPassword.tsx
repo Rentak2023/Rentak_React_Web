@@ -3,26 +3,28 @@ import { theme } from "apps/front-office/design-system";
 import Button from "apps/front-office/design-system/components/Button";
 import { Flex } from "apps/front-office/design-system/components/Grids";
 import { P4 } from "apps/front-office/design-system/components/Typography";
-import React, { useState } from "react";
+import { useState } from "react";
 import Layout from "../Layout";
 import BackButton from "./BackButton";
 import Logo from "shared/assets/images/auth-logo.png";
 import Title from "./Title";
-import { Form } from "@mongez/react-form";
+import { Form, HiddenInput } from "@mongez/react-form";
 import PhoneNumberInput from "apps/front-office/design-system/components/Form/PhoneNumberInput";
 import SubmitButton from "apps/front-office/design-system/components/Form/SubmitButton";
-import { Tabs } from "@mantine/core";
-import { navigateTo } from "@mongez/react-router";
+import { navigateTo, queryString } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
-import { forgetPassword } from "../../service/auth";
+import { forgetPassword, resetPassword } from "../../service/auth";
 import { showNotification } from "apps/front-office/design-system/components/Notifications/showNotification";
+import PasswordInput from "apps/front-office/design-system/components/Form/PasswordInput";
 
-const ForgetPassword = () => {
+const ResetPassword = ({ params }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  // console.log(queryString.get("key"));
+
   const submitForgetPassword = async ({ values }) => {
     setIsSubmitting(true);
     try {
-      const response = await forgetPassword(values);
+      const response = await resetPassword(values);
       showNotification({
         message: response.data.message,
       });
@@ -59,10 +61,19 @@ const ForgetPassword = () => {
         </Flex>
         <Form onSubmit={submitForgetPassword}>
           <Flex direction="column" gap="24px" fullWidth>
-            <PhoneNumberInput
-              name="username"
-              placeholder={trans("yourPhone")}
-              label={trans("phoneNumber")}
+            <HiddenInput name="key" value={queryString.get("key")} />
+            <PasswordInput
+              name="new_password"
+              placeholder={trans("yourPassword")}
+              label={trans("createPassword")}
+              icon
+              required
+            />
+            <PasswordInput
+              name="confirm_password"
+              placeholder={trans("yourPassword")}
+              label={trans("reenterPassword")}
+              icon
               required
             />
             <SubmitButton
@@ -88,4 +99,4 @@ const ForgetPassword = () => {
   );
 };
 
-export default ForgetPassword;
+export default ResetPassword;

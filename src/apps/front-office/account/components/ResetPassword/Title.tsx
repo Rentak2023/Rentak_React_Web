@@ -5,17 +5,16 @@ import {
   H5,
   Small,
 } from "apps/front-office/design-system/components/Typography";
-import React from "react";
 
 const Title = () => {
   return (
     <Flex direction="column" align="center">
-      <H5>{trans("forgetPassword")}</H5>
+      <H5>{trans("resetPassword")}</H5>
       <Small
         textAlign="center"
         color={theme.colors.grey[200]}
-        style={{ width: "418px" }}>
-        {trans("forgetPasswordSubTitle")}
+        style={{ width: "324px" }}>
+        {trans("resetPasswordSubTitle")}
       </Small>
     </Flex>
   );

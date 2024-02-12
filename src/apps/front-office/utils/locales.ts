@@ -882,5 +882,21 @@ groupedTranslations({
   tourScheduled:{
     en: "Tour scheduled successfully , rentak agent will contact you in 2 business days , Thanks",
     ar: "تمت جدولة الجولة بنجاح، وسيتصل بك وكيل رينتك خلال يومي عمل، شكرًا"
+  },
+  createPassword: {
+    en: "Create Password",
+    ar: "إنشاء كلمة المرور"
+  },
+  reenterPassword:{
+    en: "Re-enter Password",
+    ar: "إعادة إدخال كلمة المرور"
+  },
+  resetPassword: {
+    en: "Reset Password",
+    ar: "إعادة تعيين كلمة المرور"
+  },
+  resetPasswordSubTitle: {
+    en: "Your previous has been reset. Please set a new password for your account.",
+    ar: "تمت إعادة تعيين السابق الخاص بك. يرجى تعيين كلمة مرور جديدة لحسابك."
   }
 });

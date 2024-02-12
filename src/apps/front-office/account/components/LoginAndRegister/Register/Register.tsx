@@ -14,17 +14,21 @@ import { P4 } from "apps/front-office/design-system/components/Typography";
 import { theme } from "apps/front-office/design-system";
 import PhoneNumberInput from "apps/front-office/design-system/components/Form/PhoneNumberInput";
 import { Tabs } from "@mantine/core";
+import { navigateTo } from "@mongez/react-router";
 
 const Register = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const submitLogin = async ({ values }) => {
+  const submitRegister = async ({ values }) => {
     setIsSubmitting(true);
     try {
       const response = await register(values);
       showNotification({
         message: response.data.message,
       });
+      setTimeout(() => {
+        
+      }, 1000)
     } catch (error: any) {
       if (error.response.data.message) {
         showNotification({
@@ -49,7 +53,7 @@ const Register = () => {
       <LogoWrapper>
         <img src={Logo} />
       </LogoWrapper>
-      <Form onSubmit={submitLogin}>
+      <Form onSubmit={submitRegister}>
         <Flex direction="column" gap="24px" fullWidth>
           <TextInput
             name="full_name"

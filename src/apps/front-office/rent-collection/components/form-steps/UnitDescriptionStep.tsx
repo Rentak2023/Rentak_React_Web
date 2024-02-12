@@ -117,8 +117,8 @@ const UnitDescriptionStep = () => {
         name="annual_increase_percentage"
         label={trans("annualIncreasePercentage")}
         placeholder={trans("annualIncreasePercentage")}
-        min={1}
-        required
+        min={0}
+        defaultValue={0}
       />
       <SelectInput
         name="collection_day"

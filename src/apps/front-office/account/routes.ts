@@ -12,4 +12,12 @@ publicRoutes([
     path: URLS.auth.forgetPassword,
     component: React.lazy(() => import("./components/ForgetPassword")),
   },
+  {
+    path: URLS.auth.verifyForgetPassword,
+    component: React.lazy(() => import("./components/Verify")),
+  },
+  {
+    path: URLS.auth.resetPassword,
+    component: React.lazy(() => import("./components/ResetPassword")),
+  },
 ]);

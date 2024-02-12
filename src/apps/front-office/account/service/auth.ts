@@ -46,7 +46,7 @@ export function changePassword(data: any) {
  * Forget password request
  */
 export function forgetPassword(data: any) {
-  return endpoint.post("/forget-password", data);
+  return endpoint.post("/auth/forget-password", data);
 }
 
 /**
@@ -60,7 +60,7 @@ export function verifyForgetPassword(data: any) {
  * Reset password
  */
 export function resetPassword(data: any) {
-  return endpoint.post("/reset-password", data);
+  return endpoint.post("/auth/reset-password", data);
 }
 
 /**

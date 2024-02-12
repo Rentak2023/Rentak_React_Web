@@ -3,7 +3,7 @@ import { theme } from "apps/front-office/design-system";
 import Button from "apps/front-office/design-system/components/Button";
 import { Flex } from "apps/front-office/design-system/components/Grids";
 import { P4 } from "apps/front-office/design-system/components/Typography";
-import React, { useState } from "react";
+import { useState } from "react";
 import Layout from "../Layout";
 import BackButton from "./BackButton";
 import Logo from "shared/assets/images/auth-logo.png";
@@ -11,13 +11,12 @@ import Title from "./Title";
 import { Form } from "@mongez/react-form";
 import PhoneNumberInput from "apps/front-office/design-system/components/Form/PhoneNumberInput";
 import SubmitButton from "apps/front-office/design-system/components/Form/SubmitButton";
-import { Tabs } from "@mantine/core";
 import { navigateTo } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
 import { forgetPassword } from "../../service/auth";
 import { showNotification } from "apps/front-office/design-system/components/Notifications/showNotification";
 
-const ForgetPassword = () => {
+const Verify = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const submitForgetPassword = async ({ values }) => {
     setIsSubmitting(true);
@@ -26,6 +25,7 @@ const ForgetPassword = () => {
       showNotification({
         message: response.data.message,
       });
+      console.log(response)
     } catch (error: any) {
       if (error.response.data.message) {
         showNotification({
@@ -88,4 +88,4 @@ const ForgetPassword = () => {
   );
 };
 
-export default ForgetPassword;
+export default Verify;

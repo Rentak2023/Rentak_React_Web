@@ -12,7 +12,7 @@ const CityAndDistricts = () => {
 
   const getCitiesHandler = async () => {
     try {
-      const response = await getCities({governoment_id: government});
+      const response = await getCities({governorate_id: government});
       const formattedCities = response.data.map(city => ({
         label: city.city_name,
         value: city.city_id
