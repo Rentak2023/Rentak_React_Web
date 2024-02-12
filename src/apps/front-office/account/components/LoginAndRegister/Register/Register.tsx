@@ -15,6 +15,7 @@ import { theme } from "apps/front-office/design-system";
 import PhoneNumberInput from "apps/front-office/design-system/components/Form/PhoneNumberInput";
 import { Tabs } from "@mantine/core";
 import { navigateTo } from "@mongez/react-router";
+import URLS from "apps/front-office/utils/urls";
 
 const Register = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,7 +28,7 @@ const Register = () => {
         message: response.data.message,
       });
       setTimeout(() => {
-        
+        navigateTo(URLS.auth.verify)
       }, 1000)
     } catch (error: any) {
       if (error.response.data.message) {

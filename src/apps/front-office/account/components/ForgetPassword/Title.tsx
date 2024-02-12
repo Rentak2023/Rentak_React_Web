@@ -13,8 +13,7 @@ const Title = () => {
       <H5>{trans("forgetPassword")}</H5>
       <Small
         textAlign="center"
-        color={theme.colors.grey[200]}
-        style={{ width: "418px" }}>
+        color={theme.colors.grey[200]}>
         {trans("forgetPasswordSubTitle")}
       </Small>
     </Flex>

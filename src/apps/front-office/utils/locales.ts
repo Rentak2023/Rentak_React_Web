@@ -898,5 +898,33 @@ groupedTranslations({
   resetPasswordSubTitle: {
     en: "Your previous has been reset. Please set a new password for your account.",
     ar: "تمت إعادة تعيين السابق الخاص بك. يرجى تعيين كلمة مرور جديدة لحسابك."
+  },
+  verifyCode: {
+    en: "Verify Code",
+    ar: "رمز التحقق"
+  },
+  verifyCodeSubTitle: {
+    en: "An authentication code has been sent to your Phone number",
+    ar: "تم إرسال رمز التوثيق إلى رقم هاتفك"
+  },
+  codeNumber: {
+    en: "Code Number",
+    ar: "رقم الكود"
+  },
+  verificationCode: {
+    en: "Verification Code",
+    ar: "رمز التحقق"
+  },
+  notGetCode: {
+    en: "Didn't receive a code?",
+    ar: "لم تتلق رمزا ؟"
+  },
+  resendCode: {
+    en: "Resend",
+    ar: "إعادة إرسال"
+  },
+  verify: {
+    en: "Verify",
+    ar: "تحقق"
   }
 });

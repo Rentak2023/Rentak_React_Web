@@ -16,16 +16,15 @@ export const Wrapper = styled.div`
     background-color: ${theme.colors.primaryColor};
     border: none;
   }
+
 `;
 export const Card = styled.div`
   width: 732px;
   padding: 52px 64px;
-  /* display: flex; */
-  /* height: 1147px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0; */
+  ${devices.mediumMax}{
+    width: auto;
+    padding: 10px;
+  }
   border-radius: 24px;
   background: #fff;
   .ltr-Tabs-tabsList,
@@ -36,6 +35,9 @@ export const Card = styled.div`
   .rtl-Tabs-tab {
     display: flex;
     width: 302px;
+    ${devices.mediumMax}{
+      width: 50%;
+    }
     height: 56px;
     padding: 15px 0px 14px 0px;
     justify-content: center;

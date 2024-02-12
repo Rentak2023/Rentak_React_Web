@@ -5,10 +5,11 @@
     {
       "entry": [
         "/account",
-        "/login",
+        "/login-register",
         "/register",
         "/forget-password",
-        "/rest-password"
+        "/reset-password",
+        "/verify"
       ],
       "name": "account"
     },

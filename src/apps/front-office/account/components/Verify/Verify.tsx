@@ -15,6 +15,7 @@ import { navigateTo } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
 import { forgetPassword } from "../../service/auth";
 import { showNotification } from "apps/front-office/design-system/components/Notifications/showNotification";
+import NumberInput from "apps/front-office/design-system/components/Form/NumberInput";
 
 const Verify = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -25,7 +26,7 @@ const Verify = () => {
       showNotification({
         message: response.data.message,
       });
-      console.log(response)
+      console.log(response);
     } catch (error: any) {
       if (error.response.data.message) {
         showNotification({
@@ -45,6 +46,10 @@ const Verify = () => {
       setIsSubmitting(false);
     }
   };
+
+  const resendCodeHandler = () => {
+
+  }
   return (
     <Layout>
       <Flex direction="column" gap="40px" fullWidth>
@@ -59,17 +64,27 @@ const Verify = () => {
         </Flex>
         <Form onSubmit={submitForgetPassword}>
           <Flex direction="column" gap="24px" fullWidth>
-            <PhoneNumberInput
-              name="username"
-              placeholder={trans("yourPhone")}
-              label={trans("phoneNumber")}
+            <NumberInput
+              name="otp"
+              placeholder={trans("codeNumber")}
+              label={trans("verificationCode")}
               required
             />
+            <Flex gap="0.5rem" justify="end" fullWidth>
+              <P4>{trans("notGetCode")}</P4>
+              <Button type="button" noStyle onClick={resendCodeHandler}>
+                <P4
+                  style={{ marginBottom: "14px" }}
+                  color={theme.colors.primaryColor}>
+                  {trans("resendCode")}
+                </P4>
+              </Button>
+            </Flex>
             <SubmitButton
               isSubmitting={isSubmitting}
               fullWidth
               className="submit--button">
-              <P4 color={theme.colors.white}>{trans("submit")}</P4>
+              <P4 color={theme.colors.white}>{trans("verify")}</P4>
             </SubmitButton>
           </Flex>
         </Form>

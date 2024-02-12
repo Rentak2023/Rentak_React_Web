@@ -13,7 +13,7 @@ publicRoutes([
     component: React.lazy(() => import("./components/ForgetPassword")),
   },
   {
-    path: URLS.auth.verifyForgetPassword,
+    path: URLS.auth.verify,
     component: React.lazy(() => import("./components/Verify")),
   },
   {
