@@ -67,9 +67,11 @@ export function resetPassword(data: any) {
  * Register verification code
  */
 export function verifyCode(data: any) {
-  return endpoint.post("/register/verify-code", data);
+  return endpoint.post("/auth/confirm-otp", data);
 }
-
+export function resendVerifyCode(data: any) {
+  return endpoint.post("/auth/resend_otp", data);
+}
 /**
  * Login using google
  */

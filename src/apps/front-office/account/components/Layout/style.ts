@@ -16,7 +16,12 @@ export const Wrapper = styled.div`
     background-color: ${theme.colors.primaryColor};
     border: none;
   }
-
+  .signup{
+    margin-bottom: 14px;
+    ${devices.mediumMax}{
+      margin-bottom: 24px;
+    }
+  }
 `;
 export const Card = styled.div`
   width: 732px;
@@ -33,6 +38,9 @@ export const Card = styled.div`
   }
   .ltr-Tabs-tab,
   .rtl-Tabs-tab {
+    &:hover{
+      background: rgba(17, 17, 17, 0.25);
+    }
     display: flex;
     width: 302px;
     ${devices.mediumMax}{
@@ -47,6 +55,7 @@ export const Card = styled.div`
     border: none;
     &[data-active] {
       background: ${theme.colors.primaryColor};
+      color: #fff;
     }
     :first-of-type {
       border-radius: 14px 0 0 14px;

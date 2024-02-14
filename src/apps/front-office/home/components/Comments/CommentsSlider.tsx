@@ -10,7 +10,7 @@ const CommentsSlider = ({ comments }) => {
   return (
     <Swiper
       modules={[Navigation, Pagination, Autoplay]}
-      // spaceBetween={10}
+      spaceBetween={20}
       slidesPerView={3}
       navigation={{
         prevEl: ".custom--prev",

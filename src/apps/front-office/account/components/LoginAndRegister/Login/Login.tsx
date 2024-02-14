@@ -84,7 +84,9 @@ const Login = () => {
           <Flex gap="0.5rem" justify="center" fullWidth>
             <P4>{trans("notHaveAccount")}</P4>
             <Tabs.Tab value="signup" className="link-tab">
-              {trans("signup")}
+              <P4 color={theme.colors.primaryColor} >
+                {trans("signup")}
+              </P4>
             </Tabs.Tab>
           </Flex>
         </Flex>

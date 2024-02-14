@@ -92,9 +92,12 @@ export const Reason = styled.div`
   gap: 1rem;
   align-items: center;
   .reason {
-    flex-flow: wrap;
+    /* flex-flow: wrap; */
     ${devices.mediumMax} {
       flex-flow: column;
+    }
+    .left{
+      max-width: 194px;
     }
   }
 `;

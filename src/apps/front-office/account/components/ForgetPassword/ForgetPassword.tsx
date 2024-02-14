@@ -77,7 +77,7 @@ const ForgetPassword = () => {
           <P4>{trans("notHaveAccount")}</P4>
           <Button noStyle onClick={() => navigateTo(URLS.auth.login)}>
             <P4
-              style={{ marginBottom: "14px" }}
+              className="signup"
               color={theme.colors.primaryColor}>
               {trans("signup")}
             </P4>

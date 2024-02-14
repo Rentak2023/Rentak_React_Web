@@ -13,7 +13,7 @@ export const PlansWrapper = styled.section`
   }
   .trinational-renting {
     margin-bottom: 16px;
-    width: 390px;
+    width: 361px;
     ${devices.largeMax} {
       width: 297px;
     }
@@ -88,7 +88,7 @@ export const AbsoluteCard = styled.div`
   opacity: 0.9;
   width: 380px;
   height: 530px;
-  right: 440px;
+  right: 366px;
   top: 100px;
   ul {
     li {

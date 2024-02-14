@@ -8,21 +8,23 @@ import Layout from "../Layout";
 import BackButton from "./BackButton";
 import Logo from "shared/assets/images/auth-logo.png";
 import Title from "./Title";
-import { Form } from "@mongez/react-form";
+import { Form, HiddenInput } from "@mongez/react-form";
 import PhoneNumberInput from "apps/front-office/design-system/components/Form/PhoneNumberInput";
 import SubmitButton from "apps/front-office/design-system/components/Form/SubmitButton";
 import { navigateTo } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
-import { forgetPassword } from "../../service/auth";
+import { forgetPassword, resendVerifyCode, verifyCode } from "../../service/auth";
 import { showNotification } from "apps/front-office/design-system/components/Notifications/showNotification";
 import NumberInput from "apps/front-office/design-system/components/Form/NumberInput";
+import cache from "@mongez/cache";
 
 const Verify = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const submitForgetPassword = async ({ values }) => {
+
+  const submitVerify = async ({ values }) => {
     setIsSubmitting(true);
     try {
-      const response = await forgetPassword(values);
+      const response = await verifyCode(values);
       showNotification({
         message: response.data.message,
       });
@@ -47,8 +49,29 @@ const Verify = () => {
     }
   };
 
-  const resendCodeHandler = () => {
-
+  const resendCodeHandler = async () => {
+    try {
+      const response = await resendVerifyCode(cache.get("userId"));
+      showNotification({
+        message: response.data.message,
+      });
+      console.log(response);
+    } catch (error: any) {
+      if (error.response.data.message) {
+        showNotification({
+          type: "danger",
+          message: error.response.data.message,
+        });
+      }
+      if (error.response.data.errors) {
+        Object.entries(error.response.data.errors).map(([key, value]: any) => {
+          return showNotification({
+            type: "danger",
+            message: value[0],
+          });
+        });
+      }
+    }
   }
   return (
     <Layout>
@@ -62,8 +85,9 @@ const Verify = () => {
         <Flex justify="center" align="center" fullWidth>
           <Title />
         </Flex>
-        <Form onSubmit={submitForgetPassword}>
+        <Form onSubmit={submitVerify}>
           <Flex direction="column" gap="24px" fullWidth>
+            <HiddenInput name="userId" value={cache.get("userId")} />
             <NumberInput
               name="otp"
               placeholder={trans("codeNumber")}
@@ -74,7 +98,7 @@ const Verify = () => {
               <P4>{trans("notGetCode")}</P4>
               <Button type="button" noStyle onClick={resendCodeHandler}>
                 <P4
-                  style={{ marginBottom: "14px" }}
+                  className="signup"
                   color={theme.colors.primaryColor}>
                   {trans("resendCode")}
                 </P4>
@@ -92,7 +116,7 @@ const Verify = () => {
           <P4>{trans("notHaveAccount")}</P4>
           <Button noStyle onClick={() => navigateTo(URLS.auth.login)}>
             <P4
-              style={{ marginBottom: "14px" }}
+              className="signup"
               color={theme.colors.primaryColor}>
               {trans("signup")}
             </P4>

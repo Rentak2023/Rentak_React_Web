@@ -43,9 +43,9 @@ const WhyRentak = () => {
           <Flex fullWidth className="grid" justify="center" align="center">
             <Flex direction="column" justify="center">
               <Reason>
-                <Flex className="reason" direction="column" align="center" justify="center">
+                <Flex className="reason" direction="column" align="end" justify="end">
                   <h4>{reasons[0].title}</h4>
-                  <P4>{reasons[0].text}</P4>
+                  <P4 className="left" >{reasons[0].text}</P4>
                 </Flex>
                 <Line />
               </Reason>
@@ -56,7 +56,7 @@ const WhyRentak = () => {
             <Flex direction="column" justify="center">
               <Reason>
                 <Line />
-                <Flex className="reason" direction="column" align="center" justify="center">
+                <Flex className="reason" direction="column" align="baseline" justify="start">
                   <h4>{reasons[1].title}</h4>
                   <P4>{reasons[1].text}</P4>
                 </Flex>

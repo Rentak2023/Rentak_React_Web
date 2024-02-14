@@ -16,6 +16,7 @@ import PhoneNumberInput from "apps/front-office/design-system/components/Form/Ph
 import { Tabs } from "@mantine/core";
 import { navigateTo } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
+import cache from "@mongez/cache";
 
 const Register = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,6 +28,7 @@ const Register = () => {
       showNotification({
         message: response.data.message,
       });
+      cache.set("userId",response.data.userId)
       setTimeout(() => {
         navigateTo(URLS.auth.verify)
       }, 1000)
@@ -90,7 +92,9 @@ const Register = () => {
           <Flex gap="0.5rem" justify="center" fullWidth>
             <P4>{trans("alreadyHaveAccount")}</P4>
             <Tabs.Tab value="login" className="link-tab">
-              {trans("login")}
+              <P4 color={theme.colors.primaryColor} >
+                {trans("login")}
+              </P4>
             </Tabs.Tab>
           </Flex>
         </Flex>
