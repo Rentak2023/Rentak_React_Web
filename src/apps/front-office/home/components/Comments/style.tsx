@@ -16,13 +16,7 @@ export const CommentsWrapper = styled.section`
 `;
 
 export const CommentWrapper = styled.div`
-  padding: 52px 34px;
-  ${devices.xxLargeMax} {
-    padding: 52px 15px;
-  }
-  ${devices.xSmallMax} {
-    padding: 52px 10px;
-  }
+  padding: 52px 10px;
   border-radius: 10px;
   background: #fff;
   > svg {

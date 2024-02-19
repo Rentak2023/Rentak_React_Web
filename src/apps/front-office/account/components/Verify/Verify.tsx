@@ -13,10 +13,15 @@ import PhoneNumberInput from "apps/front-office/design-system/components/Form/Ph
 import SubmitButton from "apps/front-office/design-system/components/Form/SubmitButton";
 import { navigateTo } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
-import { forgetPassword, resendVerifyCode, verifyCode } from "../../service/auth";
+import {
+  forgetPassword,
+  resendVerifyCode,
+  verifyCode,
+} from "../../service/auth";
 import { showNotification } from "apps/front-office/design-system/components/Notifications/showNotification";
 import NumberInput from "apps/front-office/design-system/components/Form/NumberInput";
 import cache from "@mongez/cache";
+import user from "../../user";
 
 const Verify = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,9 +31,12 @@ const Verify = () => {
     try {
       const response = await verifyCode(values);
       showNotification({
-        message: response.data.message,
+        message: trans("signUpSuccessfully"),
       });
-      console.log(response);
+      user.login({ accessToken: response.data.token });
+      setTimeout(() => {
+        navigateTo("/");
+      }, 1000);
     } catch (error: any) {
       if (error.response.data.message) {
         showNotification({
@@ -51,7 +59,7 @@ const Verify = () => {
 
   const resendCodeHandler = async () => {
     try {
-      const response = await resendVerifyCode(cache.get("userId"));
+      const response = await resendVerifyCode({ userId: cache.get("userId") });
       showNotification({
         message: response.data.message,
       });
@@ -72,7 +80,7 @@ const Verify = () => {
         });
       }
     }
-  }
+  };
   return (
     <Layout>
       <Flex direction="column" gap="40px" fullWidth>
@@ -97,9 +105,7 @@ const Verify = () => {
             <Flex gap="0.5rem" justify="end" fullWidth>
               <P4>{trans("notGetCode")}</P4>
               <Button type="button" noStyle onClick={resendCodeHandler}>
-                <P4
-                  className="signup"
-                  color={theme.colors.primaryColor}>
+                <P4 className="signup" color={theme.colors.primaryColor}>
                   {trans("resendCode")}
                 </P4>
               </Button>
@@ -115,9 +121,7 @@ const Verify = () => {
         <Flex gap="0.5rem" justify="center" fullWidth>
           <P4>{trans("notHaveAccount")}</P4>
           <Button noStyle onClick={() => navigateTo(URLS.auth.login)}>
-            <P4
-              className="signup"
-              color={theme.colors.primaryColor}>
+            <P4 className="signup" color={theme.colors.primaryColor}>
               {trans("signup")}
             </P4>
           </Button>

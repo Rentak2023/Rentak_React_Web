@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LogoWrapper, TabWrapper } from "../style";
 import Logo from "shared/assets/images/auth-logo.png";
 import { trans } from "@mongez/localization";
@@ -17,6 +17,7 @@ import LoginTypeModal from "./LoginTypeModal";
 import Button from "apps/front-office/design-system/components/Button";
 import { navigateTo } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
+import user from "apps/front-office/account/user";
 
 const Login = () => {
   const [
@@ -25,11 +26,14 @@ const Login = () => {
   ] = useDisclosure(false);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  useEffect(() => {
+    openLoginTypeModal();
+  }, [])
   const submitLogin = async ({ values }) => {
     setIsSubmitting(true);
     try {
-      await login(values);
+      const response = await login(values);
+      user.login({accessToken: response.data.token})
       openLoginTypeModal();
     } catch (error: any) {
       if (error.response.data.message) {

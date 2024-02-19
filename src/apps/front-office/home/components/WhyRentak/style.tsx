@@ -98,6 +98,7 @@ export const Reason = styled.div`
     }
     .left{
       max-width: 194px;
+      text-align: end;
     }
   }
 `;

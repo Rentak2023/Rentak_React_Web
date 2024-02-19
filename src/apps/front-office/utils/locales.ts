@@ -926,5 +926,9 @@ groupedTranslations({
   verify: {
     en: "Verify",
     ar: "تحقق"
+  },
+  signUpSuccessfully: {
+    en: "You have successfully registered the account",
+    ar: "لقد قمت بتسجيل الحساب بنجاح"
   }
 });

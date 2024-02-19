@@ -1,15 +1,19 @@
-import React, { useState } from "react";
-import { Card, Wrapper } from "./style";
-import { Container } from "apps/front-office/design-system/components/Grids";
+import  { useEffect, useState } from "react";
 import { Tabs } from "@mantine/core";
 import { trans } from "@mongez/localization";
 import Login from "./Login";
 import Register from "./Register";
 import Layout from "../Layout";
+import user from "../../user";
+import { navigateTo } from "@mongez/react-router";
 
 const LoginAndRegister = () => {
   const [activeTab, setActiveTab] = useState("first");
-
+  useEffect(() => {
+    if(user.isLoggedIn()){
+      navigateTo("/")
+    }
+  }, []);
   return (
     <Layout>
       <Tabs defaultValue="login">
