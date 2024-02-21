@@ -20,12 +20,25 @@ export const ContentWrapper = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  left: 25px;
+  left: 18px;
   right: 0;
   bottom: 0;
-  top: -23rem;
+  top: -30rem;
+  ${devices.xLargeMax} {
+    top: -27rem;
+  }
   ${devices.largeMax} {
-    top: -18rem;
+    top: -21rem;
+  }
+  ${devices.mediumMax} {
+    top: -30rem;
+  }
+  ${devices.smallMax} {
+    top: -37rem;
+  }
+  ${devices.xSmallMax} {
+    top: -31rem;
+    left: 4px;
   }
   display: flex;
   flex-direction: column;

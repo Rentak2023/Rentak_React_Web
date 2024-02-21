@@ -12,6 +12,7 @@ import {
 import Plan from "./Plan";
 import checkIcon from "assets/images/CheckIcon.png";
 import closeIcon from "assets/images/CloseIcon.png";
+import WhiteLogo from "shared/assets/images/white-logo.png"
 
 const traditionalPlans = [
   {
@@ -38,7 +39,7 @@ const traditionalPlans = [
 const rentakPlans = [
   {
     id: "p1",
-    description: trans("rentak"),
+    description: <img src={WhiteLogo} style={{maxWidth: "50px"}} />,
   },
   {
     id: "p1",

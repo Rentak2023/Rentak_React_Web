@@ -50,6 +50,7 @@
         "react-responsive-carousel": "^3.2.23",
         "sass": "^1.66.1",
         "stylis-plugin-rtl": "^2.1.1",
+        "survey-react-ui": "^1.9.130",
         "swiper": "^11.0.4"
     },
     "devDependencies": {

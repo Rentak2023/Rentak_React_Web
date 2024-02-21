@@ -12,6 +12,7 @@ import {
 } from "apps/front-office/design-system/components/Grids";
 import Plan from "./Plan";
 import { PlanType } from "./types";
+import WhiteLogo from "shared/assets/images/white-logo.png"
 
 const traditionalPlans: PlanType[] = [
   {
@@ -39,7 +40,7 @@ const traditionalPlans: PlanType[] = [
 const rentakPlans: PlanType[] = [
   {
     id: "p1",
-    subTitle: trans("rentak"),
+    subTitle: <img src={WhiteLogo} style={{maxWidth: "100px"}} />,
   },
   {
     id: "p1",
