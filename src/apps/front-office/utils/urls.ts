@@ -15,6 +15,7 @@ const URLS = {
     resetPassword: "/reset-password",
     register: "/register",
     verify: "/verify",
+    verifyForgetPassword: "/verify-forget-password"
   },
   settings: "/settings",
   notifications: "/notifications",
