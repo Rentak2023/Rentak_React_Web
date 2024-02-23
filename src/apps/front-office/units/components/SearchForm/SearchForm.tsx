@@ -18,7 +18,7 @@ import { theme } from "apps/front-office/design-system";
 import SearchInput from "./SearchInput";
 import Button from "apps/front-office/design-system/components/Button";
 import { ResetIcon } from "shared/assets/svgs";
-import { currentPageAtom, paramsAtom, propertiesAtom } from "../../atoms";
+import { currentPageAtom, paramsAtom, propertiesAtom, totalPagesAtom } from "../../atoms";
 import { showNotification } from "apps/front-office/design-system/components/Notifications/showNotification";
 import ReactGA from "react-ga";
 import { getAllProperties } from "../../services/services";
@@ -29,6 +29,8 @@ const SearchForm = () => {
   const [properties, setProperties] = propertiesAtom.useState();
   const [searchParams, setSearchParams] = paramsAtom.useState();
   const [currentPage, setCurrentPage] = currentPageAtom.useState();
+  const [totalPages, setTotalPages] = totalPagesAtom.useState();
+  const pageSize = 10;
 
   const formRef = useRef<any>();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -52,6 +54,7 @@ const SearchForm = () => {
       // });
 
       setProperties({ properties: response.data.items });
+      setTotalPages({pages : Math.floor(response.data.total_count / pageSize)});
 
       ReactGA.event({
         category: "Search",
@@ -95,6 +98,7 @@ const SearchForm = () => {
       // });
 
       setProperties({ properties: response.data.items });
+      setTotalPages({pages : Math.floor(response.data.total_count / pageSize)});
 
       ReactGA.event({
         category: "Search",

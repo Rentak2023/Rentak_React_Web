@@ -20,3 +20,10 @@ export const paramsAtom = atom({
     params: {}
   }
 });
+
+export const totalPagesAtom = atom({
+  key: "totalPages",
+  default: {
+    pages: {}
+  }
+});

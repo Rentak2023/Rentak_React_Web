@@ -7,7 +7,7 @@ import {
   Container,
   Flex,
 } from "apps/front-office/design-system/components/Grids";
-import { currentPageAtom, paramsAtom, propertiesAtom } from "../../atoms";
+import { currentPageAtom, paramsAtom, propertiesAtom, totalPagesAtom } from "../../atoms";
 import { Pagination as MantinePagination } from "@mantine/core";
 import { PaginationWrapper, PropertiesWrapper, Wrapper } from "./style";
 import { DirectionIcon } from "shared/assets/svgs";
@@ -27,7 +27,8 @@ const Properties = () => {
   const [searchParams, setSearchParams] = paramsAtom.useState();
 
   const pageSize = 10; // Adjust the page size as needed
-  const [totalPages, setTotalPages] = useState(0);
+  // const [totalPages, setTotalPages] = useState(0);
+  const [totalPages, setTotalPages] = totalPagesAtom.useState();
 
   const getProperties = async () => {
     setIsLoading(true);
@@ -39,7 +40,7 @@ const Properties = () => {
       });
       setProperties({ properties: response.data.items });
       // Calculate the total pages based on the total number of properties and page size
-      setTotalPages(Math.floor(response.data.total_count / pageSize));
+      setTotalPages({pages : Math.floor(response.data.total_count / pageSize)});
     } catch (error) {
       console.log(error);
     } finally {
@@ -72,7 +73,7 @@ const Properties = () => {
               <Small color={theme.colors.secondary[400]} className="results">
                 {`${trans("showing")} ${pageSize} ${trans("results")}, ${trans(
                   "page",
-                )} ${currentPage.currentPage} ${trans("of")} ${totalPages} `}
+                )} ${currentPage.currentPage} ${trans("of")} ${totalPages.pages} `}
               </Small>
               <PropertiesWrapper>
                 <Grid>
@@ -87,7 +88,7 @@ const Properties = () => {
                 <PaginationWrapper>
                   <MantinePagination
                     value={currentPage.currentPage}
-                    total={totalPages}
+                    total={totalPages.pages as any}
                     onChange={handlePageChange}
                     nextIcon={() => <DirectionIcon type="right" />}
                     previousIcon={() => <DirectionIcon type="left" />}
