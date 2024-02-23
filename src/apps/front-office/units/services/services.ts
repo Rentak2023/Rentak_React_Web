@@ -1,7 +1,7 @@
 import { current } from "@mongez/react";
 import endpoint from "shared/endpoint";
 
-export function getAllProperties(params) {
+export function getAllProperties(params?) {
   return endpoint.get(`/unit/get-all-units?lang=${current("localeCode")}`, {params});
 }
 

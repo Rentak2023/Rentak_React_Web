@@ -34,20 +34,19 @@ const SearchForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const searchHandler = async ({ values }) => {
-    console.log(values);
     setIsSubmitting(true);
     const formattedValues = {
       price_from: Math.min(...values.price),
       price_to: Math.max(...values.price),
       page: currentPage.currentPage,
-      ...values
-    }
+      ...values,
+    };
 
-    setSearchParams({params: formattedValues})
-    
+    setSearchParams({ params: formattedValues });
+
     try {
-      const response : any = await getAllProperties(formattedValues);
-      
+      const response: any = await getAllProperties(formattedValues);
+
       // showNotification({
       //   message: response.data.message,
       // });
@@ -58,7 +57,6 @@ const SearchForm = () => {
         category: "Search",
         action: "Search Success",
       });
-
     } catch (error: any) {
       ReactGA.event({
         category: "Search",
@@ -70,7 +68,7 @@ const SearchForm = () => {
           message: error.response.data.message,
         });
       }
-      if(error.response.data.errors){
+      if (error.response.data.errors) {
         Object.entries(error.response.data.errors).map(([key, value]: any) => {
           return showNotification({
             type: "danger",
@@ -83,16 +81,55 @@ const SearchForm = () => {
     }
   };
 
-  const resetFormHandler = () => {
+  const resetFormHandler = async () => {
     const form = formRef.current as Form;
     form.reset();
-  }
+
+    try {
+      const response: any = await getAllProperties({
+        page: currentPage.currentPage,
+      });
+
+      // showNotification({
+      //   message: response.data.message,
+      // });
+
+      setProperties({ properties: response.data.items });
+
+      ReactGA.event({
+        category: "Search",
+        action: "Form Reset",
+      });
+    } catch (error: any) {
+      ReactGA.event({
+        category: "Search",
+        action: "Form Reset Failed",
+      });
+      if (error.response.data.message) {
+        showNotification({
+          type: "danger",
+          message: error.response.data.message,
+        });
+      }
+      if (error.response.data.errors) {
+        Object.entries(error.response.data.errors).map(([key, value]: any) => {
+          return showNotification({
+            type: "danger",
+            message: value[0],
+          });
+        });
+      }
+    }
+  };
   return (
     <FormWrapper>
       <Container>
         <Form onSubmit={searchHandler} ref={formRef}>
           <FormCard>
-            <Flex justify="space-between" fullWidth className="flex search-and-reset">
+            <Flex
+              justify="space-between"
+              fullWidth
+              className="flex search-and-reset">
               <Flex direction="column">
                 <P4 color={theme.colors.grey[500]}>{trans("findPlace")}</P4>
                 <SearchInput />

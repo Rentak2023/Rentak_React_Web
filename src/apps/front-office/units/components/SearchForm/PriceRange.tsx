@@ -9,7 +9,7 @@ import { getMinMaxPrice } from '../../services/services';
 const PriceRange = () => {
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(0);
-  const [defaultValue, setDefaultValue] = useState([0, 0]);
+  const [defaultValue, setDefaultValue] = useState([12000, 215000]);
 
   const getMinMaxPriceHandler = async () => {
     try {
