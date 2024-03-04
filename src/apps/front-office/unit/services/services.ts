@@ -9,3 +9,7 @@ export function visit(formData) {
   return endpoint.post(`/unit/visit`, formData);
 }
 
+export function getInspection(id) {
+  return endpoint.get(`https://rentak-api.azurewebsites.net//unit/get-unit-inspection?id=${id}`);
+}
+

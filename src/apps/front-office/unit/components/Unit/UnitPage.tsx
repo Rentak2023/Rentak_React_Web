@@ -6,14 +6,17 @@ import TabsComponent from "../TabsComponent";
 import ContactUs from "apps/front-office/design-system/components/ContactUs";
 import { getProperty } from "../../services/services";
 import Loader from "apps/front-office/design-system/components/Loader";
+import { ArrangeVisitWrapper } from "./style";
+import { Grid } from "@mantine/core";
+import { Col, Container } from "apps/front-office/design-system/components/Grids";
+import PropertyImages from "./PropertyImages";
+import ArrangeVisitForm from "./ArrangeVisitForm";
 
 function UnitPage({ params }) {
   const unitId = params.id;
   const [isLoading, setIsLoading] = useState(false);
   const [property, setProperty] = useState({});
 
-  console.log(unitId);
-  
   const getPropertyHandler = async () => {
     setIsLoading(true);
     try {
@@ -42,6 +45,18 @@ function UnitPage({ params }) {
   return (
     <>
       <Helmet title={trans("unit")} />
+      <Container>
+        <ArrangeVisitWrapper>
+          <Grid gutter={100}>
+            <Col span={12} md={6}>
+              <PropertyImages property={property} />
+            </Col>
+            <Col span={12} md={6}>
+              <ArrangeVisitForm property={property} />
+            </Col>
+          </Grid>
+        </ArrangeVisitWrapper>
+      </Container>
       <TabsComponent property={property} />
       {/* <ContactUs /> */}
     </>

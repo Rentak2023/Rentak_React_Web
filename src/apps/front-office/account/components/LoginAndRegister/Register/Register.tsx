@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { LogoWrapper, TabWrapper } from "../style";
-import Logo from "shared/assets/images/auth-logo.png";
+import Logo from "shared/assets/images/Logo.png";
 import EmailInput from "apps/front-office/design-system/components/Form/EmailInput";
 import { trans } from "@mongez/localization";
 import PasswordInput from "apps/front-office/design-system/components/Form/PasswordInput";

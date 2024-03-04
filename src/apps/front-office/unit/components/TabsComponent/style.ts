@@ -39,10 +39,10 @@ export const IconWrapper = styled.div`
   padding: 15px;
 `;
 
-export const ArrangeVisitWrapper = styled.div`
+export const InspectionWrapper = styled.div`
   margin-top: 80px;
 `;
 
-export const InspectionWrapper = styled.div`
-  margin-top: 80px;
+export const InspectionCard = styled.div`
+
 `;

@@ -6,15 +6,13 @@ import { P4 } from "apps/front-office/design-system/components/Typography";
 import { useState } from "react";
 import Layout from "../Layout";
 import BackButton from "./BackButton";
-import Logo from "shared/assets/images/auth-logo.png";
+import Logo from "shared/assets/images/Logo.png";
 import Title from "./Title";
 import { Form, HiddenInput } from "@mongez/react-form";
-import PhoneNumberInput from "apps/front-office/design-system/components/Form/PhoneNumberInput";
 import SubmitButton from "apps/front-office/design-system/components/Form/SubmitButton";
 import { navigateTo } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
 import {
-  forgetPassword,
   resendVerifyCode,
   verifyCode,
 } from "../../service/auth";
@@ -22,6 +20,7 @@ import { showNotification } from "apps/front-office/design-system/components/Not
 import NumberInput from "apps/front-office/design-system/components/Form/NumberInput";
 import cache from "@mongez/cache";
 import user from "../../user";
+import { LogoWrapper } from "../LoginAndRegister/style";
 
 const Verify = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -87,9 +86,9 @@ const Verify = () => {
         <Flex fullWidth>
           <BackButton />
         </Flex>
-        <Flex justify="center" align="center" fullWidth>
+        <LogoWrapper>
           <img src={Logo} />
-        </Flex>
+        </LogoWrapper>
         <Flex justify="center" align="center" fullWidth>
           <Title />
         </Flex>

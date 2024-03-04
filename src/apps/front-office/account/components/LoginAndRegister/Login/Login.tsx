@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { LogoWrapper, TabWrapper } from "../style";
-import Logo from "shared/assets/images/auth-logo.png";
+import Logo from "shared/assets/images/Logo.png";
 import { trans } from "@mongez/localization";
 import PasswordInput from "apps/front-office/design-system/components/Form/PasswordInput";
 import { Form } from "@mongez/react-form";
@@ -26,15 +26,15 @@ const Login = () => {
   ] = useDisclosure(false);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  useEffect(() => {
-    openLoginTypeModal();
-  }, [])
+  // useEffect(() => {
+  //   openLoginTypeModal();
+  // }, [])
   const submitLogin = async ({ values }) => {
     setIsSubmitting(true);
     try {
       const response = await login(values);
       user.login({accessToken: response.data.token})
-      openLoginTypeModal();
+      // openLoginTypeModal();
     } catch (error: any) {
       if (error.response.data.message) {
         showNotification({

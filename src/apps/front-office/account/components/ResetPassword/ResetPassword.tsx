@@ -6,16 +6,16 @@ import { P4 } from "apps/front-office/design-system/components/Typography";
 import { useState } from "react";
 import Layout from "../Layout";
 import BackButton from "./BackButton";
-import Logo from "shared/assets/images/auth-logo.png";
+import Logo from "shared/assets/images/Logo.png";
 import Title from "./Title";
 import { Form, HiddenInput } from "@mongez/react-form";
-import PhoneNumberInput from "apps/front-office/design-system/components/Form/PhoneNumberInput";
 import SubmitButton from "apps/front-office/design-system/components/Form/SubmitButton";
 import { navigateTo, queryString } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
-import { forgetPassword, resetPassword } from "../../service/auth";
+import { resetPassword } from "../../service/auth";
 import { showNotification } from "apps/front-office/design-system/components/Notifications/showNotification";
 import PasswordInput from "apps/front-office/design-system/components/Form/PasswordInput";
+import { LogoWrapper } from "../LoginAndRegister/style";
 
 const ResetPassword = ({ params }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -53,9 +53,9 @@ const ResetPassword = ({ params }) => {
         <Flex fullWidth>
           <BackButton />
         </Flex>
-        <Flex justify="center" align="center" fullWidth>
+        <LogoWrapper>
           <img src={Logo} />
-        </Flex>
+        </LogoWrapper>
         <Flex justify="center" align="center" fullWidth>
           <Title />
         </Flex>

@@ -10,4 +10,8 @@ export const LogoWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 57px 0;
+  img{
+    max-width: 175px;
+  }
 `;

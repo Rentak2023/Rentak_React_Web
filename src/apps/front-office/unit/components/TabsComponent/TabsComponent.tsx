@@ -16,18 +16,18 @@ const TabsComponent = ({ property }) => {
             <Tabs.Tab value="first">
               <H4 weight="500">{trans("unitOverview")}</H4>
             </Tabs.Tab>
-            {/* <Tabs.Tab value="second" color="blue">
+            <Tabs.Tab value="second" color="blue">
               <H4 weight="500">{trans("inspection")}</H4>
-            </Tabs.Tab> */}
+            </Tabs.Tab>
           </Tabs.List>
 
           <Tabs.Panel value="first" pt="xs">
             <UnitOverviewTab property={property} />
           </Tabs.Panel>
 
-          <Tabs.Panel value="second" pt="xs">
+          {/* <Tabs.Panel value="second" pt="xs">
             <InspectionTab property={property} />
-          </Tabs.Panel>
+          </Tabs.Panel> */}
         </Tabs>
       </Container>
     </TabsWrapper>
