@@ -31,7 +31,7 @@ const appConfigurations: ApplicationConfigurations = {
     defaultLocaleCode: defaultLocaleCode,
     fallback: fallbackLocaleCode,
     locales: localeCodesList,
-  },
+  }
 };
 
 // router configurations
