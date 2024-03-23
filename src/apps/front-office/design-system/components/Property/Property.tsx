@@ -25,14 +25,16 @@ import { theme } from "apps/front-office/design-system";
 import URLS from "apps/front-office/utils/urls";
 
 const Property = ({ property }) => {
+  const bedroom = property.rooms.find(room => (room.room_name === "Bedroom"));
+  const bathroom = property.rooms.find(room => (room.room_name === "Bathroom"));
   const items = [
     {
       icon: <BedIcon />,
-      text: property.room_numbers,
+      text: bedroom !== undefined ? bedroom.num_of_rooms : 0 ,
     },
     {
       icon: <ShowerIcon />,
-      text: property.bathrom_numbers,
+      text: bathroom !== undefined ? bathroom.num_of_rooms : 0 ,
     },
     {
       icon: <AreaIcon />,

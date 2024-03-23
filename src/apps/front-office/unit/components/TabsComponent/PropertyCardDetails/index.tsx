@@ -18,7 +18,8 @@ import { trans } from "@mongez/localization";
 
 const PropertyCardDetails = ({ property }) => {
   console.log(property);
-
+  const bedroom = property.rooms?.find(room => (room.room_name === "Bedroom"));
+  const bathroom = property.rooms?.find(room => (room.room_name === "Bathroom"));
   const detailsList = [
     {
       icon: <LocationIcon />,
@@ -33,12 +34,12 @@ const PropertyCardDetails = ({ property }) => {
     {
       icon: <BedIcon />,
       text: trans("rooms"),
-      detail: property?.room_numbers,
+      detail: bedroom !== undefined ? bedroom.num_of_rooms : 0,
     },
     {
       icon: <ShowerIcon />,
       text: trans("toilets"),
-      detail: property?.bathrom_numbers,
+      detail: bathroom !== undefined ? bathroom.num_of_rooms : 0,
     },
     {
       icon: <AreaIcon />,
@@ -99,11 +100,11 @@ const PropertyCardDetails = ({ property }) => {
             </Flex>
             <Flex direction="column">
               <Small weight="600">{trans("rooms")}</Small>
-              <Small weight="400">{property?.room_numbers}</Small>
+              <Small weight="400">{bedroom !== undefined ? bedroom.num_of_rooms : 0}</Small>
             </Flex>
             <Flex direction="column">
               <Small weight="600">{trans("toilets")}</Small>
-              <Small weight="400">{property?.bathrom_numbers}</Small>
+              <Small weight="400">{bathroom !== undefined ? bathroom.num_of_rooms : 0}</Small>
             </Flex>
           </Flex>
         </Flex>
