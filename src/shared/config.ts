@@ -10,6 +10,7 @@ import { setPreloadConfiguration } from "@mongez/react-utils";
 import { localeCodesList } from "apps/front-office/utils/localization";
 import { defaultLocaleCode, fallbackLocaleCode } from "./flags";
 import { routerConfigurations } from "./router-configurations.js";
+import Loader from "apps/front-office/design-system/components/Loader/index.js";
 
 // if you're not using `@mongez/react-utils` for preload function, you can remove the following line
 setPreloadConfiguration({
@@ -31,7 +32,7 @@ const appConfigurations: ApplicationConfigurations = {
     defaultLocaleCode: defaultLocaleCode,
     fallback: fallbackLocaleCode,
     locales: localeCodesList,
-  }
+  },
 };
 
 // router configurations

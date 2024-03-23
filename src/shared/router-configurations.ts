@@ -31,4 +31,5 @@ export const routerConfigurations: RouterConfigurations = {
     path: URLS.notFound,
   },
   rootComponent: React.lazy(() => import("apps/front-office/App")),
+autoRedirectToLocaleCode: false
 };
