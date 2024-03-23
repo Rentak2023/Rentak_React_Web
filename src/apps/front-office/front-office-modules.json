@@ -63,6 +63,12 @@
         "/unit"
       ],
       "name": "unit"
+    },
+    {
+      "entry": [
+        "/survey"
+      ],
+      "name": "survey"
     }
   ]
 }

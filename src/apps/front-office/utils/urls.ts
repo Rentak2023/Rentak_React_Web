@@ -58,7 +58,8 @@ const URLS = {
   unit: "/unit/:id",
   property: (property) => `/unit/${property.id}` || `https://rent-ak.com/Listing/Details/${property.id}`,
   //Contract
-  contract: "/contract"
+  contract: "/contract",
+  survey: "/survey/:id"
 
 };
 

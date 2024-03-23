@@ -41,6 +41,7 @@
         "@mongez/supportive-is": "^1.0.12",
         "@mongez/user": "^1.0.12",
         "@mongez/validator": "^1.0.18",
+        "@reduxjs/toolkit": "^2.2.1",
         "@tabler/icons-react": "^2.24.0",
         "rc-slider": "^9.6.5",
         "react": "^18.2.0",
@@ -50,8 +51,17 @@
         "react-responsive-carousel": "^3.2.23",
         "sass": "^1.66.1",
         "stylis-plugin-rtl": "^2.1.1",
-        "survey-react-ui": "^1.9.130",
-        "swiper": "^11.0.4"
+        "swiper": "^11.0.4",
+        "connected-react-router": "6.9.3",
+        "history": "5.3.0",
+        "react-redux": "^7.2.8",
+        "react-router": "6.3.0",
+        "react-router-dom": "6.3.0",
+        "survey-react-ui": "latest",
+        "survey-analytics": "latest",
+        "survey-core": "latest",
+        "survey-creator-core": "latest",
+        "survey-creator-react": "latest"
     },
     "devDependencies": {
         "@mongez/vite": "^1.0.25",

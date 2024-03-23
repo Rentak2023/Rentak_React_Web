@@ -33,12 +33,12 @@ const PropertyCardDetails = ({ property }) => {
     {
       icon: <BedIcon />,
       text: trans("rooms"),
-      detail: property?.room_numbers,
+      detail: property?.rooms.room_name === "Bedroom" ? property.rooms.num_of_rooms : 0,
     },
     {
       icon: <ShowerIcon />,
       text: trans("toilets"),
-      detail: property?.bathrom_numbers,
+      detail: property?.rooms.room_name === "Bathroom" ? property.rooms.num_of_rooms : 0,
     },
     {
       icon: <AreaIcon />,

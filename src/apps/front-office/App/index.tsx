@@ -14,6 +14,8 @@ import { getPrimaryFont } from "../design-system";
 import ProgressBar from "../design-system/Indicators/ProgressBar";
 import { cacheLTR, cacheRTL, cacheValue } from "./LayoutSettings";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import store from "../redux";
+import { Provider } from "react-redux";
 
 const themeCacheKey = "theme-mode";
 
@@ -68,7 +70,9 @@ export default function App({ children }: AppProps) {
             <InjectThemeAtom />
             <ModalsProvider>
               <ToastContainer />
-              {children}
+              <Provider store={store}>
+                {children}
+              </Provider>
             </ModalsProvider>
           </MantineProvider>
         </CacheProvider>

@@ -22,11 +22,11 @@ const Property = ({ property }) => {
   const items = [
     {
       icon: <BedIcon />,
-      text: property.room_numbers,
+      text: property.rooms.room_name === "Bedroom" ? property.rooms.num_of_rooms : 0,
     },
     {
       icon: <Bathtub />,
-      text: property.bathrom_numbers,
+      text: property.rooms.room_name === "Bathroom" ? property.rooms.num_of_rooms : 0,
     },
     {
       icon: <SpaceIcon />,
