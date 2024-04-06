@@ -53,13 +53,11 @@ export default function ContractContent() {
               name="landlord_identity_image"
               label="landlordIdentity"
               placeholder="landlordIdentity"
-              required
             />
             <FileInput
               name="tenant_identity_image"
               label="tenantIdentity"
               placeholder="tenantIdentity"
-              required
             />
           </Flex>
           <Flex gap="57px" fullWidth className="row">
@@ -67,13 +65,11 @@ export default function ContractContent() {
               name="landlord_phone"
               label="landlordPhone"
               placeholder={trans("phone")}
-              required
             />
             <PhoneNumberInput
               name="tenant_phone"
               label="tenantPhone"
               placeholder={trans("phone")}
-              required
             />
           </Flex>
           <Line />
