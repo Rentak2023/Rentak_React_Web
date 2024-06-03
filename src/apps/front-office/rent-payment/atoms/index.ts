@@ -12,4 +12,4 @@ export const rentPaymentFeesAtom = atom({
   default: {
     fees: 0,
   }
-})
+});

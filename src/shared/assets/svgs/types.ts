@@ -1,5 +1,5 @@
-export interface SvgsTypes {
+export type SvgsTypes = {
   size?: number | string;
   color?: string;
-  type?: any
-}
+  type?: any;
+};

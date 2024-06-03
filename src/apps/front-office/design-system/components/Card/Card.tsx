@@ -6,7 +6,7 @@ import { trans } from "@mongez/localization";
 const Card = ({ title, subtitle, children }) => {
   return (
     <Wrapper>
-      <Container>
+      <Container size="65rem">
         <Flex direction="column" className="title">
           <H4 weight="600">{trans(title)}</H4>
           <P4>{trans(subtitle)}</P4>

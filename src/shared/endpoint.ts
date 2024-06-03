@@ -30,7 +30,7 @@ const endpointEvents = endpoint.events;
 
 endpointEvents.beforeSending(config => {
   const headers: any = config.headers;
-  headers["os"] = apiOS;
+  // headers["os"] = apiOS;
   headers['lang'] = current('localeCode')
 });
 

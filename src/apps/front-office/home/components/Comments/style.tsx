@@ -28,7 +28,7 @@ export const CommentWrapper = styled.div`
   .comment {
     height: 100px;
     width: 220px;
-    ${devices.mediumMax}{
+    ${devices.mediumMax} {
       width: auto;
     }
   }
@@ -72,7 +72,7 @@ export const SliderWrapper = styled.div`
       margin-top: 74px;
     }
     .swiper-pagination-bullet {
-      background: #80b3e6;
+      background: #222222;
       height: 13px;
       width: 13px;
       &.swiper-pagination-bullet-active {

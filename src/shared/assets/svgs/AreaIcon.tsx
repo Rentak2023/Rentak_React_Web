@@ -5,8 +5,8 @@ const AreaIcon = ({ size, color }: SvgsTypes) => {
     <>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="21"
+        width={size ?? "20"}
+        height={size ?? "21"}
         viewBox="0 0 20 21"
         fill="none">
         <g clip-path="url(#clip0_1189_914)">
