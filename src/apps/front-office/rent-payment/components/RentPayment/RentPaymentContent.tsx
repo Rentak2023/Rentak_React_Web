@@ -113,12 +113,19 @@ const RentPaymentContent = () => {
         category: "Rent Payment",
         action: "Rent Payment Failed",
       });
-      Object.entries(error.response.data.errors).map(([key, value]: any) => {
-        return showNotification({
+      if (error.response.data.message) {
+        showNotification({
           type: "danger",
-          message: value[0],
+          message: error.response.data.message,
         });
-      });
+      } else {
+        Object.entries(error.response.data.errors).map(([key, value]: any) => {
+          return showNotification({
+            type: "danger",
+            message: value[0],
+          });
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
