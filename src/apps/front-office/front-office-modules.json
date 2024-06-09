@@ -66,6 +66,12 @@
     },
     {
       "entry": [
+        "/thank-you"
+      ],
+      "name": "thank-you"
+    },
+    {
+      "entry": [
         "/survey"
       ],
       "name": "survey"

@@ -8,6 +8,7 @@ const URLS = {
     viewRoute: "/blog/:id/:slug",
     view: (post: any) => `/blog/${post.id}/${post.slug}`,
   },
+  thankYou: "/thank-you",
   faq: "https://rent-ak.com/Home/FAQs",
   auth: {
     login: "/login-register" || "https://rent-ak.com/Account/Login",
@@ -15,15 +16,18 @@ const URLS = {
     resetPassword: "/reset-password",
     register: "/register",
     verify: "/verify",
-    verifyForgetPassword: "/verify-forget-password"
+    verifyForgetPassword: "/verify-forget-password",
   },
   settings: "/settings",
   notifications: "/notifications",
   wallet: "/wallet",
   invoices: "/invoices",
-  rentPayment: "/rent-payment" || "https://rent-ak.com/Contract/Form?product_id=1",
-  rentCollection: "/rent-collection" ||  "https://rent-ak.com/Contract/RentCollectionForm",
-  maintenancePayment: "/maintenance-payment" || "https://rent-ak.com/Contract/Form?product_id=2",
+  rentPayment:
+    "/rent-payment" || "https://rent-ak.com/Contract/Form?product_id=1",
+  rentCollection:
+    "/rent-collection" || "https://rent-ak.com/Contract/RentCollectionForm",
+  maintenancePayment:
+    "/maintenance-payment" || "https://rent-ak.com/Contract/Form?product_id=2",
   units: "/units" || "https://rent-ak.com/Listing/Index",
 
   pages: {
@@ -42,7 +46,7 @@ const URLS = {
   contactUs: "https://rent-ak.com/Home/ContactUs",
   team: "#",
   services: "#",
-  
+
   //Services
   kitchen: "#",
   livingArea: "#",
@@ -56,11 +60,12 @@ const URLS = {
 
   //Properties
   unit: "/unit/:id",
-  property: (property) => `/unit/${property.id}` || `https://rent-ak.com/Listing/Details/${property.id}`,
+  property: property =>
+    `/unit/${property.id}` ||
+    `https://rent-ak.com/Listing/Details/${property.id}`,
   //Contract
   contract: "/contract",
-  survey: "/survey/:id"
-
+  survey: "/survey/:id",
 };
 
 export default URLS;
