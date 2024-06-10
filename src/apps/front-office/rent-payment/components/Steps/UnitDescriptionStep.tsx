@@ -18,7 +18,7 @@ const UnitDescriptionStep = () => {
   const [productFees, setProductFees] = useState<any>(0);
   const [rentAmount, setRentAmount] = useState<any>(0);
   const [total, setTotal] = useState(0);
-  const [promoCode, setPromoCode] = useState('');
+  const [promoCode, setPromoCode] = useState("");
   const [promoDiscount, setPromoDiscount] = useState(0);
 
   const getProductsFees = async () => {
@@ -28,10 +28,9 @@ const UnitDescriptionStep = () => {
         product => product.id === 1,
       );
       setProductFees(rentPaymentProduct.fees);
-      rentPaymentFeesAtom.update({fees: rentPaymentProduct.fees})
-
+      rentPaymentFeesAtom.update({ fees: rentPaymentProduct.fees });
     } catch (error: any) {
-      Object.entries(error.response.data.errors).map(([key, value]: any) => {
+      Object.entries(error.response.data.errors).map(([_key, value]: any) => {
         return showNotification({
           type: "danger",
           message: value[0],
@@ -48,28 +47,27 @@ const UnitDescriptionStep = () => {
     const parsedBaseAmount = Number(baseAmount);
     const parsedFees = Number(fees);
     const parsedPromoDiscount = Number(promoDiscount);
-  
+
     // Calculate the total with promo discount
     const total = parsedBaseAmount + (parsedBaseAmount * parsedFees) / 100;
     const discountAmount = (total * parsedPromoDiscount) / 100;
     const totalWithDiscount = total - discountAmount;
-  
+
     return totalWithDiscount;
   };
 
   useEffect(() => {
-    setTotal(calculateTotal(rentAmount, productFees, promoDiscount) as any)
+    setTotal(calculateTotal(rentAmount, productFees, promoDiscount) as any);
   }, [productFees, rentAmount, promoDiscount]);
 
   const requestPromoCode = async () => {
     try {
-      const response = await sendPromoCode({code: promoCode});
+      const response = await sendPromoCode({ code: promoCode });
       setPromoDiscount(response.data.promocode.discount);
 
       showNotification({
         message: response.data.message,
       });
-
     } catch (error: any) {
       setPromoDiscount(0);
 
@@ -81,15 +79,15 @@ const UnitDescriptionStep = () => {
   };
 
   const applyPromoCode = () => {
-    if(!Is.empty(promoCode)){
+    if (!Is.empty(promoCode)) {
       requestPromoCode();
-    }else{
-      setPromoCode('')
+    } else {
+      setPromoCode("");
     }
-  }
+  };
 
   useEffect(() => {
-    if(!Is.empty(promoCode)){
+    if (!Is.empty(promoCode)) {
       const timeoutId = setTimeout(() => requestPromoCode(), 2000);
       return () => clearTimeout(timeoutId);
     }
@@ -115,8 +113,8 @@ const UnitDescriptionStep = () => {
             placeholder={trans("rentAmount")}
             min={1}
             value={rentAmount}
-            onChange={(value) => {
-              setRentAmount(value)
+            onChange={value => {
+              setRentAmount(value);
             }}
             required
           />
@@ -131,7 +129,7 @@ const UnitDescriptionStep = () => {
             readOnly
           />
         </Col>
-      </Grid> 
+      </Grid>
       {/* <TextInput
         name="promo_code"
         label={trans("promoCode")}
@@ -146,10 +144,9 @@ const UnitDescriptionStep = () => {
           label={trans("promoCode")}
           placeholder={trans("promoCode")}
           value={promoCode}
-          onChange={(value) => {
-            setPromoCode(value)
+          onChange={value => {
+            setPromoCode(value);
           }}
-          
         />
         <Button onClick={applyPromoCode}>
           <P4 color={theme.colors.white}>{trans("applyPromoCode")}</P4>
@@ -157,7 +154,9 @@ const UnitDescriptionStep = () => {
       </Flex>
       <NumberInput
         name="total_amount"
-        label={`${trans("totalAmount")} ( ${trans("totalAmountHint", {fees: fees})} )`}
+        label={`${trans("totalAmount")} ( ${trans("totalAmountHint", {
+          fees: productFees,
+        })} )`}
         placeholder={trans("totalAmount")}
         min={1}
         readOnly
