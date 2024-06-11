@@ -4,6 +4,7 @@ import Card from "apps/front-office/design-system/components/Card";
 import PageHeader from "apps/front-office/design-system/components/PageHeader";
 import MaintenancePaymentContent from "./MaintenancePaymentContent";
 import { FormIcon } from "shared/assets/svgs";
+import FloatingButtons from "apps/front-office/design-system/components/FloatingButtons";
 
 function MaintenancePaymentPage() {
   return (
@@ -15,11 +16,9 @@ function MaintenancePaymentPage() {
           subTitle="rentNow"
           icon={<FormIcon />}
         />
-        <Card
-          title="fillForm"
-          subtitle="completeForm"
-        >
+        <Card title="fillForm" subtitle="completeForm">
           <MaintenancePaymentContent />
+          <FloatingButtons />
         </Card>
       </>
     </>

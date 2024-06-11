@@ -4,6 +4,7 @@ import Card from "apps/front-office/design-system/components/Card";
 import PageHeader from "apps/front-office/design-system/components/PageHeader";
 import RentCollectionContent from "./RentCollectionContent";
 import { FormIcon } from "shared/assets/svgs";
+import FloatingButtons from "apps/front-office/design-system/components/FloatingButtons";
 
 function RentCollectionPage() {
   return (
@@ -16,11 +17,9 @@ function RentCollectionPage() {
           description="rentCollectionDescription"
           icon={<FormIcon />}
         />
-        <Card
-          title="fillForm"
-          subtitle="completeForm"
-        >
+        <Card title="fillForm" subtitle="completeForm">
           <RentCollectionContent />
+          <FloatingButtons />
         </Card>
       </>
     </>

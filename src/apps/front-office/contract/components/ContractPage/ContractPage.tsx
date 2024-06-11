@@ -4,6 +4,7 @@ import PageContent from "apps/front-office/design-system/components/PageContent"
 import PageHeader from "apps/front-office/design-system/components/PageHeader";
 import ContractContent from "./ContractContent";
 import ContractGif from "shared/assets/images/contract.gif";
+import FloatingButtons from "apps/front-office/design-system/components/FloatingButtons";
 
 function ContractPage() {
   return (
@@ -17,6 +18,7 @@ function ContractPage() {
         />
         <PageContent>
           <ContractContent />
+          <FloatingButtons />
         </PageContent>
       </>
     </>
