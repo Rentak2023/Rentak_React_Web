@@ -79,10 +79,10 @@ export const StepWrapper = styled.div`
   label: StepWrapper;
   .otp {
     button {
-      background-color: ${theme.colors.secondary[400]};
+      /* background-color: ${theme.colors.secondary[400]}; */
       height: auto;
       padding: 16px;
-      border-radius: 10.842px;
+      /* border-radius: 10.842px; */
     }
     ${devices.mediumMax} {
       flex-direction: column;
@@ -109,8 +109,6 @@ export const BannerDescription = styled.div`
   transform: translate(-50%, -50%);
   color: white; /* Adjust this as needed */
   text-align: center;
-  padding: 20px; /* Adjust padding as needed */
-  border-radius: 10px; /* Optional: Add border-radius for rounded corners */
   margin-top: 15px;
 `;
 

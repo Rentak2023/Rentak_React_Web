@@ -107,8 +107,8 @@ const PersonalInfoStep = () => {
           placeholder={trans("phoneNumber")}
           required
         />
-        <Button onClick={sendOtpHandler}>
-          <P4 color={theme.colors.white}>{trans("sendOtp")}</P4>
+        <Button variant="outline" onClick={sendOtpHandler}>
+          <P4 color={theme.colors.secondary[500]}>{trans("sendOtp")}</P4>
         </Button>
       </Flex>
       <Flex gap="1rem" fullWidth align="end" className="otp">
@@ -118,8 +118,8 @@ const PersonalInfoStep = () => {
           placeholder={trans("otp")}
           required
         />
-        <Button onClick={verifyOtpHandler}>
-          <P4 color={theme.colors.white}>{trans("verifyOtp")}</P4>
+        <Button variant="outline" onClick={verifyOtpHandler}>
+          <P4 color={theme.colors.secondary[500]}>{trans("verifyOtp")}</P4>
         </Button>
       </Flex>
     </Col>

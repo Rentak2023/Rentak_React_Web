@@ -18,7 +18,7 @@ const PageHeader = () => {
           <H2 weight="800" color="white">
             {trans("vacayNow")}
           </H2>
-          <P2 weight="400" color="white">
+          <P2 weight="600" color="white">
             {trans("rentNow")}
           </P2>
         </Flex>
