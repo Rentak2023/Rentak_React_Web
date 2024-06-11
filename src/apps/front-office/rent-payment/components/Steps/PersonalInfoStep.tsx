@@ -85,19 +85,19 @@ const PersonalInfoStep = () => {
         name="tenant_name"
         label={trans("fullName")}
         placeholder={trans("fullName")}
-        onChange={(value) => rentPaymentAtom.update({username: value})}
-        required
-      />
-      <TextInput
-        name="tenant_national_id"
-        label={trans("nationalId")}
-        placeholder={trans("nationalId")}
+        onChange={value => rentPaymentAtom.update({ username: value })}
         required
       />
       <EmailInput
         name="tenant_email"
         label={trans("email")}
         placeholder={trans("email")}
+        required
+      />
+      <TextInput
+        name="tenant_national_id"
+        label={trans("nationalId")}
+        placeholder={trans("nationalId")}
         required
       />
       <Flex gap="1rem" fullWidth align="end" className="otp">

@@ -3,7 +3,7 @@ import { P4 } from "apps/front-office/design-system/components/Typography";
 
 export const labels = [
   <P4 weight="600" style={{ width: "max-content" }}>
-    {trans("profileInfo")}
+    {trans("personalInfo")}
   </P4>,
   <P4 weight="600" style={{ width: "max-content" }}>
     {trans("paymentMethod")}

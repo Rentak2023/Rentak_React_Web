@@ -512,10 +512,10 @@ groupedTranslations({
     en: "Vacation financing",
     ar: "تمويل الاجازة",
   },
-  vacayNow: {
-    en: "vacay now and pay later",
-    ar: "إجازة الآن والدفع في وقت لاحق",
-  },
+  // vacayNow: {
+  //   en: "vacay now and pay later",
+  //   ar: "إجازة الآن والدفع في وقت لاحق",
+  // },
   fillForm: {
     en: "Fill in the form",
     ar: "إملأ الإستمارة",
@@ -528,6 +528,10 @@ groupedTranslations({
   profileInfo: {
     en: "Profile Info",
     ar: "المعلومات الشخصية",
+  },
+  serviceAndPaymentMethod: {
+    en: "Service And Payment Method",
+    ar: "الخدمة وطريقة الدفع",
   },
   ownerInfo: {
     en: "Owner Info",
@@ -637,9 +641,13 @@ groupedTranslations({
     en: "Our automated rent collection system ensures seamless payments. Plus, offer your tenants flexible options like credit card payments, with a 55-day grace period, interest-free.",
     ar: "يضمن نظامنا الآلي لتحصيل الإيجار دفعات سلسة. بالإضافة إلى ذلك، قدم للمستأجرين خيارات مرنة مثل الدفع ببطاقات الائتمان، مع فترة سماح مدتها 55 يومًا، بدون فوائد.",
   },
+  vacayNow: {
+    en: "Vacay Now, Pay Later!",
+    ar: "أحجز الآن، ادفع لاحقاً!",
+  },
   rentNow: {
-    en: "Rent now .. Pay Later",
-    ar: "استأجر الآن .. ادفع لاحقًا",
+    en: "Choose a chalet from any platform you prefer, agree on the price, provide owner's bank details, and fill out our form. Rentak handles the rest, including transferring the amount within 4 working days.",
+    ar: "اختر شاليه من أي منصة تفضلها، ووافق على السعر، وقدم التفاصيل المصرفية للمالك، واملأ النموذج الخاص بنا. وتتولى شركة Rentak الباقي، بما في ذلك تحويل المبلغ خلال 4 أيام عمل.",
   },
   rentPaymentDescription: {
     en: "For any Home, Villa, Chalet or Hotel Room, from any website or even through your connections.",
