@@ -15,7 +15,7 @@ function RentPaymentPage() {
     headerAtom.update({ mode: "form" });
   }, []);
 
-  if (headerModeValue.mode !== "form") return <Loader />;
+  // if (headerModeValue.mode !== "form") return <Loader />;
 
   return (
     <>

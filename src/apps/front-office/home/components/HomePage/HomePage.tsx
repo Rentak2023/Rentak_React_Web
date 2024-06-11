@@ -12,11 +12,17 @@ import Brands from "../Brands";
 import Comments from "../Comments";
 import Properties from "../Properties";
 import ContactUs from "apps/front-office/design-system/components/ContactUs";
+import { useEffect } from "react";
+import { headerAtom } from "apps/front-office/design-system/layouts/Header/atoms";
 
 export default function HomePage() {
+  useEffect(() => {
+    headerAtom.update({ mode: "default" });
+  }, []);
+
   return (
     <>
-      <Helmet title={trans('rentakApp')} appendAppName={false} />
+      <Helmet title={trans("rentakApp")} appendAppName={false} />
 
       <MainSlider />
       {/* <BookingStrip /> */}

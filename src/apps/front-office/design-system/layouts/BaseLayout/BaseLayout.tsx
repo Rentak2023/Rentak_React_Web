@@ -7,6 +7,7 @@ import GlobalStyles from "../../utils/GlobalStyles";
 /**
  * Base layout can be used to wrap all pages
  */
+
 export default function BaseLayout({ children }: BasicComponentProps) {
   return (
     <>
