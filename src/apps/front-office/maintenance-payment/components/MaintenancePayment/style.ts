@@ -32,21 +32,33 @@ export const StepperWrapper = styled.div`
       color: ${theme.colors.grey[200]};
       border: none;
     }
+    ${devices.mediumMax} {
+      div.ltr-Stepper-stepDescription,
+      div.rtl-Stepper-stepDescription {
+        svg {
+          width: 25px !important;
+          height: 25px !important;
+        }
+      }
+    }
     div[data-progress] {
       color: ${theme.colors.white};
       background-color: ${theme.colors.secondary[500]};
     }
     button[data-completed] {
       svg {
-        fill: #1d8841 path {
-
-        }
+        fill: #1d8841;
       }
       div.ltr-Stepper-stepIcon,
       div.rtl-Stepper-stepIcon {
         background-color: #1d8841;
         color: ${theme.colors.white};
         border: none;
+        ${devices.mediumMax} {
+          height: 2rem;
+          width: 2rem;
+          min-width: auto;
+        }
       }
     }
   }
@@ -73,10 +85,8 @@ export const StepWrapper = styled.div`
   label: StepWrapper;
   .otp {
     button {
-      background-color: ${theme.colors.secondary[400]};
       height: auto;
       padding: 16px;
-      border-radius: 10.842px;
     }
     ${devices.mediumMax} {
       flex-direction: column;
