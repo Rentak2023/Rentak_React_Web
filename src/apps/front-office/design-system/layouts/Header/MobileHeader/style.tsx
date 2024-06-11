@@ -53,13 +53,19 @@ export const IconWrapper = styled(Flex)`
   }
 `;
 
-export const TopBarContainer = styled(Flex)`
+type TopBarProps = {
+  mode?: string;
+};
+
+export const TopBarContainer = styled(Flex)<TopBarProps>`
   padding: 12px 10px;
   position: absolute;
   z-index: 99;
   left: 0;
   right: 0;
   top: 0;
+  background-color: ${props =>
+    props.mode === "form" ? "rgba(255,255,255, 0.8)" : "transparent"};
   & > a img {
     max-width: 50px;
   }

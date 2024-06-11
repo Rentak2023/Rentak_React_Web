@@ -24,16 +24,29 @@ export const StepperWrapper = styled.div`
       border-color: ${theme.colors.grey[100]};
       color: ${theme.colors.grey[200]};
       border: none;
+      ${devices.mediumMax} {
+        height: 2rem;
+        width: 2rem;
+        min-width: auto;
+      }
     }
+    ${devices.mediumMax} {
+      div.ltr-Stepper-stepDescription,
+      div.rtl-Stepper-stepDescription {
+        svg {
+          width: 25px !important;
+          height: 25px !important;
+        }
+      }
+    }
+
     div[data-progress] {
       color: ${theme.colors.white};
       background-color: ${theme.colors.secondary[500]};
     }
     button[data-completed] {
       svg {
-        fill: #1d8841 path {
-
-        }
+        fill: #1d8841;
       }
       div.ltr-Stepper-stepIcon,
       div.rtl-Stepper-stepIcon {
@@ -84,7 +97,7 @@ export const BannerContainer = styled.div`
     width: 100%;
     height: auto;
     ${devices.largeMax} {
-      height: 100vh;
+      height: 60vh;
     }
   }
 `;
