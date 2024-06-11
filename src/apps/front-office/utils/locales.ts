@@ -643,11 +643,11 @@ groupedTranslations({
   },
   vacayNow: {
     en: "Vacay Now, Pay Later!",
-    ar: "أحجز الآن، ادفع لاحقاً!",
+    ar: "قسط ايجار الشاليه!",
   },
   rentNow: {
-    en: "Choose a chalet from any platform you prefer, agree on the price, provide owner's bank details, and fill out our form. Rentak handles the rest, including transferring the amount within 4 working days.",
-    ar: "اختر شاليه من أي منصة تفضلها، ووافق على السعر، وقدم التفاصيل المصرفية للمالك، واملأ النموذج الخاص بنا. وتتولى شركة Rentak الباقي، بما في ذلك تحويل المبلغ خلال 4 أيام عمل.",
+    en: "Choose a chalet from any platform you prefer, agree on the price, provide owner's bank details, and fill out our form. Rentak handles the rest, including transferring the amount within 4 working days.",
+    ar: "اختر الشاليه من أي منصة تفضلها، اتفق على السعر، احصل على تفاصيل الحساب البنكي للمالك، واملأ النموذج. رينتك سيتولى الباقي، بما في ذلك تحويل المبلغ خلال ٤ أيام عمل.",
   },
   rentPaymentDescription: {
     en: "For any Home, Villa, Chalet or Hotel Room, from any website or even through your connections.",

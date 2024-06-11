@@ -123,7 +123,8 @@ export const Wrapper = styled.div`
   /* background-color: #f7f8fa; */
   padding: 50px;
   .title {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+    margin-top: 30px;
   }
   ${devices.mediumMax} {
     padding: 1rem;
