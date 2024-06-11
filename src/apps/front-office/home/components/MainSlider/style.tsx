@@ -30,16 +30,16 @@ export const ContentWrapper = styled.div`
   ${devices.largeMax} {
     top: -21rem;
   }
-  ${devices.mediumMax} {
-    top: -30rem;
-  }
-  ${devices.smallMax} {
-    top: -37rem;
-  }
-  ${devices.xSmallMax} {
+  /* ${devices.mediumMax} {
+    top: -22rem;
+  } */
+  /* ${devices.smallMax} {
+    top: -22rem;
+  } */
+  /* ${devices.xSmallMax} {
     top: -31rem;
     left: 4px;
-  }
+  } */
   display: flex;
   flex-direction: column;
   justify-content: center;
