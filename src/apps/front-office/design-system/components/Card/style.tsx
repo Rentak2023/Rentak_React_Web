@@ -19,7 +19,6 @@ export const StyledCard = styled.div`
   background: ${theme.colors.white};
   padding: 57.82px;
   position: relative;
-  /* top: 100px; */
   z-index: 9;
   ${devices.smallMax} {
     padding: calc(57px * 0.4);

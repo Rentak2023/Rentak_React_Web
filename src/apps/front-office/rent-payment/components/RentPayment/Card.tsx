@@ -1,7 +1,10 @@
-import { Container, Flex } from "../Grids";
 import { Wrapper, StyledCard } from "./style";
-import { H3, H4, P4 } from "../Typography";
 import { trans } from "@mongez/localization";
+import {
+  Container,
+  Flex,
+} from "apps/front-office/design-system/components/Grids";
+import { H4, P4 } from "apps/front-office/design-system/components/Typography";
 import React from "react";
 
 const Card = ({

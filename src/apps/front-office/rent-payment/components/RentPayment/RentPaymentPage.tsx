@@ -1,23 +1,28 @@
 import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
-import Card from "apps/front-office/design-system/components/Card";
-import PageHeader from "apps/front-office/design-system/components/PageHeader";
 import RentPaymentContent from "./RentPaymentContent";
-import { FormIcon } from "shared/assets/svgs";
 import FloatingButtons from "apps/front-office/design-system/components/FloatingButtons";
+import PageHeader from "./PageHeader";
+import Card from "./Card";
+import { useEffect } from "react";
+import { headerAtom } from "apps/front-office/design-system/layouts/Header/atoms";
+import Loader from "apps/front-office/design-system/components/Loader";
 
 function RentPaymentPage() {
+  const headerModeValue = headerAtom.useValue();
+
+  useEffect(() => {
+    headerAtom.update({ mode: "form" });
+  }, []);
+
+  if (headerModeValue.mode !== "form") return <Loader />;
+
   return (
     <>
       <Helmet title={trans("rentPayment")} />
       <>
-        <PageHeader
-          title="rentPayment"
-          subTitle="rentNow"
-          description="rentPaymentDescription"
-          icon={<FormIcon />}
-        />
-        <Card title="fillForm" subtitle="completeRentPaymentForm">
+        <PageHeader />
+        <Card title="fillForm">
           <RentPaymentContent />
           <FloatingButtons />
         </Card>
