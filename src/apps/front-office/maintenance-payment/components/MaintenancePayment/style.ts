@@ -9,6 +9,13 @@ export const StepperWrapper = styled.div`
       flex-wrap: wrap;
     }
   }
+  ${devices.mediumMax} {
+    .ltr-Stepper-steps .ltr-Stepper-step,
+    .rtl-Stepper-steps .rtl-Stepper-step {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
   .line {
     margin-top: 57px;
     margin-bottom: 57px;
@@ -50,7 +57,7 @@ export const StepperWrapper = styled.div`
       height: auto;
       min-height: auto;
       padding: 20px 45px;
-      ${devices.mediumMax}{
+      ${devices.mediumMax} {
         padding: 14px;
       }
       border-radius: 10.842px;
@@ -64,14 +71,14 @@ export const StepperWrapper = styled.div`
 
 export const StepWrapper = styled.div`
   label: StepWrapper;
-  .otp{
-    button{
+  .otp {
+    button {
       background-color: ${theme.colors.secondary[400]};
       height: auto;
       padding: 16px;
       border-radius: 10.842px;
     }
-    ${devices.mediumMax}{
+    ${devices.mediumMax} {
       flex-direction: column;
     }
   }

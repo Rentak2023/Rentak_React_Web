@@ -9,6 +9,13 @@ export const StepperWrapper = styled.div`
       flex-wrap: wrap;
     }
   }
+  ${devices.mediumMax} {
+    .ltr-Stepper-steps .ltr-Stepper-step,
+    .rtl-Stepper-steps .rtl-Stepper-step {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
   .line {
     margin-top: 57px;
     margin-bottom: 57px;
