@@ -2,12 +2,7 @@ import BannerHeader from "shared/assets/images/rent-payment-banner.png";
 import { BannerContainer, BannerDescription } from "./style";
 import { Flex } from "apps/front-office/design-system/components/Grids";
 import { trans } from "@mongez/localization";
-import {
-  H1,
-  H4,
-  P4,
-  Small,
-} from "apps/front-office/design-system/components/Typography";
+import { H1, P3 } from "apps/front-office/design-system/components/Typography";
 
 const PageHeader = () => {
   return (
@@ -18,9 +13,9 @@ const PageHeader = () => {
           <H1 weight="700" color="white">
             {trans("vacayNow")}
           </H1>
-          <P4 weight="400" color="white">
+          <P3 weight="400" color="white">
             {trans("rentNow")}
-          </P4>
+          </P3>
         </Flex>
       </BannerDescription>
     </BannerContainer>
