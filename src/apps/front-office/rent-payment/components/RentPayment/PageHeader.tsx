@@ -5,6 +5,7 @@ import { trans } from "@mongez/localization";
 import {
   H1,
   H2,
+  P2,
   P3,
 } from "apps/front-office/design-system/components/Typography";
 
@@ -14,12 +15,12 @@ const PageHeader = () => {
       <img src={BannerHeader} title="Rent Payment Banner" />
       <BannerDescription>
         <Flex direction="column">
-          <H2 weight="700" color="white">
+          <H2 weight="800" color="white">
             {trans("vacayNow")}
           </H2>
-          <P3 weight="400" color="white">
+          <P2 weight="400" color="white">
             {trans("rentNow")}
-          </P3>
+          </P2>
         </Flex>
       </BannerDescription>
     </BannerContainer>
