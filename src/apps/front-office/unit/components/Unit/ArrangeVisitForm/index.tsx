@@ -24,9 +24,9 @@ const ArrangeVisitForm = ({ property }) => {
   const onSubmit = async ({ values }) => {
     setIsSubmitting(true);
     try {
-      const response : any = await visit(values);
+      const response: any = await visit(values);
       showNotification({
-        message: trans('tourScheduled'),
+        message: trans("tourScheduled"),
       });
     } catch (error: any) {
       if (error.response.data.message) {
@@ -47,6 +47,7 @@ const ArrangeVisitForm = ({ property }) => {
       setIsSubmitting(false);
     }
   };
+
   return (
     <ArrangeVisit>
       <TitleWrapper>
@@ -60,7 +61,7 @@ const ArrangeVisitForm = ({ property }) => {
       <Form onSubmit={onSubmit}>
         <Flex gap="32px" fullWidth direction="column">
           <HiddenInput name="unit_id" value={property?.id} />
-          <HiddenInput name="lang" value={current('localeCode')}/>
+          <HiddenInput name="lang" value={current("localeCode")} />
           <DateInput
             name="datetime"
             label="date"

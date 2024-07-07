@@ -25,16 +25,16 @@ import { theme } from "apps/front-office/design-system";
 import URLS from "apps/front-office/utils/urls";
 
 const Property = ({ property }) => {
-  const bedroom = property.rooms.find(room => (room.room_name === "Bedroom"));
-  const bathroom = property.rooms.find(room => (room.room_name === "Bathroom"));
+  const bedroom = property.rooms.find(room => room.room_name === "Bedroom");
+  const bathroom = property.rooms.find(room => room.room_name === "Bathroom");
   const items = [
     {
       icon: <BedIcon />,
-      text: bedroom !== undefined ? bedroom.num_of_rooms : 0 ,
+      text: bedroom !== undefined ? bedroom.num_of_rooms : 0,
     },
     {
       icon: <ShowerIcon />,
-      text: bathroom !== undefined ? bathroom.num_of_rooms : 0 ,
+      text: bathroom !== undefined ? bathroom.num_of_rooms : 0,
     },
     {
       icon: <AreaIcon />,
@@ -58,9 +58,7 @@ const Property = ({ property }) => {
       <PropertyWrapper image={property.picture}>
         <img src={property.picture} />
         <DescriptionWrapper>
-          <Flex
-            justify="space-between"
-            fullWidth>
+          <Flex justify="space-between" fullWidth>
             {property.property_name && (
               <PropertyType>
                 <P3 weight="500">{property.property_name}</P3>
@@ -83,12 +81,14 @@ const Property = ({ property }) => {
           </Flex>
           <Flex align="center" gap="0.5rem">
             <LocationIcon />
-            <Small className="address">{property.location.address_in_detail}</Small>
+            <Small className="address">
+              {property.location.address_in_detail}
+            </Small>
           </Flex>
           <div className="description">
-            <Small>
+            {/* <Small>
               {trans("listed")} {property.ago}
-            </Small>
+            </Small> */}
             <Flex fullWidth justify="space-between">
               <Flex gap="26px">
                 {items.map(item => (
