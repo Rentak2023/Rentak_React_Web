@@ -2690,5 +2690,9 @@
   "copyRight": {
     "en": "Copy Right Reversed",
     "ar": "حقوق النشر محفوظة"
+  },
+  "serviceRequestSuccess": {
+    "en": "Request made successfully. someone will contact you shortly.",
+    "ar": "تم تقديم الطلب بنجاح. سوف تتلقى رسالة من فريق الخدمة في اقرب وقت."
   }
 }

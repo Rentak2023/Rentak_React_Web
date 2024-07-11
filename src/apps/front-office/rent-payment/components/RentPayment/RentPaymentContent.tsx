@@ -30,10 +30,12 @@ const RentPaymentContent = () => {
     { open: openSuccessModal, close: closeSuccessModal },
   ] = useDisclosure(false);
 
-  const formRef = useRef<any>();
+  const formRef = useRef<Form>();
 
   const handleNextStep = () => {
-    const form = formRef.current as Form;
+    const form = formRef.current;
+
+    if (!form) return;
 
     form.validateVisible().then(() => {
       if (form.isValid()) {
@@ -80,6 +82,8 @@ const RentPaymentContent = () => {
   const handlePrevStep = () => {
     const form = formRef.current;
 
+    if (!form) return;
+
     form.validateVisible().then(() => {
       if (form.isValid()) {
         // move to the Prev step
@@ -94,20 +98,25 @@ const RentPaymentContent = () => {
     try {
       const response = await sendRentPayment(values);
       console.log(response.data);
-      showNotification({
-        message: response.data.message,
-      });
 
       openSuccessModal();
       ReactGA.event({
         category: "Rent Payment",
         action: "Rent Payment Success",
       });
-      setTimeout(() => {
-        if (response.data.payment_data.redirect_url) {
+
+      if (response.data.redirect) {
+        showNotification({
+          message: response.data.message,
+        });
+        setTimeout(() => {
           window.location.href = response.data.payment_data.redirect_url;
-        }
-      }, 1500);
+        }, 1500);
+      } else {
+        showNotification({
+          message: trans("serviceRequestSuccess"),
+        });
+      }
     } catch (error: any) {
       ReactGA.event({
         category: "Rent Payment",
