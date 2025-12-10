@@ -3,16 +3,16 @@
     "private": true,
     "version": "0.0.0",
     "type": "module",
-    "scripts": {
-        "dev": "rm -rf ./node_modules/.vite && unlink yarn.lock && yarn update && yarn install && yarn start",
-        "update": "npx ncu -u",
-        "lint": "npx eslint .",
-        "fix": "npx eslint --fix -c ./.eslintrc.json ./src",
-        "format": "npx prettier --write ./**/*.{js,jsx,ts,tsx,css,scss,md,json} --config ./.prettierrc.json",
-        "start": "vite --host",
-        "build": "tsc && vite build",
-        "preview": "vite preview"
-    },
+ "scripts": {
+  "dev": "vite",
+  "update": "npx ncu -u",
+  "lint": "npx eslint .",
+  "fix": "npx eslint --fix -c ./.eslintrc.json ./src",
+  "format": "npx prettier --write ./**/*.{js,jsx,ts,tsx,css,scss,md,json} --config ./.prettierrc.json",
+  "build": "tsc && vite build",
+  "start": "node server.cjs",
+  "preview": "vite preview"
+   },
     "dependencies": {
         "@emotion/cache": "^11.11.0",
         "@emotion/react": "11.11.1",
