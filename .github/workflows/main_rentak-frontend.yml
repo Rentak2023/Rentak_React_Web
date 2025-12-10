@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - claude/fix-502-deployment-error-01KS3umMzQG3in5TocBUjkNt
   workflow_dispatch:
 jobs:
   build:
